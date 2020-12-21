@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) Ville de Montréal and other contributors
+Copyright (c) 2020 Ville de Montréal
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

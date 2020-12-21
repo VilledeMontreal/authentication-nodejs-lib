@@ -1,0 +1,50 @@
+{
+  "name": "core-authentication-nodejs-lib",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Montreal City Authors",
+  "license": "MIT",
+  "description": "An OIDC lib for backend to backend communication",
+  "keywords": [
+    "authentication",
+    "oauth2",
+    "oidc",
+    "openid connect"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VilledeMontreal/authentication-nodejs-lib.git"
+  },
+  "scripts": {
+    "postinstall": "npm run bootstrap && npm run compile",
+    "prepublishOnly": "./node_modules/.bin/lerna run compile --no-private",
+    "pre-commit": "./node_modules/.bin/lerna run pre-commit",
+    "pre-push": "./node_modules/.bin/lerna run pre-push --concurrency 1",
+    "clean": "./node_modules/.bin/lerna clean && ./node_modules/.bin/lerna run clean",
+    "compile": "./node_modules/.bin/lerna run compile",
+    "lint": "./node_modules/.bin/lerna run lint",
+    "lint-fix": "./node_modules/.bin/lerna run lint-fix",
+    "test": "./node_modules/.bin/lerna run test --concurrency 1",
+    "test-ci": "./node_modules/.bin/lerna run test-ci --concurrency 1",
+    "publish:dev": "./node_modules/.bin/lerna publish --canary --preid beta --force-publish --yes",
+    "publish:master": "./node_modules/.bin/lerna publish from-git --yes",
+    "bootstrap": "./node_modules/.bin/lerna bootstrap",
+    "bump": "./node_modules/.bin/lerna version patch",
+    "bump:force": "./node_modules/.bin/lerna version patch --force-publish",
+    "ncu": "ncu && ./node_modules/.bin/lerna exec -- ncu",
+    "ncu-fix": "ncu -u && ./node_modules/.bin/lerna exec -- ncu -u",
+  },
+  "devDependencies": {
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "husky": "4.3.5",
+    "lerna": "^3.22.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run pre-commit",
+      "pre-push": "npm run pre-push"
+    }
+  }
+}

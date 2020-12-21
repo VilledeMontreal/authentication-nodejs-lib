@@ -1,0 +1,22 @@
+{
+  "name": "@villemontreal/demo-client-internal",
+  "version": "0.0.30",
+  "private": true,
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf ./build ./tsconfig.tsbuildinfo coverage output",
+    "compile": "./node_modules/.bin/tsc",
+    "start": "npm run compile && node dist/index.js",
+    "test": "echo 'no tests'"
+  },
+  "author": "Morgan Martinet <morgan.martinet@montreal.ca>",
+  "license": "MIT",
+  "dependencies": {
+    "@villemontreal/auth-core": "^0.0.30",
+    "@villemontreal/auth-oidc": "^0.0.30"
+  },
+  "devDependencies": {
+    "typescript": "4.1.2"
+  }
+}

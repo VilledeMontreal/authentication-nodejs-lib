@@ -1,0 +1,80 @@
+{
+  "name": "@villemontreal/auth-oidc-plugin-request",
+  "version": "1.0.0",
+  "description": "request binding for auth-oidc",
+  "author": "Montreal City Authors",
+  "keywords": [
+    "auth",
+    "oidc",
+    "request"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "homepage": "https://github.com/VilledeMontreal/authentication-nodejs-lib#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VilledeMontreal/authentication-nodejs-lib.git",
+    "directory": "packages/oidc-plugin-request"
+  },
+  "bugs": {
+    "url": "https://github.com/VilledeMontreal/authentication-nodejs-lib/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "src"
+  },
+  "scripts": {
+    "clean": "rm -rf ./build ./tsconfig.tsbuildinfo coverage output",
+    "compile": "./node_modules/.bin/tsc -p .",
+    "pre-commit": "npm run lint-fix",
+    "pre-push": "npm run lint && npm run test",
+    "lint": "eslint -c .eslintrc.js --ext .ts src",
+    "lint-fix": "eslint -c .eslintrc.js --fix --ext .ts src",
+    "test": "./node_modules/.bin/jest --runInBand --reporters=default",
+    "test-ci": "./node_modules/.bin/jest --ci --runInBand",
+    "show-coverage": "open output/coverage/lcov-report/index.html"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "typings": "dist/index.d.ts",
+  "dependencies": {
+    "@villemontreal/auth-core": "^0.0.30",
+    "@villemontreal/auth-oidc": "^0.0.30"
+  },
+  "peerDependencies": {
+    "request": "2.x"
+  },
+  "devDependencies": {
+    "@types/body-parser": "1.19.0",
+    "@types/express": "4.17.9",
+    "@types/jest": "26.0.18",
+    "@types/request": "2.48.5",
+    "@types/request-promise-native": "1.0.17",
+    "@typescript-eslint/eslint-plugin": "4.9.1",
+    "@typescript-eslint/parser": "4.9.1",
+    "body-parser": "1.19.0",
+    "eslint": "7.15.0",
+    "eslint-config-airbnb-typescript": "12.0.0",
+    "eslint-config-prettier": "7.0.0",
+    "eslint-plugin-header": "3.1.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jest": "24.1.3",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.2.0",
+    "express": "4.17.1",
+    "jest": "26.6.3",
+    "jest-junit": "12.0.0",
+    "prettier": "2.2.1",
+    "request": "2.88.2",
+    "request-promise-core": "1.1.4",
+    "ts-jest": "26.4.4",
+    "typescript": "4.1.2"
+  }
+}

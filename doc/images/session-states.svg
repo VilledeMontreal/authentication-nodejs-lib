@@ -1,0 +1,505 @@
+<svg id="mermaid-1581653775358" width="503.1796875" xmlns="http://www.w3.org/2000/svg" viewBox="-43  0 287.53125 343.75"><style>
+
+
+
+#mermaid-1581653775358 .label {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  color: #333; }
+
+#mermaid-1581653775358 .label text {
+  fill: #333; }
+
+#mermaid-1581653775358 .node rect,
+#mermaid-1581653775358 .node circle,
+#mermaid-1581653775358 .node ellipse,
+#mermaid-1581653775358 .node polygon,
+#mermaid-1581653775358 .node path {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1px; }
+
+#mermaid-1581653775358 .node .label {
+  text-align: center; }
+
+#mermaid-1581653775358 .node.clickable {
+  cursor: pointer; }
+
+#mermaid-1581653775358 .arrowheadPath {
+  fill: #333333; }
+
+#mermaid-1581653775358 .edgePath .path {
+  stroke: #333333;
+  stroke-width: 1.5px; }
+
+#mermaid-1581653775358 .edgeLabel {
+  background-color: #e8e8e8;
+  text-align: center; }
+
+#mermaid-1581653775358 .cluster rect {
+  fill: #ffffde;
+  stroke: #aaaa33;
+  stroke-width: 1px; }
+
+#mermaid-1581653775358 .cluster text {
+  fill: #333; }
+
+#mermaid-1581653775358 div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 12px;
+  background: #ffffde;
+  border: 1px solid #aaaa33;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100; }
+
+#mermaid-1581653775358 .actor {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1581653775358 text.actor {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1581653775358 .actor-line {
+  stroke: grey; }
+
+#mermaid-1581653775358 .messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1581653775358 .messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1581653775358 #arrowhead {
+  fill: #333; }
+
+#mermaid-1581653775358 .sequenceNumber {
+  fill: white; }
+
+#mermaid-1581653775358 #sequencenumber {
+  fill: #333; }
+
+#mermaid-1581653775358 #crosshead path {
+  fill: #333 !important;
+  stroke: #333 !important; }
+
+#mermaid-1581653775358 .messageText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1581653775358 .labelBox {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1581653775358 .labelText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1581653775358 .loopText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1581653775358 .loopLine {
+  stroke-width: 2;
+  stroke-dasharray: '2 2';
+  stroke: #CCCCFF; }
+
+#mermaid-1581653775358 .note {
+  stroke: #aaaa33;
+  fill: #fff5ad; }
+
+#mermaid-1581653775358 .noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 14px; }
+
+#mermaid-1581653775358 .activation0 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1581653775358 .activation1 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1581653775358 .activation2 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+
+#mermaid-1581653775358 .mermaid-main-font {
+  font-family: "trebuchet ms", verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653775358 .section {
+  stroke: none;
+  opacity: 0.2; }
+
+#mermaid-1581653775358 .section0 {
+  fill: rgba(102, 102, 255, 0.49); }
+
+#mermaid-1581653775358 .section2 {
+  fill: #fff400; }
+
+#mermaid-1581653775358 .section1,
+#mermaid-1581653775358 .section3 {
+  fill: white;
+  opacity: 0.2; }
+
+#mermaid-1581653775358 .sectionTitle0 {
+  fill: #333; }
+
+#mermaid-1581653775358 .sectionTitle1 {
+  fill: #333; }
+
+#mermaid-1581653775358 .sectionTitle2 {
+  fill: #333; }
+
+#mermaid-1581653775358 .sectionTitle3 {
+  fill: #333; }
+
+#mermaid-1581653775358 .sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+
+#mermaid-1581653775358 .grid .tick {
+  stroke: lightgrey;
+  opacity: 0.8;
+  shape-rendering: crispEdges; }
+#mermaid-1581653775358   .grid .tick text {
+    font-family: 'trebuchet ms', verdana, arial;
+    font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653775358 .grid path {
+  stroke-width: 0; }
+
+
+#mermaid-1581653775358 .today {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px; }
+
+
+
+#mermaid-1581653775358 .task {
+  stroke-width: 2; }
+
+#mermaid-1581653775358 .taskText {
+  text-anchor: middle;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653775358 .taskText:not([font-size]) {
+  font-size: 11px; }
+
+#mermaid-1581653775358 .taskTextOutsideRight {
+  fill: black;
+  text-anchor: start;
+  font-size: 11px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653775358 .taskTextOutsideLeft {
+  fill: black;
+  text-anchor: end;
+  font-size: 11px; }
+
+
+#mermaid-1581653775358 .task.clickable {
+  cursor: pointer; }
+
+#mermaid-1581653775358 .taskText.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+#mermaid-1581653775358 .taskTextOutsideLeft.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+#mermaid-1581653775358 .taskTextOutsideRight.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+
+#mermaid-1581653775358 .taskText0,
+#mermaid-1581653775358 .taskText1,
+#mermaid-1581653775358 .taskText2,
+#mermaid-1581653775358 .taskText3 {
+  fill: white; }
+
+#mermaid-1581653775358 .task0,
+#mermaid-1581653775358 .task1,
+#mermaid-1581653775358 .task2,
+#mermaid-1581653775358 .task3 {
+  fill: #8a90dd;
+  stroke: #534fbc; }
+
+#mermaid-1581653775358 .taskTextOutside0,
+#mermaid-1581653775358 .taskTextOutside2 {
+  fill: black; }
+
+#mermaid-1581653775358 .taskTextOutside1,
+#mermaid-1581653775358 .taskTextOutside3 {
+  fill: black; }
+
+
+#mermaid-1581653775358 .active0,
+#mermaid-1581653775358 .active1,
+#mermaid-1581653775358 .active2,
+#mermaid-1581653775358 .active3 {
+  fill: #bfc7ff;
+  stroke: #534fbc; }
+
+#mermaid-1581653775358 .activeText0,
+#mermaid-1581653775358 .activeText1,
+#mermaid-1581653775358 .activeText2,
+#mermaid-1581653775358 .activeText3 {
+  fill: black !important; }
+
+
+#mermaid-1581653775358 .done0,
+#mermaid-1581653775358 .done1,
+#mermaid-1581653775358 .done2,
+#mermaid-1581653775358 .done3 {
+  stroke: grey;
+  fill: lightgrey;
+  stroke-width: 2; }
+
+#mermaid-1581653775358 .doneText0,
+#mermaid-1581653775358 .doneText1,
+#mermaid-1581653775358 .doneText2,
+#mermaid-1581653775358 .doneText3 {
+  fill: black !important; }
+
+
+#mermaid-1581653775358 .crit0,
+#mermaid-1581653775358 .crit1,
+#mermaid-1581653775358 .crit2,
+#mermaid-1581653775358 .crit3 {
+  stroke: #ff8888;
+  fill: red;
+  stroke-width: 2; }
+
+#mermaid-1581653775358 .activeCrit0,
+#mermaid-1581653775358 .activeCrit1,
+#mermaid-1581653775358 .activeCrit2,
+#mermaid-1581653775358 .activeCrit3 {
+  stroke: #ff8888;
+  fill: #bfc7ff;
+  stroke-width: 2; }
+
+#mermaid-1581653775358 .doneCrit0,
+#mermaid-1581653775358 .doneCrit1,
+#mermaid-1581653775358 .doneCrit2,
+#mermaid-1581653775358 .doneCrit3 {
+  stroke: #ff8888;
+  fill: lightgrey;
+  stroke-width: 2;
+  cursor: pointer;
+  shape-rendering: crispEdges; }
+
+#mermaid-1581653775358 .milestone {
+  transform: rotate(45deg) scale(0.8, 0.8); }
+
+#mermaid-1581653775358 .milestoneText {
+  font-style: italic; }
+
+#mermaid-1581653775358 .doneCritText0,
+#mermaid-1581653775358 .doneCritText1,
+#mermaid-1581653775358 .doneCritText2,
+#mermaid-1581653775358 .doneCritText3 {
+  fill: black !important; }
+
+#mermaid-1581653775358 .activeCritText0,
+#mermaid-1581653775358 .activeCritText1,
+#mermaid-1581653775358 .activeCritText2,
+#mermaid-1581653775358 .activeCritText3 {
+  fill: black !important; }
+
+#mermaid-1581653775358 .titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: black;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653775358 g.classGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 10px; }
+#mermaid-1581653775358   g.classGroup text .title {
+    font-weight: bolder; }
+
+#mermaid-1581653775358 g.clickable {
+  cursor: pointer; }
+
+#mermaid-1581653775358 g.classGroup rect {
+  fill: #ECECFF;
+  stroke: #9370DB; }
+
+#mermaid-1581653775358 g.classGroup line {
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653775358 .classLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #ECECFF;
+  opacity: 0.5; }
+
+#mermaid-1581653775358 .classLabel .label {
+  fill: #9370DB;
+  font-size: 10px; }
+
+#mermaid-1581653775358 .relation {
+  stroke: #9370DB;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1581653775358 .dashed-line {
+  stroke-dasharray: 3; }
+
+#mermaid-1581653775358 #compositionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653775358 #compositionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653775358 #aggregationStart {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653775358 #aggregationEnd {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653775358 #dependencyStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653775358 #dependencyEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653775358 #extensionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653775358 #extensionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653775358 .commit-id,
+#mermaid-1581653775358 .commit-msg,
+#mermaid-1581653775358 .branch-label {
+  fill: lightgrey;
+  color: lightgrey;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653775358 .pieTitleText {
+  text-anchor: middle;
+  font-size: 25px;
+  fill: black;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653775358 .slice {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653775358 g.stateGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-size: 10px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653775358 g.stateGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-size: 10px; }
+
+#mermaid-1581653775358 g.stateGroup .state-title {
+  font-weight: bolder;
+  fill: black; }
+
+#mermaid-1581653775358 g.stateGroup rect {
+  fill: #ECECFF;
+  stroke: #9370DB; }
+
+#mermaid-1581653775358 g.stateGroup line {
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653775358 .transition {
+  stroke: #9370DB;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1581653775358 .stateGroup .composit {
+  fill: white;
+  border-bottom: 1px; }
+
+#mermaid-1581653775358 .stateGroup .alt-composit {
+  fill: #e0e0e0;
+  border-bottom: 1px; }
+
+#mermaid-1581653775358 .state-note {
+  stroke: #aaaa33;
+  fill: #fff5ad; }
+#mermaid-1581653775358   .state-note text {
+    fill: black;
+    stroke: none;
+    font-size: 10px; }
+
+#mermaid-1581653775358 .stateLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #ECECFF;
+  opacity: 0.5; }
+
+#mermaid-1581653775358 .stateLabel text {
+  fill: black;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+:root {
+  --mermaid-font-family: '"trebuchet ms", verdana, arial';
+  --mermaid-font-family: "Comic Sans MS", "Comic Sans", cursive; }
+
+:root { --mermaid-font-family: "trebuchet ms", verdana, arial;}</style><style>#mermaid-1581653775358 {
+    color: rgb(0, 0, 0);
+    font: 16px "trebuchet ms", verdana, arial;
+  }</style><g></g><defs><marker id="dependencyEnd" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 19,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g id="start1" class="stateGroup" transform="translate(88.53515625,0 )" data-x-shift="88.53515625"><circle r="5" cx="13" cy="13" style="stroke: black; fill: black;"></circle></g><g id="acquiringToken" class="stateGroup" transform="translate(49.40234375,46 )" data-x-shift="49.40234375"><rect x="8" y="8" width="88.265625" height="27.5625" rx="5"></rect><text x="16" y="26" font-size="24" class="state-title">acquiringToken</text></g><g id="tokenAcquired" class="stateGroup" transform="translate(0,109.5625 )" data-x-shift="0"><rect x="8" y="8" width="84.765625" height="27.5625" rx="5"></rect><text x="16" y="26" font-size="24" class="state-title">tokenAcquired</text></g><g id="error" class="stateGroup" transform="translate(106.109375,300.25 )" data-x-shift="106.109375"><rect x="8" y="8" width="40.234375" height="27.5" rx="5"></rect><text x="16" y="26" font-size="24" class="state-title">error</text></g><g id="refreshingToken" class="stateGroup" transform="translate(79.828125,236.6875 )" data-x-shift="79.828125"><rect x="8" y="8" width="92.796875" height="27.5625" rx="5"></rect><text x="16" y="26" font-size="24" class="state-title">refreshingToken</text></g><g id="tokenExpired" class="stateGroup" transform="translate(86.921875,173.125 )" data-x-shift="86.921875"><rect x="8" y="8" width="78.609375" height="27.5625" rx="5"></rect><text x="16" y="26" font-size="24" class="state-title">tokenExpired</text></g><path d="M101.53515625,26L101.53515625,27.666666666666668C101.53515625,29.333333333333332,101.53515625,32.666666666666664,101.53515625,36C101.53515625,39.333333333333336,101.53515625,42.666666666666664,101.53515625,44.333333333333336L101.53515625,46" id="edge0" class="transition" marker-end="url(#dependencyEnd)"></path><path d="M66.47794524336283,89.5625L63.795423119469014,91.22916666666667C61.11290099557522,92.89583333333333,55.74785674778761,96.22916666666667,53.0653346238938,99.5625C50.3828125,102.89583333333333,50.3828125,106.22916666666667,50.3828125,107.89583333333333L50.3828125,109.5625" id="edge1" class="transition" marker-end="url(#dependencyEnd)"></path><path d="M49.40234375,79.91619013389409L35.335286458333336,83.19057511157841C21.268229166666668,86.46496008926272,-6.865885416666667,93.01373004463136,-20.932942708333332,101.5849900223157C-35,110.15625,-35,120.75,-35,131.34375C-35,141.9375,-35,152.53125,-35,163.125C-35,173.71875,-35,184.3125,-35,194.90625C-35,205.5,-35,216.09375,-35,226.6875C-35,237.28125,-35,247.875,-35,258.46875C-35,269.0625,-35,279.65625,-11.481770833333334,289.36557517927764C12.036458333333334,299.07490035855534,59.072916666666664,307.8998007171106,82.59114583333333,312.3122508963883L106.109375,316.72470107566596" id="edge2" class="transition" marker-end="url(#dependencyEnd)"></path><path d="M27.97778776425762,153.125L26.263390845214683,154.79166666666666C24.548993926171747,156.45833333333334,21.120200088085873,159.79166666666666,19.405803169042937,166.75520833333334C17.69140625,173.71875,17.69140625,184.3125,17.69140625,194.90625C17.69140625,205.5,17.69140625,216.09375,28.047526041666668,224.21492663325844C38.403645833333336,232.33610326651694,59.115885416666664,237.9847065330339,69.47200520833333,240.80900816629233L79.828125,243.63330979955083" id="edge3" class="transition" marker-end="url(#dependencyEnd)"></path><path d="M188.625,237.46325937351685L193.27604166666666,235.6672994779307C197.92708333333334,233.87133958234458,207.22916666666666,230.27941979117227,211.88020833333334,223.18658489558615C216.53125,216.09375,216.53125,205.5,216.53125,194.90625C216.53125,184.3125,216.53125,173.71875,197.23697916666666,164.7312231097475C177.94270833333334,155.74369621949498,139.35416666666666,148.36239243898999,120.05989583333333,144.67174054873746L100.765625,140.98108865848496" id="edge4" class="transition" marker-end="url(#dependencyEnd)"></path><path d="M134.2265625,280.25L134.2265625,281.9166666666667C134.2265625,283.5833333333333,134.2265625,286.9166666666667,134.2265625,290.25C134.2265625,293.5833333333333,134.2265625,296.9166666666667,134.2265625,298.5833333333333L134.2265625,300.25" id="edge5" class="transition" marker-end="url(#dependencyEnd)"></path><path d="M78.58653284783678,153.125L80.74463674819732,154.79166666666666C82.90274064855785,156.45833333333334,87.21894844927893,159.79166666666666,91.61586749221567,163.125C96.01278653515242,166.45833333333334,100.49041682030482,169.79166666666666,102.72923196288103,171.45833333333334L104.96804710545723,173.125" id="edge6" class="transition" marker-end="url(#dependencyEnd)"></path><path d="M162.34375,313.2739022527682L174.70833333333334,309.4365852106402C187.07291666666666,305.59926816851214,211.80208333333334,297.92463408425607,224.16666666666666,288.79044204212806C236.53125,279.65625,236.53125,269.0625,236.53125,258.46875C236.53125,247.875,236.53125,237.28125,236.53125,226.6875C236.53125,216.09375,236.53125,205.5,236.53125,194.90625C236.53125,184.3125,236.53125,173.71875,236.53125,163.125C236.53125,152.53125,236.53125,141.9375,236.53125,131.34375C236.53125,120.75,236.53125,110.15625,222.720703125,101.60804801209525C208.91015625,93.0598460241905,181.2890625,86.55719204838103,167.478515625,83.30586506047628L153.66796875,80.05453807257155" id="edge7" class="transition" marker-end="url(#dependencyEnd)"></path><path d="M155.57679218903638,173.125L157.21047786586365,171.45833333333334C158.84416354269092,169.79166666666666,162.11153489634546,166.45833333333334,163.74522057317273,159.49479166666666C165.37890625,152.53125,165.37890625,141.9375,165.37890625,131.34375C165.37890625,120.75,165.37890625,110.15625,162.0308236541298,103.19270833333333C158.68274105825958,96.22916666666667,151.9865758665192,92.89583333333333,148.63849327064898,91.22916666666667L145.29041067477877,89.5625" id="edge8" class="transition" marker-end="url(#dependencyEnd)"></path><path d="M134.2265625,216.6875L134.2265625,218.35416666666666C134.2265625,220.02083333333334,134.2265625,223.35416666666666,134.2265625,226.6875C134.2265625,230.02083333333334,134.2265625,233.35416666666666,134.2265625,235.02083333333334L134.2265625,236.6875" id="edge9" class="transition" marker-end="url(#dependencyEnd)"></path></svg>

@@ -1,0 +1,16 @@
+.*/*
+**/*.md
+**/node_modules
+**/log
+**/coverage
+**/temp
+**/output
+**/dist
+**/build
+**/.vscode
+**/.VSCodeCounter
+**/tsconfig.tsbuildinfo
+doc/
+Dockerfile
+.dockerignore
+.gitignore

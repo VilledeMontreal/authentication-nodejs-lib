@@ -1,0 +1,505 @@
+<svg id="mermaid-1581653933058" width="1104.2265625" xmlns="http://www.w3.org/2000/svg" height="308" viewBox="0 0 1104.2265625 308"><style>
+
+
+
+#mermaid-1581653933058 .label {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  color: #333; }
+
+#mermaid-1581653933058 .label text {
+  fill: #333; }
+
+#mermaid-1581653933058 .node rect,
+#mermaid-1581653933058 .node circle,
+#mermaid-1581653933058 .node ellipse,
+#mermaid-1581653933058 .node polygon,
+#mermaid-1581653933058 .node path {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1px; }
+
+#mermaid-1581653933058 .node .label {
+  text-align: center; }
+
+#mermaid-1581653933058 .node.clickable {
+  cursor: pointer; }
+
+#mermaid-1581653933058 .arrowheadPath {
+  fill: #333333; }
+
+#mermaid-1581653933058 .edgePath .path {
+  stroke: #333333;
+  stroke-width: 1.5px; }
+
+#mermaid-1581653933058 .edgeLabel {
+  background-color: #e8e8e8;
+  text-align: center; }
+
+#mermaid-1581653933058 .cluster rect {
+  fill: #ffffde;
+  stroke: #aaaa33;
+  stroke-width: 1px; }
+
+#mermaid-1581653933058 .cluster text {
+  fill: #333; }
+
+#mermaid-1581653933058 div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 12px;
+  background: #ffffde;
+  border: 1px solid #aaaa33;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100; }
+
+#mermaid-1581653933058 .actor {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1581653933058 text.actor {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1581653933058 .actor-line {
+  stroke: grey; }
+
+#mermaid-1581653933058 .messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1581653933058 .messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1581653933058 #arrowhead {
+  fill: #333; }
+
+#mermaid-1581653933058 .sequenceNumber {
+  fill: white; }
+
+#mermaid-1581653933058 #sequencenumber {
+  fill: #333; }
+
+#mermaid-1581653933058 #crosshead path {
+  fill: #333 !important;
+  stroke: #333 !important; }
+
+#mermaid-1581653933058 .messageText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1581653933058 .labelBox {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1581653933058 .labelText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1581653933058 .loopText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1581653933058 .loopLine {
+  stroke-width: 2;
+  stroke-dasharray: '2 2';
+  stroke: #CCCCFF; }
+
+#mermaid-1581653933058 .note {
+  stroke: #aaaa33;
+  fill: #fff5ad; }
+
+#mermaid-1581653933058 .noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 14px; }
+
+#mermaid-1581653933058 .activation0 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1581653933058 .activation1 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1581653933058 .activation2 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+
+#mermaid-1581653933058 .mermaid-main-font {
+  font-family: "trebuchet ms", verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653933058 .section {
+  stroke: none;
+  opacity: 0.2; }
+
+#mermaid-1581653933058 .section0 {
+  fill: rgba(102, 102, 255, 0.49); }
+
+#mermaid-1581653933058 .section2 {
+  fill: #fff400; }
+
+#mermaid-1581653933058 .section1,
+#mermaid-1581653933058 .section3 {
+  fill: white;
+  opacity: 0.2; }
+
+#mermaid-1581653933058 .sectionTitle0 {
+  fill: #333; }
+
+#mermaid-1581653933058 .sectionTitle1 {
+  fill: #333; }
+
+#mermaid-1581653933058 .sectionTitle2 {
+  fill: #333; }
+
+#mermaid-1581653933058 .sectionTitle3 {
+  fill: #333; }
+
+#mermaid-1581653933058 .sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+
+#mermaid-1581653933058 .grid .tick {
+  stroke: lightgrey;
+  opacity: 0.8;
+  shape-rendering: crispEdges; }
+#mermaid-1581653933058   .grid .tick text {
+    font-family: 'trebuchet ms', verdana, arial;
+    font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653933058 .grid path {
+  stroke-width: 0; }
+
+
+#mermaid-1581653933058 .today {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px; }
+
+
+
+#mermaid-1581653933058 .task {
+  stroke-width: 2; }
+
+#mermaid-1581653933058 .taskText {
+  text-anchor: middle;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653933058 .taskText:not([font-size]) {
+  font-size: 11px; }
+
+#mermaid-1581653933058 .taskTextOutsideRight {
+  fill: black;
+  text-anchor: start;
+  font-size: 11px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653933058 .taskTextOutsideLeft {
+  fill: black;
+  text-anchor: end;
+  font-size: 11px; }
+
+
+#mermaid-1581653933058 .task.clickable {
+  cursor: pointer; }
+
+#mermaid-1581653933058 .taskText.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+#mermaid-1581653933058 .taskTextOutsideLeft.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+#mermaid-1581653933058 .taskTextOutsideRight.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+
+#mermaid-1581653933058 .taskText0,
+#mermaid-1581653933058 .taskText1,
+#mermaid-1581653933058 .taskText2,
+#mermaid-1581653933058 .taskText3 {
+  fill: white; }
+
+#mermaid-1581653933058 .task0,
+#mermaid-1581653933058 .task1,
+#mermaid-1581653933058 .task2,
+#mermaid-1581653933058 .task3 {
+  fill: #8a90dd;
+  stroke: #534fbc; }
+
+#mermaid-1581653933058 .taskTextOutside0,
+#mermaid-1581653933058 .taskTextOutside2 {
+  fill: black; }
+
+#mermaid-1581653933058 .taskTextOutside1,
+#mermaid-1581653933058 .taskTextOutside3 {
+  fill: black; }
+
+
+#mermaid-1581653933058 .active0,
+#mermaid-1581653933058 .active1,
+#mermaid-1581653933058 .active2,
+#mermaid-1581653933058 .active3 {
+  fill: #bfc7ff;
+  stroke: #534fbc; }
+
+#mermaid-1581653933058 .activeText0,
+#mermaid-1581653933058 .activeText1,
+#mermaid-1581653933058 .activeText2,
+#mermaid-1581653933058 .activeText3 {
+  fill: black !important; }
+
+
+#mermaid-1581653933058 .done0,
+#mermaid-1581653933058 .done1,
+#mermaid-1581653933058 .done2,
+#mermaid-1581653933058 .done3 {
+  stroke: grey;
+  fill: lightgrey;
+  stroke-width: 2; }
+
+#mermaid-1581653933058 .doneText0,
+#mermaid-1581653933058 .doneText1,
+#mermaid-1581653933058 .doneText2,
+#mermaid-1581653933058 .doneText3 {
+  fill: black !important; }
+
+
+#mermaid-1581653933058 .crit0,
+#mermaid-1581653933058 .crit1,
+#mermaid-1581653933058 .crit2,
+#mermaid-1581653933058 .crit3 {
+  stroke: #ff8888;
+  fill: red;
+  stroke-width: 2; }
+
+#mermaid-1581653933058 .activeCrit0,
+#mermaid-1581653933058 .activeCrit1,
+#mermaid-1581653933058 .activeCrit2,
+#mermaid-1581653933058 .activeCrit3 {
+  stroke: #ff8888;
+  fill: #bfc7ff;
+  stroke-width: 2; }
+
+#mermaid-1581653933058 .doneCrit0,
+#mermaid-1581653933058 .doneCrit1,
+#mermaid-1581653933058 .doneCrit2,
+#mermaid-1581653933058 .doneCrit3 {
+  stroke: #ff8888;
+  fill: lightgrey;
+  stroke-width: 2;
+  cursor: pointer;
+  shape-rendering: crispEdges; }
+
+#mermaid-1581653933058 .milestone {
+  transform: rotate(45deg) scale(0.8, 0.8); }
+
+#mermaid-1581653933058 .milestoneText {
+  font-style: italic; }
+
+#mermaid-1581653933058 .doneCritText0,
+#mermaid-1581653933058 .doneCritText1,
+#mermaid-1581653933058 .doneCritText2,
+#mermaid-1581653933058 .doneCritText3 {
+  fill: black !important; }
+
+#mermaid-1581653933058 .activeCritText0,
+#mermaid-1581653933058 .activeCritText1,
+#mermaid-1581653933058 .activeCritText2,
+#mermaid-1581653933058 .activeCritText3 {
+  fill: black !important; }
+
+#mermaid-1581653933058 .titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: black;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653933058 g.classGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 10px; }
+#mermaid-1581653933058   g.classGroup text .title {
+    font-weight: bolder; }
+
+#mermaid-1581653933058 g.clickable {
+  cursor: pointer; }
+
+#mermaid-1581653933058 g.classGroup rect {
+  fill: #ECECFF;
+  stroke: #9370DB; }
+
+#mermaid-1581653933058 g.classGroup line {
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653933058 .classLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #ECECFF;
+  opacity: 0.5; }
+
+#mermaid-1581653933058 .classLabel .label {
+  fill: #9370DB;
+  font-size: 10px; }
+
+#mermaid-1581653933058 .relation {
+  stroke: #9370DB;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1581653933058 .dashed-line {
+  stroke-dasharray: 3; }
+
+#mermaid-1581653933058 #compositionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653933058 #compositionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653933058 #aggregationStart {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653933058 #aggregationEnd {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653933058 #dependencyStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653933058 #dependencyEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653933058 #extensionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653933058 #extensionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653933058 .commit-id,
+#mermaid-1581653933058 .commit-msg,
+#mermaid-1581653933058 .branch-label {
+  fill: lightgrey;
+  color: lightgrey;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653933058 .pieTitleText {
+  text-anchor: middle;
+  font-size: 25px;
+  fill: black;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653933058 .slice {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653933058 g.stateGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-size: 10px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1581653933058 g.stateGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-size: 10px; }
+
+#mermaid-1581653933058 g.stateGroup .state-title {
+  font-weight: bolder;
+  fill: black; }
+
+#mermaid-1581653933058 g.stateGroup rect {
+  fill: #ECECFF;
+  stroke: #9370DB; }
+
+#mermaid-1581653933058 g.stateGroup line {
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1581653933058 .transition {
+  stroke: #9370DB;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1581653933058 .stateGroup .composit {
+  fill: white;
+  border-bottom: 1px; }
+
+#mermaid-1581653933058 .stateGroup .alt-composit {
+  fill: #e0e0e0;
+  border-bottom: 1px; }
+
+#mermaid-1581653933058 .state-note {
+  stroke: #aaaa33;
+  fill: #fff5ad; }
+#mermaid-1581653933058   .state-note text {
+    fill: black;
+    stroke: none;
+    font-size: 10px; }
+
+#mermaid-1581653933058 .stateLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #ECECFF;
+  opacity: 0.5; }
+
+#mermaid-1581653933058 .stateLabel text {
+  fill: black;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+:root {
+  --mermaid-font-family: '"trebuchet ms", verdana, arial';
+  --mermaid-font-family: "Comic Sans MS", "Comic Sans", cursive; }
+
+:root { --mermaid-font-family: "trebuchet ms", verdana, arial;}</style><style>#mermaid-1581653933058 {
+    color: rgb(0, 0, 0);
+    font: 16px "trebuchet ms", verdana, arial;
+  }</style><g transform="translate(0, 0)"><g class="output"><g class="clusters"><g class="cluster" id="client" transform="translate(184.66015625,154)" style="opacity: 1;"><rect width="353.3203125" height="292" x="-176.66015625" y="-146"></rect><g class="label" transform="translate(0, -132)" id="mermaid-1581653933058Text"><g transform="translate(-20.5078125,-9.5)"><foreignObject width="41.015625" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">client</div></foreignObject></g></g></g><g class="cluster" id="serializers" style="opacity: 1;" transform="translate(738.7734375,97)"><rect width="714.90625" height="178" x="-357.453125" y="-89"></rect><g class="label" transform="translate(0, -75)" id="mermaid-1581653933058Text"><g transform="translate(-36.34375,-9.5)"><foreignObject width="72.6875" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">serializers</div></foreignObject></g></g></g></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M698.52734375,60.30380492314115L482.4765625,97L482.4765625,122" marker-end="url(#arrowhead187)" style="fill:none"></path><defs><marker id="arrowhead187" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M706.8163623595506,72L658.5390625,97L658.5390625,122" marker-end="url(#arrowhead188)" style="fill:none"></path><defs><marker id="arrowhead188" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M782.1289501404494,72L830.40625,97L830.40625,122" marker-end="url(#arrowhead189)" style="fill:none"></path><defs><marker id="arrowhead189" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M790.41796875,60.445487666034154L1001.796875,97L1001.796875,122" marker-end="url(#arrowhead190)" style="fill:none"></path><defs><marker id="arrowhead190" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M102.0625,72L102.0625,97L148.3318117977528,122" marker-end="url(#arrowhead191)" style="fill:none"></path><defs><marker id="arrowhead191" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M266.78125,72L266.78125,97L220.5119382022472,122" marker-end="url(#arrowhead192)" style="fill:none"></path><defs><marker id="arrowhead192" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M184.421875,161L184.421875,186L184.421875,211L184.421875,236" marker-end="url(#arrowhead193)" style="fill:none"></path><defs><marker id="arrowhead193" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="IHttpClient" transform="translate(184.421875,141.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-49.59375" y="-19.5" width="99.1875" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-39.59375,-9.5)"><foreignObject width="79.1875" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">IHttpClient</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="IHttpRequest" transform="translate(102.0625,52.5)"><rect rx="0" ry="0" x="-56.8828125" y="-19.5" width="113.765625" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-46.8828125,-9.5)"><foreignObject width="93.765625" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">IHttpRequest</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="IHttpDefaults" transform="translate(266.78125,52.5)"><rect rx="0" ry="0" x="-57.8359375" y="-19.5" width="115.671875" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-47.8359375,-9.5)"><foreignObject width="95.671875" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">IHttpDefaults</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="IHttpResponse" transform="translate(184.421875,255.5)"><rect rx="0" ry="0" x="-61.2421875" y="-19.5" width="122.484375" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-51.2421875,-9.5)"><foreignObject width="102.484375" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">IHttpResponse</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="BinarySerializer" transform="translate(482.4765625,141.5)"><rect rx="0" ry="0" x="-66.15625" y="-19.5" width="132.3125" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-56.15625,-9.5)"><foreignObject width="112.3125" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">BinarySerializer</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="ISerializer" transform="translate(744.47265625,52.5)"><rect rx="0" ry="0" x="-45.9453125" y="-19.5" width="91.890625" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-35.9453125,-9.5)"><foreignObject width="71.890625" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">ISerializer</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="TextSerializer" transform="translate(658.5390625,141.5)"><rect rx="0" ry="0" x="-59.90625" y="-19.5" width="119.8125" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-49.90625,-9.5)"><foreignObject width="99.8125" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">TextSerializer</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="FormSerializer" transform="translate(830.40625,141.5)"><rect rx="0" ry="0" x="-61.9609375" y="-19.5" width="123.921875" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-51.9609375,-9.5)"><foreignObject width="103.921875" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">FormSerializer</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="JsonSerializer" transform="translate(1001.796875,141.5)"><rect rx="0" ry="0" x="-59.4296875" y="-19.5" width="118.859375" height="39" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-49.4296875,-9.5)"><foreignObject width="98.859375" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">JsonSerializer</div></foreignObject></g></g></g></g></g></g></svg>

@@ -1,0 +1,8 @@
+**/node_modules/**
+**/build/**
+**/dist/**
+**/output/**
+testApp/**
+.eslintrc.js
+.prettierrc.js
+tslint.base.js

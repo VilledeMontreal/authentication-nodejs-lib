@@ -1,0 +1,12 @@
+graph TB
+  subgraph serializers
+    ISerializer --> BinarySerializer
+    ISerializer --> TextSerializer
+    ISerializer --> FormSerializer
+    ISerializer --> JsonSerializer
+  end
+  subgraph client
+    IHttpRequest --> IHttpClient
+    IHttpDefaults --> IHttpClient
+    IHttpClient --> IHttpResponse
+  end

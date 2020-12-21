@@ -1,0 +1,23 @@
+sequenceDiagram
+  HttpClient ->>+ IOidcSession: get token
+    IOidcSession ->>+ ITokenStore: get token
+    ITokenStore -->>- IOidcSession: existing token
+  IOidcSession -->>- HttpClient: token
+  HttpClient ->>+ API server: invoke API with token in Authorization header (first call)
+  API server -->>- HttpClient: 401 error
+  HttpClient ->>+ IOidcSession: delete token
+  IOidcSession ->>+ ITokenStore: delete token
+  ITokenStore -->>- IOidcSession: OK
+  IOidcSession -->>- HttpClient: OK
+  HttpClient ->>+ IOidcSession: get token
+    IOidcSession ->>+ ITokenStore: get token
+    ITokenStore -->>- IOidcSession: no token
+    IOidcSession ->>+ IOidcTokenProvider: get token (no token)
+      IOidcTokenProvider ->>+ OIDC server: request token
+      OIDC server -->>- IOidcTokenProvider: new token
+    IOidcTokenProvider -->- IOidcSession: new token
+    IOidcSession ->>+ ITokenStore: store token
+    ITokenStore -->>- IOidcSession: OK
+  IOidcSession -->>- HttpClient: token
+  HttpClient ->>+ API server: invoke API with token in Authorization header (RETRY)
+  API server -->>- HttpClient: HTTP response

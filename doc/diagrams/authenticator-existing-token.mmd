@@ -1,0 +1,7 @@
+sequenceDiagram
+  HttpClient ->>+ IOidcSession: get token
+    IOidcSession ->>+ ITokenStore: get token
+    ITokenStore -->>- IOidcSession: existing token
+  IOidcSession -->>- HttpClient: token
+  HttpClient ->>+ API server: invoke API with token in Authorization header
+  API server -->>- HttpClient: HTTP response

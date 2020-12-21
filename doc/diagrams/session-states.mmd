@@ -1,0 +1,12 @@
+stateDiagram
+    [*] --> acquiringToken
+
+    acquiringToken --> tokenAcquired
+    acquiringToken --> error
+    tokenAcquired --> refreshingToken
+    refreshingToken --> tokenAcquired
+    refreshingToken --> error
+    tokenAcquired --> tokenExpired
+    error --> acquiringToken
+    tokenExpired --> acquiringToken
+    tokenExpired --> refreshingToken

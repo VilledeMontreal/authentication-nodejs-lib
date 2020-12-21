@@ -1,0 +1,17 @@
+graph TB
+IOidcServerConfig --> IOidcClientConfig
+IOidcClientConfig --> OidcSessionBuilder
+IOidcFactory --> IOidcSessionConfig
+IOidcSessionConfig --> OidcSessionBuilder
+OidcSessionBuilder --Creates--> IOidcSession
+IOidcSession --new token--> ITokenProvider
+IOidcSession --read/write--> ITokenStore
+ITokenProvider --Creates--> TokenSet
+ITokenProvider --Invokes--> IOidcServerConfigGetter
+ITokenProvider --Invokes--> IHttpClient
+ITokenStore --Is a--> InMemoryTokenStore
+TokenSet --Invokes--> IClaimsProvider
+IClaimsProvider --Creates--> IClaims
+IOidcServerConfigGetter --Invokes--> IOidcServerConfigProvider
+IOidcServerConfigGetter --get--> IOidcServerConfig2[IOidcServerConfig]
+
