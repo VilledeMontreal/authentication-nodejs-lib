@@ -13,8 +13,8 @@
   "author": "Morgan Martinet <morgan.martinet@montreal.ca>",
   "license": "MIT",
   "dependencies": {
-    "@villemontreal/auth-core": "^0.0.30",
-    "@villemontreal/auth-oidc-plugin-superagent": "^0.0.30",
+    "@villemontreal/auth-core": "^1.0.0",
+    "@villemontreal/auth-oidc-plugin-superagent": "^1.0.0",
     "superagent": "6.1.0"
   },
   "devDependencies": {

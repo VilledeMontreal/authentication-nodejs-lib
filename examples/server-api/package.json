@@ -14,8 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "@types/express": "4.17.9",
-    "@villemontreal/auth-core": "^0.0.30",
-    "@villemontreal/auth-oidc": "^0.0.30",
+    "@villemontreal/auth-core": "^1.0.0",
+    "@villemontreal/auth-oidc": "^1.0.0",
     "express": "4.17.1"
   },
   "devDependencies": {
