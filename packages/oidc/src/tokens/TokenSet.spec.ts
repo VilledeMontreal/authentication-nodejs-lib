@@ -27,7 +27,7 @@ describe('TokenSet', () => {
 
   test('create without claimsProvider', async () => {
     const timeProvider = new FakeTimeProvider(
-      new Date(2019, 5, 21, 14, 33, 56),
+      new Date('2019-06-21T14:33:56-04:00'),
     );
     const token = new TokenSet(
       timeProvider,
@@ -163,7 +163,7 @@ describe('TokenSet', () => {
 
   test('you should not pass an empty access_token to the constructor', () => {
     const timeProvider = new FakeTimeProvider(
-      new Date(2019, 5, 21, 14, 33, 56),
+      new Date('2019-05-21T14:33:56-04:00'),
     );
     expect.assertions(1);
     try {
@@ -175,7 +175,7 @@ describe('TokenSet', () => {
 
   test('you should not pass an empty token_type to the constructor', () => {
     const timeProvider = new FakeTimeProvider(
-      new Date(2019, 5, 21, 14, 33, 56),
+      new Date('2019-05-21T14:33:56-04:00'),
     );
     expect.assertions(1);
     try {
@@ -187,7 +187,7 @@ describe('TokenSet', () => {
 
   test('you should not pass a zero expiration to the constructor', () => {
     const timeProvider = new FakeTimeProvider(
-      new Date(2019, 5, 21, 14, 33, 56),
+      new Date('2019-05-21T14:33:56-04:00'),
     );
     expect.assertions(1);
     try {
@@ -199,7 +199,7 @@ describe('TokenSet', () => {
 
   test('you should not pass a zero expiration to the constructor', () => {
     const timeProvider = new FakeTimeProvider(
-      new Date(2019, 5, 21, 14, 33, 56),
+      new Date('2019-05-21T14:33:56-04:00'),
     );
     expect.assertions(1);
     try {
@@ -282,7 +282,7 @@ describe('TokenSet', () => {
     const claims: IClaims = { foo: 'bar', age: 33 };
     const claimsProvider = new FakeClaimsProvider(claims);
     const timeProvider = new FakeTimeProvider(
-      new Date(2019, 5, 21, 14, 33, 56),
+      new Date('2019-06-21T14:33:56-04:00'),
     );
     const token = new TokenSet(
       timeProvider,

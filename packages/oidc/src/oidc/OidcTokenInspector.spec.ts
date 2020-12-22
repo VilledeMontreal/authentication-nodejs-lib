@@ -369,7 +369,9 @@ function setup() {
     scopes: ['openid', 'profile'],
   };
   const logger = new FakeLogger();
-  const timeProvider = new FakeTimeProvider(new Date(2019, 12, 26, 17, 23, 44));
+  const timeProvider = new FakeTimeProvider(
+    new Date('2019-12-26T17:23:44-05:00'),
+  );
   const tokenProvider = new FakeTokenProvider(timeProvider);
   const httpClient = new FakeHttpClient();
   const sessionConfig: IOidcSessionConfig = {

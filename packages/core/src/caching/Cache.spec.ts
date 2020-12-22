@@ -12,7 +12,7 @@ describe('Cache', () => {
     test('get / set', () => {
       // setup
       const timeProvider = new FakeTimeProvider(
-        new Date(2019, 12, 26, 17, 23, 44),
+        new Date('2019-12-26T17:23:44-05:00'),
       );
       const cache = new Cache<string>(timeProvider);
       expect(cache.get('foo')).toBeUndefined();
@@ -25,7 +25,7 @@ describe('Cache', () => {
     test('delete existing', () => {
       // setup
       const timeProvider = new FakeTimeProvider(
-        new Date(2019, 12, 26, 17, 23, 44),
+        new Date('2019-12-26T17:23:44-05:00'),
       );
       const cache = new Cache<string>(timeProvider);
       cache.set('foo', 'bar', 100);
@@ -39,7 +39,7 @@ describe('Cache', () => {
     test('delete missing', () => {
       // setup
       const timeProvider = new FakeTimeProvider(
-        new Date(2019, 12, 26, 17, 23, 44),
+        new Date('2019-12-26T17:23:44-05:00'),
       );
       const cache = new Cache<string>(timeProvider);
       expect(cache.get('foo')).toBeUndefined();
@@ -54,7 +54,7 @@ describe('Cache', () => {
     test('get', () => {
       // setup
       const timeProvider = new FakeTimeProvider(
-        new Date(2019, 12, 26, 17, 23, 44),
+        new Date('2019-12-26T17:23:44-05:00'),
       );
       const cache = new Cache<string>(timeProvider);
       cache.set('foo', 'bar', 100);
@@ -68,7 +68,7 @@ describe('Cache', () => {
     test('set', () => {
       // setup
       const timeProvider = new FakeTimeProvider(
-        new Date(2019, 12, 26, 17, 23, 44),
+        new Date('2019-12-26T17:23:44-05:00'),
       );
       const cache = new Cache<string>(timeProvider);
       cache.set('key1', 'val1', 100);
@@ -84,7 +84,7 @@ describe('Cache', () => {
     test('delete', () => {
       // setup
       const timeProvider = new FakeTimeProvider(
-        new Date(2019, 12, 26, 17, 23, 44),
+        new Date('2019-12-26T17:23:44-05:00'),
       );
       const cache = new Cache<string>(timeProvider);
       cache.set('key1', 'val1', 100);

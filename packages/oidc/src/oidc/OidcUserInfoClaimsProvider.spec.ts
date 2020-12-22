@@ -23,7 +23,7 @@ describe('OidcUserInfoClaimsProvider', () => {
   function setup(options: ISetupOptions = {}) {
     const logger = new FakeLogger();
     const timeProvider = new FakeTimeProvider(
-      new Date(2019, 12, 26, 17, 23, 44),
+      new Date('2019-12-26T17:23:44-05:00'),
     );
     const httpClient = new FakeHttpClient();
     httpClient.register({
