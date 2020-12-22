@@ -1,4 +1,4 @@
-# core-authentication-nodejs-lib
+# authentication-nodejs-lib
 
 ## Gabarit pour README.md
 

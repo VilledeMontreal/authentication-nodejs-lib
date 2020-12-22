@@ -1,4 +1,4 @@
-# core-authentication-nodejs-lib
+# authentication-nodejs-lib
 
 This library handles transparent authentication of backend to backend API calls, using the OpenID Connect protocol.
 
