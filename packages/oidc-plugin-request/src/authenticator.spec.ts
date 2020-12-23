@@ -29,6 +29,7 @@ import { authenticator, canApplyAuthenticator } from './authenticator';
 import { requestLogger } from './requestLogger';
 import { requestCorrelator } from './requestCorrelator';
 import { makeRequestPlugin } from './makeRequestPlugin';
+import { authInterceptor, requestCorrelationInterceptor, requestLoggingInterceptor } from './interceptors';
 
 interface ExtendedCoreOptions extends request.CoreOptions {
   simple?: boolean;
@@ -789,6 +790,38 @@ describe('authenticator', () => {
       ]);
     };
     await correlationService.withIdAsync(work, 'test-123');
+  });
+  
+  test('interceptors', async () => {
+    // setup
+    const { session, states, logger} = setup();
+
+    const auth = authInterceptor(session);
+    const logging = requestLoggingInterceptor(logger);
+    const correlator = requestCorrelationInterceptor(correlationService);
+
+    const options: ExtendedCoreOptions = { 
+      resolveWithFullResponse: true,
+      headers: {
+        'x-correlation-id': 'custom CID',
+      },
+    };
+    await auth(options);
+    await logging(options);
+    await correlator(options);
+    // act
+    const res = await httpGet('http://localhost:4000/api/secured', options);
+    // expect
+    expect(res.statusCode).toBe(200);
+    expect(res.request.headers.authorization).toBe('Bearer token1');
+    expect(res.req.getHeader('x-correlation-id')).toBe('custom CID');
+    expect(requestCounter).toBe(1);
+    expect(states).toEqual([
+      OidcSessionState.acquiringToken,
+      OidcSessionState.tokenAcquired,
+    ]);
+    expect(logger.last().logType).toBe('debug');
+    expect(logger.last().messageObj.url).toBe('http://localhost:4000/api/secured');
   });
 
   function setup(options: ISetupOptions = {}) {
