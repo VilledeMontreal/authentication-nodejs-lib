@@ -1,3 +1,10 @@
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=villedemontreal_authentication-nodejs-lib&metric=ncloc)](https://sonarcloud.io/dashboard?id=villedemontreal_authentication-nodejs-lib)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=villedemontreal_authentication-nodejs-lib&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=villedemontreal_authentication-nodejs-lib)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=villedemontreal_authentication-nodejs-lib&metric=coverage)](https://sonarcloud.io/dashboard?id=villedemontreal_authentication-nodejs-lib)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=villedemontreal_authentication-nodejs-lib&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=villedemontreal_authentication-nodejs-lib)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=villedemontreal_authentication-nodejs-lib&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=villedemontreal_authentication-nodejs-lib)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=villedemontreal_authentication-nodejs-lib&metric=security_rating)](https://sonarcloud.io/dashboard?id=villedemontreal_authentication-nodejs-lib)[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=villedemontreal_authentication-nodejs-lib&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=villedemontreal_authentication-nodejs-lib)
+
 # authentication-nodejs-lib
 
 This library handles transparent authentication of backend to backend API calls, using the OpenID Connect protocol.
@@ -7,7 +14,6 @@ in order to satisfy developers and stay out of their way.
 
 The use of plugins has made the token injection completely transparent, simplifying development
 and reducing the risk of mistakes.
-
 
 ## Why another oauth library?
 
