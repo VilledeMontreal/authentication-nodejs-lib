@@ -12,7 +12,7 @@ import {
   ILogger,
   ITimeProvider,
   SynchronizedAsyncCachedValue,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { IOidcServerConfig } from './IOidcServerConfig';
 import { IOidcServerConfigProvider } from './IOidcServerConfigProvider';
 

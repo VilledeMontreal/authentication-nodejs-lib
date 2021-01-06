@@ -9,8 +9,8 @@ import {
   IHttpClient,
   ILogger,
   NoopLogger,
-} from '@villemontreal/auth-core';
-import { IHttpDefaults } from '@villemontreal/auth-core/dist/http/IHttpDefaults';
+} from '@villedemontreal/auth-core';
+import { IHttpDefaults } from '@villedemontreal/auth-core/dist/http/IHttpDefaults';
 import { injectHttpClient } from './injectHttpClient';
 import { IOidcSessionConfig } from './IOidcSessionConfig';
 

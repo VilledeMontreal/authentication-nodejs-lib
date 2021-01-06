@@ -11,8 +11,8 @@ import {
   ITimeProvider,
   NoopLogger,
   SystemTimeProvider,
-} from '@villemontreal/auth-core';
-import { IHttpDefaults } from '@villemontreal/auth-core/dist/http/IHttpDefaults';
+} from '@villedemontreal/auth-core';
+import { IHttpDefaults } from '@villedemontreal/auth-core/dist/http/IHttpDefaults';
 import { IClaimsProvider } from '../tokens/IClaimsProvider';
 import { InMemoryTokenStore } from '../tokens/InMemoryTokenStore';
 import { ITokenProvider } from '../tokens/ITokenProvider';

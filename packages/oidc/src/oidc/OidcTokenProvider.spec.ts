@@ -10,7 +10,7 @@ import {
   FakeTimeProvider,
   IHttpMock,
   IHttpRequest,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { IOidcClientConfig } from '..';
 import { IClientCredentials } from '../creds/IClientCredentials';
 import { IUserCredentials } from '../creds/IUserCredentials';

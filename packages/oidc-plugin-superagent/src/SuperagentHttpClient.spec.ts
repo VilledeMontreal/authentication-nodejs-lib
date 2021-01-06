@@ -7,7 +7,7 @@ import {
   HttpClientError,
   initHttpClientTestSuite,
   NoopLogger,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { remapError, SuperagentHttpClient } from './SuperagentHttpClient';
 
 describe('SuperagentHttpClient', () => {

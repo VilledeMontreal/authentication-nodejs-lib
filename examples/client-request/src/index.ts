@@ -4,7 +4,7 @@ import {
   delay,
   ConsoleLogger,
   HttpRequestCorrelator,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import {
   authenticator,
   requestLogger,
@@ -14,7 +14,7 @@ import {
   IOidcSessionConfig,
   IOidcAuthenticatorConfig,
   patchClass,
-} from '@villemontreal/auth-oidc-plugin-request';
+} from '@villedemontreal/auth-oidc-plugin-request';
 
 async function main(): Promise<void> {
   patchClass((request as any).Request); // this is required when using Lerna but should not otherwise

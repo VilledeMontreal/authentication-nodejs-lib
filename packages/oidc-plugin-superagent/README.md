@@ -23,7 +23,7 @@ import {
   authenticator,
   createSession,
   requestLogger,
-} from '@villemontreal/auth-oidc-plugin-superagent';
+} from '@villedemontreal/auth-oidc-plugin-superagent';
 // configure
 const session = createSession({
   authMethod: 'client_secret_basic',

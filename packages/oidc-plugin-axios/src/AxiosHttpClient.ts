@@ -23,7 +23,7 @@ import {
   isInvalidStatusCode,
   formatErrorMessage,
   getHeaderAsString,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import * as http from 'http';
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { requestCorrelator } from './requestCorrelator';

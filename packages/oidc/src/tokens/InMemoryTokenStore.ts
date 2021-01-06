@@ -4,7 +4,7 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { ILogger } from '@villemontreal/auth-core';
+import { ILogger } from '@villedemontreal/auth-core';
 import { ITokenStore } from './ITokenStore';
 import { TokenSet } from './TokenSet';
 

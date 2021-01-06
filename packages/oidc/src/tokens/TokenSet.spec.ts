@@ -6,7 +6,7 @@
 
 /* eslint-disable no-new */
 
-import { FakeTimeProvider } from '@villemontreal/auth-core';
+import { FakeTimeProvider } from '@villedemontreal/auth-core';
 import { FakeClaimsProvider } from './FakeClaimsProvider';
 import { IClaims } from './IClaims';
 import { TokenSet } from './TokenSet';

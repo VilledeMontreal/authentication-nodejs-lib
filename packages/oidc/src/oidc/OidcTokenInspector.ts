@@ -4,7 +4,7 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { IHttpRequest, StandardContentTypes } from '@villemontreal/auth-core';
+import { IHttpRequest, StandardContentTypes } from '@villedemontreal/auth-core';
 import { OutgoingHttpHeaders } from 'http';
 import { IClaims } from '../tokens/IClaims';
 import { IOidcSession } from './IOidcSession';

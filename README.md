@@ -95,7 +95,7 @@ This plugin will retry a request if it meets some criteria.
 Here's the simplest example, using the [Superagent](https://visionmedia.github.io/superagent/) http client:
 
 ```
-npm install superagent @villemontreal/auth-oidc-plugin-superagent
+npm install superagent @villedemontreal/auth-oidc-plugin-superagent
 npm install @types/superagent --save-dev
 ```
 
@@ -104,7 +104,7 @@ import * as superagent from 'superagent';
 import {
   authenticator,
   createSession,
-} from '@villemontreal/auth-oidc-plugin-superagent';
+} from '@villedemontreal/auth-oidc-plugin-superagent';
 // configure
 const session = createSession({
   authMethod: 'client_secret_basic',
@@ -133,7 +133,7 @@ console.log(res2.status, res.body);
 Here's the simplest example, using the [Axios](https://visionmedia.github.io/axios/) http client:
 
 ```
-npm install axios @villemontreal/auth-oidc-plugin-axios
+npm install axios @villedemontreal/auth-oidc-plugin-axios
 npm install @types/axios --save-dev
 ```
 
@@ -142,7 +142,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 import {
   authenticator,
   createSession,
-} from '@villemontreal/auth-oidc-plugin-axios';
+} from '@villedemontreal/auth-oidc-plugin-axios';
 // configure
 const session = createSession({
   authMethod: 'client_secret_basic',
@@ -172,7 +172,7 @@ console.log(res2.status, res.data);
 Here's the simplest example, using the [Request](https://github.com/request/request/) http client:
 
 ```
-npm install request @villemontreal/auth-oidc-plugin-request
+npm install request @villedemontreal/auth-oidc-plugin-request
 npm install @types/request --save-dev
 ```
 
@@ -181,7 +181,7 @@ import * as request from 'request';
 import {
   authenticator,
   createSession,
-} from '@villemontreal/auth-oidc-plugin-request';
+} from '@villedemontreal/auth-oidc-plugin-request';
 // configure
 const session = createSession({
   authMethod: 'client_secret_basic',
@@ -216,13 +216,13 @@ There are a couple of helper functions that make it easy to add OIDC authenticat
 import {
   ILogger,
   IHttpRequestCorrelator,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import {
   IOidcSession,
   authInterceptor,
   requestCorrelationInterceptor,
   requestLoggingInterceptor
-} from '@villemontreal/auth-oidc-plugin-request';
+} from '@villedemontreal/auth-oidc-plugin-request';
 import { OrderApi } from 'OrderApi';
 
 export function createOrderApi(
@@ -327,7 +327,7 @@ Publish the package as a beta release.
 Note that it will patch the current version (but it won't alter the committed package.json file),
 inject a beta tag and a Git sha.
 
-Ex: @villemontreal/auth-core@0.0.6-beta.1+55b3646
+Ex: @villedemontreal/auth-core@0.0.6-beta.1+55b3646
 
 ```
 git checkout develop

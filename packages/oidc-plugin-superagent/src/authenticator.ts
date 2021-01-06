@@ -4,12 +4,12 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { hookMethod, TypedProperty } from '@villemontreal/auth-core';
+import { hookMethod, TypedProperty } from '@villedemontreal/auth-core';
 import {
   IOidcSession,
   IOidcAuthenticatorConfig,
   TokenSet,
-} from '@villemontreal/auth-oidc';
+} from '@villedemontreal/auth-oidc';
 import * as superagent from 'superagent';
 
 const tokenProperty = new TypedProperty<TokenSet, superagent.SuperAgentRequest>(

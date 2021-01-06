@@ -1,25 +1,26 @@
 # Table of contents
+
 - [Concepts](#concepts)
 - [Extensibility](#extensibility)
-  * [Logging](#logging)
-  * [Request correlations](#request-correlations)
-    + [Example with the internal HTTP client:](#example-with-the-internal-http-client)
-    + [Example with Superagent:](#example-with-superagent)
-  * [Claims provider](#claims-provider)
+  - [Logging](#logging)
+  - [Request correlations](#request-correlations)
+    - [Example with the internal HTTP client:](#example-with-the-internal-http-client)
+    - [Example with Superagent:](#example-with-superagent)
+  - [Claims provider](#claims-provider)
 - [Configuration](#configuration)
-  * [IOidcClientConfig](#ioidcclientconfig)
-  * [IOidcSessionConfig](#ioidcsessionconfig)
-  * [IOidcAuthenticatorConfig](#ioidcauthenticatorconfig)
-  * [IHttpDefaults](#ihttpdefaults)
-  * [IOidcFactory](#ioidcfactory)
+  - [IOidcClientConfig](#ioidcclientconfig)
+  - [IOidcSessionConfig](#ioidcsessionconfig)
+  - [IOidcAuthenticatorConfig](#ioidcauthenticatorconfig)
+  - [IHttpDefaults](#ihttpdefaults)
+  - [IOidcFactory](#ioidcfactory)
 - [Flows](#flows)
-  * [Request or renew a token](#request-or-renew-a-token)
-  * [Use an existing token](#use-an-existing-token)
-  * [Retry a failed request](#retry-a-failed-request)
+  - [Request or renew a token](#request-or-renew-a-token)
+  - [Use an existing token](#use-an-existing-token)
+  - [Retry a failed request](#retry-a-failed-request)
 - [Object model](#object-model)
-  * [High level relationships](#high-level-relationships)
-  * [Session states](#session-states)
-  * [Http client](#http-client)
+  - [High level relationships](#high-level-relationships)
+  - [Session states](#session-states)
+  - [Http client](#http-client)
 - [Introspection](#introspection)
 - [Unit testing](#unit-testing)
 
@@ -61,7 +62,7 @@ import * as superagent from 'superagent';
 import {
   authenticator,
   createSession,
-} from '@villemontreal/auth-oidc-plugin-superagent';
+} from '@villedemontreal/auth-oidc-plugin-superagent';
 // configure
 const session = createSession({
   authMethod: 'client_secret_basic',
@@ -96,7 +97,7 @@ import * as superagent from 'superagent';
 import {
   authenticator,
   createSession,
-} from '@villemontreal/auth-oidc-plugin-superagent';
+} from '@villedemontreal/auth-oidc-plugin-superagent';
 // configure
 const session = createSession({
   authMethod: 'client_secret_basic',
@@ -120,7 +121,7 @@ will provide the same advantage of handling the token management and expose a si
 Example:
 
 ```typescript
-import { createSession, OidcHttpClient } from '@villemontreal/auth-oidc';
+import { createSession, OidcHttpClient } from '@villedemontreal/auth-oidc';
 // configure
 const session = createSession({
   authMethod: 'client_secret_basic',
@@ -159,7 +160,7 @@ So, you can provide your own logger, your own token store, your own token provid
 Example:
 
 ```typescript
-import { ConsoleLogger } from '@villemontreal/auth-core';
+import { ConsoleLogger } from '@villedemontreal/auth-core';
 const sessionConfig: IOidcSessionConfig = {
   factory: {
     createTokenStore: (logger) => new MyCustomTokenStore(logger),
@@ -178,7 +179,7 @@ return an instance of the [ConsoleLogger](../packages/core/src/logging/ConsoleLo
 Example:
 
 ```typescript
-import { ConsoleLogger } from '@villemontreal/auth-core';
+import { ConsoleLogger } from '@villedemontreal/auth-core';
 const sessionConfig: IOidcSessionConfig = {
   factory: {
     createLogger: () => new ConsoleLogger(),
@@ -192,7 +193,7 @@ Of course, you should use your own logging library instead for a consistant logg
 Also, the default HTTP client will log the execution of the requests by default (including the elapsed time), but you can disable this behaviour using the IHttpDefaults:
 
 ```typescript
-import { ConsoleLogger } from '@villemontreal/auth-core';
+import { ConsoleLogger } from '@villedemontreal/auth-core';
 const sessionConfig: IOidcSessionConfig = {
   factory: {
     createLogger: () => new ConsoleLogger(),
@@ -237,7 +238,10 @@ The examples are already setup to use the default correlator.
 ### Example with the internal HTTP client:
 
 ```typescript
-import { ConsoleLogger, HttpRequestCorrelator } from '@villemontreal/auth-core';
+import {
+  ConsoleLogger,
+  HttpRequestCorrelator,
+} from '@villedemontreal/auth-core';
 const correlator = new HttpRequestCorrelator();
 const sessionConfig: IOidcSessionConfig = {
   factory: {
@@ -263,7 +267,10 @@ Note that in this case you must share the correlator with the IHttpDefaults and 
 requestCorrelator plugin.
 
 ```typescript
-import { ConsoleLogger, HttpRequestCorrelator } from '@villemontreal/auth-core';
+import {
+  ConsoleLogger,
+  HttpRequestCorrelator,
+} from '@villedemontreal/auth-core';
 const correlator = new HttpRequestCorrelator();
 const sessionConfig: IOidcSessionConfig = {
   factory: {
@@ -451,7 +458,7 @@ If you need to validate an existing access token, find information about the OID
 To build such an inspector, import the createInspector function and provide a valid OIDC session:
 
 ```typescript
-import { createInspector, createSession } from '@villemontreal/auth-oidc';
+import { createInspector, createSession } from '@villedemontreal/auth-oidc';
 const session = createSession(clientConfig, sessionConfig);
 const inspector = createInspector(session, {
   introspectionEndpointAuthMethod: 'client_secret_basic',
@@ -472,12 +479,12 @@ if your code needs to access the claims of the current access token.
 Example:
 
 ```typescript
-import { FakeLogger, FakeTimeProvider } from '@villemontreal/auth-core';
+import { FakeLogger, FakeTimeProvider } from '@villedemontreal/auth-core';
 import {
   FakeClaimsprovider,
   FakeTokenProvider,
   IOidcSessionConfig,
-} from '@villemontreal/auth-oidc';
+} from '@villedemontreal/auth-oidc';
 // setup
 const logger = new FakeLogger();
 const timeProvider = new FakeTimeProvider(new Date(2019, 12, 26, 17, 23, 44));

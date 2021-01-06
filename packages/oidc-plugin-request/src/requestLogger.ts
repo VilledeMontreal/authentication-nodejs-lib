@@ -8,7 +8,7 @@ import {
   ILogger,
   extractMessageFromError,
   TypedProperty,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { Request, Response } from 'request';
 import { makeRequestPlugin } from './makeRequestPlugin';
 import { getRequestInfo } from './requestUtils';

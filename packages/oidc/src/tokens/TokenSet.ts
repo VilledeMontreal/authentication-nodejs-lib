@@ -7,7 +7,7 @@
 import {
   ITimeProvider,
   SynchronizedAsyncCachedValue,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { IClaims } from './IClaims';
 import { IClaimsProvider } from './IClaimsProvider';
 

@@ -8,7 +8,7 @@ import {
   FakeHttpClient,
   FakeLogger,
   FakeTimeProvider,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { OidcWellknownServerConfigProvider } from './OidcWellknownServerConfigProvider';
 
 describe('OidcWellknownServerConfigProvider', () => {

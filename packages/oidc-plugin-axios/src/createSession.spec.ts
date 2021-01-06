@@ -4,7 +4,7 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { DefaultHttpClient, NoopLogger } from '@villemontreal/auth-core';
+import { DefaultHttpClient, NoopLogger } from '@villedemontreal/auth-core';
 import { IOidcClientConfig, IOidcSessionConfig } from '.';
 import { createSession } from './createSession';
 import { AxiosHttpClient } from './AxiosHttpClient';

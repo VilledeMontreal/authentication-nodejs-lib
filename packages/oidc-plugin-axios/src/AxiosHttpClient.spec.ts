@@ -9,7 +9,7 @@ import {
   NoopLogger,
   IHttpContext,
   createDefaultDeserializers,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { remapError, AxiosHttpClient } from './AxiosHttpClient';
 
 describe('AxiosHttpClient', () => {

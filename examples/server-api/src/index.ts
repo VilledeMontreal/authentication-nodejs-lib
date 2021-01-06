@@ -1,11 +1,14 @@
 import express from 'express';
-import { ConsoleLogger, HttpRequestCorrelator } from '@villemontreal/auth-core';
+import {
+  ConsoleLogger,
+  HttpRequestCorrelator,
+} from '@villedemontreal/auth-core';
 import {
   createSession,
   createInspector,
   IOidcClientConfig,
   IOidcSessionConfig,
-} from '@villemontreal/auth-oidc';
+} from '@villedemontreal/auth-oidc';
 import { HttpClientError } from '../../../packages/core/dist';
 
 let requestCounter = 0;

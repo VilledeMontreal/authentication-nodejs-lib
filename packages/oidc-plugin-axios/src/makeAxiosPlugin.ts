@@ -13,7 +13,7 @@ import {
   retryAction,
   isTransientHttpError,
   TypedProperty,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { IAxiosPlugin } from './IAxiosPlugin';
 import { IAxiosPluginImplementation } from './IAxiosPluginImplementation';
 

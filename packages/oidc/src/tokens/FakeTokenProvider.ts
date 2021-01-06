@@ -4,7 +4,7 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { delay, ITimeProvider } from '@villemontreal/auth-core';
+import { delay, ITimeProvider } from '@villedemontreal/auth-core';
 import { TokenSet } from '..';
 import { IClaimsProvider } from './IClaimsProvider';
 

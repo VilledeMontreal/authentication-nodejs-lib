@@ -8,7 +8,7 @@ import {
   Stopwatch,
   ILogger,
   extractMessageFromError,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 
 /**
  * plugin that will log a message before and after the execution of request,

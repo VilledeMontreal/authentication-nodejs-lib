@@ -8,9 +8,9 @@ import {
   IOidcSession,
   IOidcAuthenticatorConfig,
   TokenSet,
-} from '@villemontreal/auth-oidc';
+} from '@villedemontreal/auth-oidc';
 import { Request, Response } from 'request';
-import { TypedProperty } from '@villemontreal/auth-core';
+import { TypedProperty } from '@villedemontreal/auth-core';
 import { makeRequestPlugin } from './makeRequestPlugin';
 import { getRequestInfo } from './requestUtils';
 

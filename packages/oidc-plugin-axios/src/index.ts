@@ -17,4 +17,4 @@ export {
   IOidcSession,
   TokenSet,
   IClaims,
-} from '@villemontreal/auth-oidc';
+} from '@villedemontreal/auth-oidc';

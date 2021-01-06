@@ -5,7 +5,7 @@
  */
 
 import { AxiosRequestConfig } from 'axios';
-import { combinePath } from '@villemontreal/auth-core';
+import { combinePath } from '@villedemontreal/auth-core';
 
 /**
  * returns the method and url of the config, while applying baseURL when necessary.

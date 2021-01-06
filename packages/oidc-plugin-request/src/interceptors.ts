@@ -7,8 +7,8 @@
 import {
   IOidcSession,
   IOidcAuthenticatorConfig,
-} from '@villemontreal/auth-oidc';
-import { ILogger, IHttpRequestCorrelator } from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-oidc';
+import { ILogger, IHttpRequestCorrelator } from '@villedemontreal/auth-core';
 import { authenticator } from './authenticator';
 import { requestLogger } from './requestLogger';
 import { requestCorrelator } from './requestCorrelator';

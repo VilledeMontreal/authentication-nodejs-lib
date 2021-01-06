@@ -4,14 +4,14 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { ILogger, IHttpDefaults } from '@villemontreal/auth-core';
+import { ILogger, IHttpDefaults } from '@villedemontreal/auth-core';
 import {
   createSession as coreCreateSession,
   injectHttpClient,
   IOidcClientConfig,
   IOidcSession,
   IOidcSessionConfig,
-} from '@villemontreal/auth-oidc';
+} from '@villedemontreal/auth-oidc';
 import { SuperagentHttpClient } from './SuperagentHttpClient';
 
 /**

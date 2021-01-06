@@ -8,7 +8,7 @@ import {
   FakeHttpClient,
   FakeLogger,
   FakeTimeProvider,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { IOidcClientConfig } from './IOidcClientConfig';
 import { IOidcServerConfig } from './IOidcServerConfig';
 import { OidcServerConfigGetter } from './OidcServerConfigGetter';

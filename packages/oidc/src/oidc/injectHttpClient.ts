@@ -4,8 +4,8 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { IHttpClient, ILogger } from '@villemontreal/auth-core';
-import { IHttpDefaults } from '@villemontreal/auth-core/dist/http/IHttpDefaults';
+import { IHttpClient, ILogger } from '@villedemontreal/auth-core';
+import { IHttpDefaults } from '@villedemontreal/auth-core/dist/http/IHttpDefaults';
 import { IOidcFactory } from './IOidcFactory';
 import { IOidcSessionConfig } from './IOidcSessionConfig';
 

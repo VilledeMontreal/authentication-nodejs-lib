@@ -9,7 +9,7 @@ import {
   ILogger,
   extractMessageFromError,
   TypedProperty,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { makeAxiosPlugin } from './makeAxiosPlugin';
 import { getRequestInfo } from './requestUtils';
 

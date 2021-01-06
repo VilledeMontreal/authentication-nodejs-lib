@@ -1,5 +1,5 @@
 {
-  "name": "@villemontreal/demo-client-superagent",
+  "name": "@villedemontreal/demo-client-superagent",
   "version": "0.0.30",
   "private": true,
   "description": "",
@@ -13,8 +13,8 @@
   "author": "Morgan Martinet <morgan.martinet@montreal.ca>",
   "license": "MIT",
   "dependencies": {
-    "@villemontreal/auth-core": "^1.0.0",
-    "@villemontreal/auth-oidc-plugin-superagent": "^1.0.0",
+    "@villedemontreal/auth-core": "^1.0.0",
+    "@villedemontreal/auth-oidc-plugin-superagent": "^1.0.0",
     "superagent": "6.1.0"
   },
   "devDependencies": {

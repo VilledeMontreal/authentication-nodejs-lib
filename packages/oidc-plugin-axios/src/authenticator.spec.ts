@@ -8,7 +8,7 @@ import {
   FakeTimeProvider,
   HttpRequestCorrelator,
   FakeLogger,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import {
   FakeTokenProvider,
   InMemoryTokenStore,
@@ -17,7 +17,7 @@ import {
   IOidcSessionConfig,
   OidcSessionState,
   TokenSet,
-} from '@villemontreal/auth-oidc';
+} from '@villedemontreal/auth-oidc';
 import bodyParser from 'body-parser';
 import express from 'express';
 import { Server } from 'http';

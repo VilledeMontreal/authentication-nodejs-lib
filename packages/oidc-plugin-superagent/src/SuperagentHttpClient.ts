@@ -14,7 +14,7 @@ import {
   IHttpRequest,
   IHttpResponse,
   ILogger,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import superagent from 'superagent';
 import { OutgoingHttpHeaders } from 'http';
 import { requestLogger } from './requestLogger';

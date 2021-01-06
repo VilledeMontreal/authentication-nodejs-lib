@@ -4,8 +4,12 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { IHttpClient, ILogger, ITimeProvider } from '@villemontreal/auth-core';
-import { IHttpDefaults } from '@villemontreal/auth-core/dist/http/IHttpDefaults';
+import {
+  IHttpClient,
+  ILogger,
+  ITimeProvider,
+} from '@villedemontreal/auth-core';
+import { IHttpDefaults } from '@villedemontreal/auth-core/dist/http/IHttpDefaults';
 // eslint-disable-next-line import/no-cycle
 import { IOidcSession } from './IOidcSession';
 import { IClaimsProvider } from '../tokens/IClaimsProvider';

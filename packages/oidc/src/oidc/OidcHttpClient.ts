@@ -9,7 +9,7 @@ import {
   IHttpRequest,
   IHttpResponse,
   retryAction,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { IOidcSession } from './IOidcSession';
 import { TokenSet } from '../tokens/TokenSet';
 import { IOidcAuthenticatorConfig } from './IOidcAuthenticatorConfig';

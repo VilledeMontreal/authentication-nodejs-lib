@@ -4,7 +4,7 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { IHttpDefaults } from '@villemontreal/auth-core/dist/http/IHttpDefaults';
+import { IHttpDefaults } from '@villedemontreal/auth-core/dist/http/IHttpDefaults';
 // eslint-disable-next-line import/no-cycle
 import { IOidcFactory } from './IOidcFactory';
 

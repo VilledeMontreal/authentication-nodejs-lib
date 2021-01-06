@@ -2,14 +2,14 @@ import {
   delay,
   ConsoleLogger,
   HttpRequestCorrelator,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import {
   createSession,
   OidcHttpClient,
   IOidcClientConfig,
   IOidcSessionConfig,
   IOidcAuthenticatorConfig,
-} from '@villemontreal/auth-oidc';
+} from '@villedemontreal/auth-oidc';
 
 async function main(): Promise<void> {
   // configure
@@ -73,7 +73,7 @@ main()
       '-----------------------------------------------------------------------'
     );
   })
-  .catch(reason => {
+  .catch((reason) => {
     console.error(reason.message);
     if (reason.body) {
       console.error(reason.body);

@@ -8,9 +8,9 @@ import {
   IOidcSession,
   IOidcAuthenticatorConfig,
   TokenSet,
-} from '@villemontreal/auth-oidc';
+} from '@villedemontreal/auth-oidc';
 import { AxiosRequestConfig, AxiosError } from 'axios';
-import { TypedProperty } from '@villemontreal/auth-core';
+import { TypedProperty } from '@villedemontreal/auth-core';
 import { makeAxiosPlugin } from './makeAxiosPlugin';
 import { getRequestInfo } from './requestUtils';
 

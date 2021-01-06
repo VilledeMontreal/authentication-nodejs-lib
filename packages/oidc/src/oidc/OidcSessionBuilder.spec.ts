@@ -9,7 +9,7 @@ import {
   FakeTimeProvider,
   ILogger,
   ITimeProvider,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { IOidcClientConfig } from './IOidcClientConfig';
 import { IOidcSessionConfig } from './IOidcSessionConfig';
 import { OidcSessionBuilder } from './OidcSessionBuilder';

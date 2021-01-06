@@ -1,5 +1,5 @@
 {
-  "name": "@villemontreal/auth-core",
+  "name": "@villedemontreal/auth-core",
   "version": "1.0.0",
   "description": "Core services shared with OIDC and http bindings",
   "author": "Montreal City Authors",

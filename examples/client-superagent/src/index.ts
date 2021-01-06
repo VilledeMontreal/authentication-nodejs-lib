@@ -3,7 +3,7 @@ import {
   delay,
   ConsoleLogger,
   HttpRequestCorrelator,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import {
   authenticator,
   requestLogger,
@@ -12,7 +12,7 @@ import {
   IOidcClientConfig,
   IOidcSessionConfig,
   IOidcAuthenticatorConfig,
-} from '@villemontreal/auth-oidc-plugin-superagent';
+} from '@villedemontreal/auth-oidc-plugin-superagent';
 
 async function main(): Promise<void> {
   // configure

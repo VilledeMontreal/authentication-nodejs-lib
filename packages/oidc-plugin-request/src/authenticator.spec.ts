@@ -9,7 +9,7 @@ import {
   HttpRequestCorrelator,
   FakeLogger,
   IHttpRequestCorrelator,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import {
   FakeTokenProvider,
   InMemoryTokenStore,
@@ -18,7 +18,7 @@ import {
   IOidcSessionConfig,
   OidcSessionState,
   TokenSet,
-} from '@villemontreal/auth-oidc';
+} from '@villedemontreal/auth-oidc';
 import bodyParser from 'body-parser';
 import express from 'express';
 import { Server } from 'http';
@@ -29,7 +29,11 @@ import { authenticator, canApplyAuthenticator } from './authenticator';
 import { requestLogger } from './requestLogger';
 import { requestCorrelator } from './requestCorrelator';
 import { makeRequestPlugin } from './makeRequestPlugin';
-import { authInterceptor, requestCorrelationInterceptor, requestLoggingInterceptor } from './interceptors';
+import {
+  authInterceptor,
+  requestCorrelationInterceptor,
+  requestLoggingInterceptor,
+} from './interceptors';
 
 interface ExtendedCoreOptions extends request.CoreOptions {
   simple?: boolean;
@@ -791,16 +795,16 @@ describe('authenticator', () => {
     };
     await correlationService.withIdAsync(work, 'test-123');
   });
-  
+
   test('interceptors', async () => {
     // setup
-    const { session, states, logger} = setup();
+    const { session, states, logger } = setup();
 
     const auth = authInterceptor(session);
     const logging = requestLoggingInterceptor(logger);
     const correlator = requestCorrelationInterceptor(correlationService);
 
-    const options: ExtendedCoreOptions = { 
+    const options: ExtendedCoreOptions = {
       resolveWithFullResponse: true,
       headers: {
         'x-correlation-id': 'custom CID',
@@ -821,7 +825,9 @@ describe('authenticator', () => {
       OidcSessionState.tokenAcquired,
     ]);
     expect(logger.last().logType).toBe('debug');
-    expect(logger.last().messageObj.url).toBe('http://localhost:4000/api/secured');
+    expect(logger.last().messageObj.url).toBe(
+      'http://localhost:4000/api/secured',
+    );
   });
 
   function setup(options: ISetupOptions = {}) {

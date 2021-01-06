@@ -8,7 +8,7 @@ import {
   IHttpClient,
   ILogger,
   SynchronizedAsyncValue,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { EventEmitter } from 'events';
 import { ITokenProvider } from '../tokens/ITokenProvider';
 import { ITokenStore } from '../tokens/ITokenStore';

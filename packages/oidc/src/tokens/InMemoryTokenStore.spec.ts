@@ -4,7 +4,7 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { FakeLogger, FakeTimeProvider } from '@villemontreal/auth-core';
+import { FakeLogger, FakeTimeProvider } from '@villedemontreal/auth-core';
 import { FakeClaimsProvider } from './FakeClaimsProvider';
 import { IClaims } from './IClaims';
 import { InMemoryTokenStore } from './InMemoryTokenStore';

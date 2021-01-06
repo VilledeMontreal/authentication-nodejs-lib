@@ -4,7 +4,7 @@
  * See LICENSE file in the project root for full license information.
  */
 import { Request } from 'request';
-import { IHttpRequestCorrelator } from '@villemontreal/auth-core';
+import { IHttpRequestCorrelator } from '@villedemontreal/auth-core';
 import { IRequestPlugin } from './IRequestPlugin';
 import { makeRequestPlugin } from './makeRequestPlugin';
 

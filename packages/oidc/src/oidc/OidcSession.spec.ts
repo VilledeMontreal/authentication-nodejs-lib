@@ -10,7 +10,7 @@ import {
   FakeTimeProvider,
   IHttpDefaults,
   FakeHttpRequestCorrelator,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { FakeTokenProvider } from '../tokens/FakeTokenProvider';
 import { TokenSet } from '../tokens/TokenSet';
 import { IOidcClientConfig } from './IOidcClientConfig';

@@ -10,7 +10,7 @@ import {
   IHttpRequest,
   ILogger,
   ITimeProvider,
-} from '@villemontreal/auth-core';
+} from '@villedemontreal/auth-core';
 import { OutgoingHttpHeaders } from 'http';
 // eslint-disable-next-line import/no-cycle
 import { TokenSet } from '..';

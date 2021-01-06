@@ -23,7 +23,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 import {
   authenticator,
   createSession,
-} from '@villemontreal/auth-oidc-plugin-axios';
+} from '@villedemontreal/auth-oidc-plugin-axios';
 // configure
 const session = createSession({
   authMethod: 'client_secret_basic',

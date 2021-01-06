@@ -4,7 +4,7 @@
  * See LICENSE file in the project root for full license information.
  */
 import { AxiosRequestConfig } from 'axios';
-import { IHttpRequestCorrelator } from '@villemontreal/auth-core';
+import { IHttpRequestCorrelator } from '@villedemontreal/auth-core';
 import { IAxiosPlugin } from './IAxiosPlugin';
 import { makeAxiosPlugin } from './makeAxiosPlugin';
 

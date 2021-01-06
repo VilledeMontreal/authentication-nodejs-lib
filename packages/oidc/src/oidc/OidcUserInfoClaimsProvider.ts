@@ -4,7 +4,7 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { IHttpClient, IHttpRequest, ILogger } from '@villemontreal/auth-core';
+import { IHttpClient, IHttpRequest, ILogger } from '@villedemontreal/auth-core';
 import { IClaims } from '../tokens/IClaims';
 import { IClaimsProvider } from '../tokens/IClaimsProvider';
 import { IOidcServerConfigGetter } from './IOidcServerConfigGetter';
