@@ -5,6 +5,9 @@ This is the HTTP client binding for the [Axios](https://github.com/axios/axios) 
 It provides an implementation of IHttpClient, to use Axios for all OIDC internal calls, and it provides
 additional plugins which enable authentication, logging and correlation ID injection.
 
+This library belongs to a monorepo. Please visit https://github.com/VilledeMontreal/authentication-nodejs-lib
+for more information.
+
 ## Plugins
 
 - [authenticator](src/authenticator.ts)
@@ -50,8 +53,8 @@ console.log(res2.status, res.data);
 
 # Documentation
 
-See [Documentation](../../doc/README.md).
+See [Documentation](https://github.com/VilledeMontreal/authentication-nodejs-lib/tree/master/doc/README.md).
 
 # Examples
 
-See [Axios client](../../examples/client-axios)
+See [Axios client](https://github.com/VilledeMontreal/authentication-nodejs-lib/tree/master/examples/client-axios)

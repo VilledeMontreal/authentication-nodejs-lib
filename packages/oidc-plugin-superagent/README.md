@@ -5,6 +5,9 @@ This is the HTTP client binding for the [Superagent](https://visionmedia.github.
 It provides an implementation of IHttpClient, to use Superagent for all OIDC internal calls, and it provides
 additional plugins which enable authentication, logging and correlation ID injection.
 
+This library belongs to a monorepo. Please visit https://github.com/VilledeMontreal/authentication-nodejs-lib
+for more information.
+
 ## Plugins
 
 - [authenticator](src/authenticator.ts)
@@ -49,8 +52,8 @@ console.log(res2.status, res.body);
 
 # Documentation
 
-See [Documentation](../../doc/README.md).
+See [Documentation](https://github.com/VilledeMontreal/authentication-nodejs-lib/tree/master/doc/README.md).
 
 # Examples
 
-See [Superagent client](../../examples/client-superagent)
+See [Superagent client](https://github.com/VilledeMontreal/authentication-nodejs-lib/tree/master/examples/client-superagent)

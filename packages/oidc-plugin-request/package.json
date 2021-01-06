@@ -13,7 +13,7 @@
   "homepage": "https://github.com/VilledeMontreal/authentication-nodejs-lib#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VilledeMontreal/authentication-nodejs-lib.git",
+    "url": "https://github.com/VilledeMontreal/authentication-nodejs-lib.git",
     "directory": "packages/oidc-plugin-request"
   },
   "bugs": {

@@ -1,3 +1,4 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=villedemontreal_authentication-nodejs-lib&metric=alert_status)](https://sonarcloud.io/dashboard?id=villedemontreal_authentication-nodejs-lib)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=villedemontreal_authentication-nodejs-lib&metric=ncloc)](https://sonarcloud.io/dashboard?id=villedemontreal_authentication-nodejs-lib)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=villedemontreal_authentication-nodejs-lib&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=villedemontreal_authentication-nodejs-lib)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=villedemontreal_authentication-nodejs-lib&metric=coverage)](https://sonarcloud.io/dashboard?id=villedemontreal_authentication-nodejs-lib)
@@ -336,21 +337,32 @@ npm run publish:dev
 
 ### Master branch
 
-`git checkout develop`
+```
+git checkout develop
+git pull
+```
 
 Generate a new version in package.json, commit it and tag it (should be executed manually):
+
 `npm run bump`
+
 Note that the incremented version (patch) should now match the pre-incremented version of the develop branch.
 
 Merge develop into master:
 
 ```
 git checkout master
+git pull
 git merge develop --ff-only
 ```
 
 Publish the package from the current git tag, created by the previous step (should be executed by the CI):
+
 `npm run publish:master`
+
+Push to Github:
+
+`git push`
 
 ## License
 

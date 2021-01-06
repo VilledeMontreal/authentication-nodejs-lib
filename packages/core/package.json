@@ -8,7 +8,7 @@
   "homepage": "https://github.com/VilledeMontreal/authentication-nodejs-lib#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VilledeMontreal/authentication-nodejs-lib",
+    "url": "https://github.com/VilledeMontreal/authentication-nodejs-lib",
     "directory": "packages/core"
   },
   "bugs": {

@@ -11,6 +11,9 @@ https://openapi-generator.tech/docs/generators/typescript-node code generator.
 Note that this plugin won't implement all features of the OIDC lib because of the limitations of the
 'request' module (no retry) and its deprecated state.
 
+This library belongs to a monorepo. Please visit https://github.com/VilledeMontreal/authentication-nodejs-lib
+for more information.
+
 ## Plugins
 
 - [authenticator](src/authenticator.ts)
@@ -107,8 +110,8 @@ const res = await orderApi.getOrderById('abc123');
 
 # Documentation
 
-See [Documentation](../../doc/README.md).
+See [Documentation](https://github.com/VilledeMontreal/authentication-nodejs-lib/tree/master/doc/README.md).
 
 # Examples
 
-See [Request client](../../examples/client-request)
+See [Request client](https://github.com/VilledeMontreal/authentication-nodejs-lib/tree/master/examples/client-request)
