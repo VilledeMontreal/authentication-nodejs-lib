@@ -1,5 +1,5 @@
 {
-  "name": "authentication-nodejs-lib",
+  "name": "@villedemontreal/authentication-nodejs-lib",
   "version": "1.0.0",
   "private": true,
   "author": "Montreal City Authors",
