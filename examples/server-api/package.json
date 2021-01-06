@@ -1,6 +1,6 @@
 {
   "name": "@villedemontreal/demo-server-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "",
   "main": "dist/index.js",
@@ -14,8 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "@types/express": "4.17.9",
-    "@villedemontreal/auth-core": "^1.0.1",
-    "@villedemontreal/auth-oidc": "^1.0.1",
+    "@villedemontreal/auth-core": "^1.0.2",
+    "@villedemontreal/auth-oidc": "^1.0.2",
     "express": "4.17.1"
   },
   "devDependencies": {
