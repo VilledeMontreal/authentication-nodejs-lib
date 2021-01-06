@@ -11,6 +11,6 @@
   "author": "Morgan Martinet <morgan.martinet@montreal.ca>",
   "license": "MIT",
   "dependencies": {
-    "oidc-provider": "6.29.8"
+    "oidc-provider": "6.29.10"
   }
 }
