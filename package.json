@@ -31,6 +31,7 @@
     "bootstrap": "./node_modules/.bin/lerna bootstrap",
     "bump": "./node_modules/.bin/lerna version patch",
     "bump:force": "./node_modules/.bin/lerna version patch --force-publish",
+    "bump:release": "./node_modules/.bin/lerna version --force-publish --conventional-commits --create-release github",
     "ncu": "ncu && ./node_modules/.bin/lerna exec -- ncu",
     "ncu-fix": "ncu -u && ./node_modules/.bin/lerna exec -- ncu -u"
   },
