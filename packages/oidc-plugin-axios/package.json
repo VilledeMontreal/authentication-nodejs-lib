@@ -49,7 +49,7 @@
     "@villedemontreal/auth-oidc": "^1.0.2"
   },
   "peerDependencies": {
-    "axios": ">=0.20.0"
+    "axios": "0.x"
   },
   "devDependencies": {
     "@types/axios": "0.14.0",
