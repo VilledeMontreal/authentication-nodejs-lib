@@ -18,6 +18,7 @@ for more information.
 
 ```
 npm install superagent @villemontrea/auth-oidc-plugin-superagent
+npm install @types/superagent --save-dev
 ```
 
 ```typescript

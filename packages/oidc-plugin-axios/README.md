@@ -17,7 +17,7 @@ for more information.
 # Usage
 
 ```
-npm install request @villemontrea/auth-oidc-plugin-axios
+npm install axios @villemontrea/auth-oidc-plugin-axios
 npm install @types/axios --save-dev
 ```
 
