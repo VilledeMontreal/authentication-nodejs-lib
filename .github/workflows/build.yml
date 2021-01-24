@@ -27,3 +27,25 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  publish-npm:
+    name: Publish npm packages
+    runs-on: ubuntu-latest
+    needs: sonarcloud
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - run: npm install
+      - run: npm publish:master
+        if: github.ref == 'refs/heads/master'
+        env:
+          CI: true
+      - run: npm publish:dev
+        if: github.ref == 'refs/heads/develop'
+        env:
+          CI: true

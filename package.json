@@ -26,7 +26,7 @@
     "lint-fix": "./node_modules/.bin/lerna run lint-fix",
     "test": "./node_modules/.bin/lerna run test --concurrency 1",
     "test-ci": "./node_modules/.bin/lerna run test-ci --concurrency 1",
-    "publish:dev": "./node_modules/.bin/lerna publish --canary --preid beta --force-publish --yes",
+    "publish:dev": "./node_modules/.bin/lerna publish --canary --preid beta --dist-tag beta --force-publish --yes",
     "publish:master": "./node_modules/.bin/lerna publish from-git --yes",
     "bootstrap": "./node_modules/.bin/lerna bootstrap",
     "bump": "./node_modules/.bin/lerna version patch",

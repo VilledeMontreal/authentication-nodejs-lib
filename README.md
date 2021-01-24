@@ -53,7 +53,7 @@ and reducing the risk of mistakes.
 ## Supported http clients
 
 - [Superagent](https://visionmedia.github.io/superagent/)
-- [Axios](https://visionmedia.github.io/axios/)
+- [Axios](https://github.com/axios/axios)
 - [Request](https://github.com/request/request/) (Note that this module has been deprecated but is still used by some projects such as https://openapi-generator.tech/docs/generators/typescript-node)
 - [Got](https://visionmedia.github.io/got/) (planned)
 
@@ -131,7 +131,7 @@ console.log(res2.status, res.body);
 
 ### Axios
 
-Here's the simplest example, using the [Axios](https://visionmedia.github.io/axios/) http client:
+Here's the simplest example, using the [Axios](https://github.com/axios/axios) http client:
 
 ```
 npm install axios @villedemontreal/auth-oidc-plugin-axios
@@ -344,9 +344,15 @@ git pull
 
 Generate a new version in package.json, commit it and tag it (should be executed manually):
 
-`npm run bump`
+```
+export GH_TOKEN=...
+npm run bump:release
+```
 
-Note that the incremented version (patch) should now match the pre-incremented version of the develop branch.
+Note that you must provide a Github auth token in order to let Lerna create a Github release with
+the generated release notes, using conventional commits.
+See [Lerna version](https://github.com/lerna/lerna/tree/main/commands/version#--create-release-type) for
+more information.
 
 Merge develop into master:
 
@@ -356,13 +362,17 @@ git pull
 git merge develop --ff-only
 ```
 
-Publish the package from the current git tag, created by the previous step (should be executed by the CI):
-
-`npm run publish:master`
-
 Push to Github:
 
 `git push`
+
+Note that any push to the master branch will trigger a Github action that will build, test,
+run Sonarqube and finally publish the lib to npm automatically.
+
+However, if you need to publish manually, you can execute the following command, providing you
+did a `npm login` first:
+
+`npm run publish:master`
 
 ## License
 
