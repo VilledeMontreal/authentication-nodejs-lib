@@ -41,11 +41,11 @@ jobs:
         with:
           node-version: '14.x'
       - run: npm install
-      - run: npm publish:master
+      - run: npm run publish:master
         if: github.ref == 'refs/heads/master'
         env:
           CI: true
-      - run: npm publish:dev
+      - run: npm run publish:dev
         if: github.ref == 'refs/heads/develop'
         env:
           CI: true
