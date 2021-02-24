@@ -75,10 +75,9 @@ export class HttpRequestCorrelator implements IHttpRequestCorrelator {
    * @param work a callback to invoke with the submitted correlation ID
    * @param [cid] the correlation ID to install be before invoking the submitted callback
    */
-  public withId(work: () => void, cid?: string): void {
+  public withId<T>(work: () => T, cid?: string): T {
     const correlationId = cid || this.createNewId();
-    this.storage.enterWith({ correlationId });
-    work();
+    return this.storage.run({ correlationId }, work);
   }
 
   /**
@@ -88,15 +87,11 @@ export class HttpRequestCorrelator implements IHttpRequestCorrelator {
    * @param work a callback to invoke with the submitted correlation ID
    * @param [cid] the correlation ID to install be before invoking the submitted callback
    */
-  public async withIdAsync(
-    work: () => Promise<void>,
+  public async withIdAsync<T>(
+    work: () => Promise<T>,
     cid?: string,
-  ): Promise<void> {
-    return new Promise((resolve, reject) => {
-      this.withId(() => {
-        work().then(resolve).catch(reject);
-      }, cid);
-    });
+  ): Promise<T> {
+    return this.withId(work, cid);
   }
 
   public bind<T>(target: T): T {
