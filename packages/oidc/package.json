@@ -1,6 +1,6 @@
 {
   "name": "@villedemontreal/auth-oidc",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "OIDC services",
   "author": "Montreal City Authors",
   "keywords": [
@@ -44,7 +44,7 @@
   ],
   "typings": "dist/index.d.ts",
   "dependencies": {
-    "@villedemontreal/auth-core": "^1.0.4"
+    "@villedemontreal/auth-core": "^1.0.5"
   },
   "devDependencies": {
     "@types/jest": "26.0.20",
