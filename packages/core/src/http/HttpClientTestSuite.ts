@@ -6,15 +6,7 @@
 
 /* eslint-disable import/no-extraneous-dependencies */
 
-import {
-  Options,
-  OptionsJson,
-  OptionsText,
-  OptionsUrlencoded,
-} from 'body-parser';
-import express from 'express';
 import { Server } from 'http';
-import { NextHandleFunction } from 'connect';
 import { ILogger } from '..';
 import { FakeLogger } from '../logging/FakeLogger';
 import { HttpClientError } from './HttpClientError';
@@ -751,29 +743,25 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
   }
 
   function createSampleApi(): Promise<Server> {
-    const app: express.Application = options.express();
-    const typedBodyParser: {
-      json: (options?: OptionsJson) => NextHandleFunction;
-      raw: (options?: Options) => NextHandleFunction;
-      text: (options?: OptionsText) => NextHandleFunction;
-      urlencoded: (options?: OptionsUrlencoded) => NextHandleFunction;
-    } = options.bodyParser;
-    app.use(typedBodyParser.json());
+    const app = options.express();
+    app.use(options.bodyParser.json());
     app.use(
-      typedBodyParser.text({
+      options.bodyParser.text({
         type: ['text/plain', 'text/html', 'application/x-yaml'],
       }),
     );
-    app.use(typedBodyParser.urlencoded({ extended: true }));
+    app.use(options.bodyParser.urlencoded({ extended: true }));
     app.use(
-      typedBodyParser.raw({ type: ['image/jpeg', 'application/octet-stream'] }),
+      options.bodyParser.raw({
+        type: ['image/jpeg', 'application/octet-stream'],
+      }),
     );
-    app.use((req, res, next) => {
+    app.use(<NextHandleFunction>(_req: any, _res: any, next: any) => {
       requestCounter += 1;
       next();
     });
 
-    app.get('/text', (req, res) => {
+    app.get('/text', (req: any, res: any) => {
       if (req.headers.cookie) {
         for (const c of req.headers.cookie.split(';')) {
           const items = c.split('=');
@@ -782,10 +770,10 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
       }
       res.send('Hello World');
     });
-    app.post('/text', (req, res) => {
+    app.post('/text', (req: any, res: any) => {
       res.contentType('text/plain').status(201).send(req.body);
     });
-    app.get('/json', (req, res) => {
+    app.get('/json', (req: any, res: any) => {
       res.json({
         completed: false,
         id: 1,
@@ -794,10 +782,10 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
         correlationId: req.headers['x-correlation-id'],
       });
     });
-    app.post('/json', (req, res) => {
+    app.post('/json', (req: any, res: any) => {
       res.status(201).json(req.body);
     });
-    app.get('/retry-json', (req, res) => {
+    app.get('/retry-json', (req: any, res: any) => {
       if (requestCounter === 1) {
         res.sendStatus(500);
       } else {
@@ -809,42 +797,42 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
         });
       }
     });
-    app.get('/bad-json', (req, res) => {
+    app.get('/bad-json', (req: any, res: any) => {
       res.type('json').send('a: 1, b:2');
     });
-    app.get('/form', (req, res) => {
+    app.get('/form', (req: any, res: any) => {
       res.type('application/x-www-form-urlencoded').send('q=foobar&topic=api');
     });
-    app.post('/form', (req, res) => {
+    app.post('/form', (req: any, res: any) => {
       res.setHeader('Location', '/form/123');
       res.status(201).json(req.body);
     });
-    app.get('/yaml', (req, res) => {
+    app.get('/yaml', (req: any, res: any) => {
       res.contentType('application/x-yaml').send('foo: bar');
     });
-    app.post('/yaml', (req, res) => {
+    app.post('/yaml', (req: any, res: any) => {
       res.status(201).contentType('application/x-yaml').send(req.body);
     });
-    app.post('/html', (req, res) => {
+    app.post('/html', (req: any, res: any) => {
       res.contentType('text/html').status(201).send(req.body);
     });
-    app.get('/binary', (req, res) => {
+    app.get('/binary', (req: any, res: any) => {
       res.contentType('image/jpeg').send(req.body);
     });
-    app.post('/binary', (req, res) => {
+    app.post('/binary', (req: any, res: any) => {
       res.contentType('image/jpeg').send(req.body);
     });
-    app.get('/bad-request', (req, res) => {
+    app.get('/bad-request', (req: any, res: any) => {
       res.status(400).send('Some validation error...');
     });
-    app.get('/disconnected-request', (req, res) => {
+    app.get('/disconnected-request', (req: any, res: any) => {
       if (requestCounter === 1) {
         (res as any).connection.destroy();
       } else {
         res.send('Hello World');
       }
     });
-    app.get('/slow', (req, res) => {
+    app.get('/slow', (req: any, res: any) => {
       setTimeout(() => {
         res.send('OK');
       }, 50);
