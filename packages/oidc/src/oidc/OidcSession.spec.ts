@@ -309,9 +309,14 @@ describe('OidcSessionState', () => {
       OidcSessionState.acquiringToken, // because previous refresh token attempt failed
       OidcSessionState.error, // refresh failed
     ]);
-    expect(logger.last()).toEqual({
+    const last = logger.last();
+    delete last.messageObj.stack;
+    expect(last).toEqual({
       logType: 'error',
-      messageObj: new Error('Could not get token'),
+      messageObj: {
+        name: 'Error',
+        message: 'Could not get token',
+      },
       txtMsg: 'Could not refresh token from timer',
     });
   });

@@ -5,6 +5,7 @@
  */
 
 import {
+  cleanupHttpError,
   IHttpClient,
   ILogger,
   SynchronizedAsyncValue,
@@ -131,7 +132,7 @@ export class OidcSession extends EventEmitter implements IOidcSession {
       return await this.doGetToken();
     } catch (e) {
       this.setState(OidcSessionState.error);
-      this.logger.error(e, 'Could not get token');
+      this.logger.error(cleanupHttpError(e), 'Could not get token');
       throw e;
     }
   }
@@ -148,7 +149,7 @@ export class OidcSession extends EventEmitter implements IOidcSession {
       this.setState(OidcSessionState.tokenAcquired);
       return refreshedToken;
     } catch (e) {
-      this.logger.error(e, 'Could not refresh token');
+      this.logger.error(cleanupHttpError(e), 'Could not refresh token');
       await this.tokenStore.delete(token);
     }
     return undefined;
@@ -228,7 +229,7 @@ export class OidcSession extends EventEmitter implements IOidcSession {
           await this.forceRefreshToken();
         }
       } catch (e) {
-        this.logger.error(e, 'Could not refresh token from timer');
+        this.logger.error(cleanupHttpError(e), 'Could not refresh token from timer');
       }
       // tslint:disable-next-line: align
     }, secs * 1000);

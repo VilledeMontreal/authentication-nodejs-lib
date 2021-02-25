@@ -10,7 +10,7 @@ import {
   TokenSet,
 } from '@villedemontreal/auth-oidc';
 import { Request, Response } from 'request';
-import { TypedProperty } from '@villedemontreal/auth-core';
+import { cleanupHttpError, TypedProperty } from '@villedemontreal/auth-core';
 import { makeRequestPlugin } from './makeRequestPlugin';
 import { getRequestInfo } from './requestUtils';
 
@@ -42,7 +42,7 @@ export function authenticator(
           const { method, url } = getRequestInfo(req);
           session.logger.error(
             {
-              error: err,
+              error: cleanupHttpError(err),
               method,
               url,
             },
@@ -70,7 +70,7 @@ export function authenticator(
           const { method, url } = getRequestInfo(req);
           session.logger.error(
             {
-              error: e,
+              error: cleanupHttpError(e),
               method,
               url,
             },

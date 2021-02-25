@@ -4,7 +4,7 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { hookMethod, TypedProperty } from '@villedemontreal/auth-core';
+import { cleanupHttpError, hookMethod, TypedProperty } from '@villedemontreal/auth-core';
 import {
   IOidcSession,
   IOidcAuthenticatorConfig,
@@ -70,7 +70,7 @@ export function authenticator(
     } catch (err) {
       session.logger.error(
         {
-          error: err,
+          error: cleanupHttpError(err),
           method: request.method,
           url: request.url,
         },
@@ -97,7 +97,7 @@ export function authenticator(
       } catch (e) {
         session.logger.error(
           {
-            error: e,
+            error: cleanupHttpError(e),
             method: request.method,
             url: request.url,
           },
@@ -111,7 +111,7 @@ export function authenticator(
         } catch (e) {
           session.logger.error(
             {
-              error: e,
+              error: cleanupHttpError(e),
               method: request.method,
               url: request.url,
             },

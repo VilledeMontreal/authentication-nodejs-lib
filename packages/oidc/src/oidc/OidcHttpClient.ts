@@ -5,6 +5,7 @@
  */
 
 import {
+  cleanupHttpError,
   IHttpClient,
   IHttpRequest,
   IHttpResponse,
@@ -77,13 +78,11 @@ export class OidcHttpClient implements IHttpClient {
   }
 
   private logLastAttempt(req: IHttpRequest, attempt: number, error: any) {
-    const clonedError = { ...error };
-    delete clonedError.response;
     const { url } = req;
     const method = req.method || 'GET';
     const { statusCode } = error;
     this.session.logger.error(
-      { attempt, method, statusCode, url, error: clonedError },
+      { attempt, method, statusCode, url, error: cleanupHttpError(error) },
       `OidcHttpClient: Attempt #${attempt} of ${method} ${url} failed with ${statusCode}. Retrying...`,
     );
   }

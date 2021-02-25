@@ -20,6 +20,7 @@ import { retryAction } from '../resilience/retryAction';
 import { isTransientHttpError } from './isTransientHttpError';
 import { Stopwatch } from '../time/Stopwatch';
 import { StandardHttpHeaders } from './StandardHttpHeaders';
+import { cleanupHttpError } from './cleanupHttpError';
 
 /**
  * Describes a payload that can be sent or received using the HTTP protocol
@@ -318,10 +319,8 @@ export class DefaultHttpClient implements IHttpClient {
       const { url } = request;
       const method = request.method || 'GET';
       const errorMessage = extractMessageFromError(error);
-      const clonedError = { ...error };
-      delete clonedError.response;
       this.logger.error(
-        { attempt, method, url, elapsedTimeInMS, error: clonedError },
+        { attempt, method, url, elapsedTimeInMS, error: cleanupHttpError(error) },
         `Attempt #${attempt} of ${method} ${url} failed in ${elapsedTimeInMS} ms: ${errorMessage}`,
       );
     }
