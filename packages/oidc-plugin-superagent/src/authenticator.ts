@@ -4,7 +4,11 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { cleanupHttpError, hookMethod, TypedProperty } from '@villedemontreal/auth-core';
+import {
+  cleanupHttpError,
+  hookMethod,
+  TypedProperty,
+} from '@villedemontreal/auth-core';
 import {
   IOidcSession,
   IOidcAuthenticatorConfig,

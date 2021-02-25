@@ -26,6 +26,7 @@ export {
 export { StandardContentTypes } from './http/StandardContentTypes';
 // eslint-disable-next-line import/no-cycle
 export { StandardHttpHeaders } from './http/StandardHttpHeaders';
+// eslint-disable-next-line import/no-cycle
 export { initHttpClientTestSuite } from './http/HttpClientTestSuite';
 export { isTransientHttpError } from './http/isTransientHttpError';
 export { cleanupHttpError } from './http/cleanupHttpError';

@@ -320,7 +320,13 @@ export class DefaultHttpClient implements IHttpClient {
       const method = request.method || 'GET';
       const errorMessage = extractMessageFromError(error);
       this.logger.error(
-        { attempt, method, url, elapsedTimeInMS, error: cleanupHttpError(error) },
+        {
+          attempt,
+          method,
+          url,
+          elapsedTimeInMS,
+          error: cleanupHttpError(error),
+        },
         `Attempt #${attempt} of ${method} ${url} failed in ${elapsedTimeInMS} ms: ${errorMessage}`,
       );
     }

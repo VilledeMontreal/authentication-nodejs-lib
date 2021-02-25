@@ -3,6 +3,10 @@
  * Licensed under the MIT license.
  * See LICENSE file in the project root for full license information.
  */
+
+/* eslint-disable global-require */
+/* eslint-disable node/no-unpublished-require */
+
 import {
   HttpClientError,
   initHttpClientTestSuite,
@@ -14,9 +18,9 @@ describe('SuperagentHttpClient', () => {
   initHttpClientTestSuite({
     httpClientFactory: (logger, httpDefaults) =>
       new SuperagentHttpClient(logger, httpDefaults),
-      express: require('express'),
-      bodyParser: require('body-parser'),
-    });
+    express: require('express'),
+    bodyParser: require('body-parser'),
+  });
 
   test('the constructor should accept an undefined httpDefaults parameter', () => {
     const client = new SuperagentHttpClient(new NoopLogger());

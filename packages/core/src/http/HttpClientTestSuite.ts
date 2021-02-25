@@ -4,9 +4,14 @@
  * See LICENSE file in the project root for full license information.
  */
 
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { Options, OptionsJson, OptionsText, OptionsUrlencoded } from 'body-parser';
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
+
+import {
+  Options,
+  OptionsJson,
+  OptionsText,
+  OptionsUrlencoded,
+} from 'body-parser';
 import express from 'express';
 import { Server } from 'http';
 import { NextHandleFunction } from 'connect';

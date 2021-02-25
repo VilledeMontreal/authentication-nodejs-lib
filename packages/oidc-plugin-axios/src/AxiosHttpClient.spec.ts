@@ -3,6 +3,10 @@
  * Licensed under the MIT license.
  * See LICENSE file in the project root for full license information.
  */
+
+/* eslint-disable global-require */
+/* eslint-disable node/no-unpublished-require */
+
 import {
   HttpClientError,
   initHttpClientTestSuite,

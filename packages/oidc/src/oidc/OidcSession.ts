@@ -229,7 +229,10 @@ export class OidcSession extends EventEmitter implements IOidcSession {
           await this.forceRefreshToken();
         }
       } catch (e) {
-        this.logger.error(cleanupHttpError(e), 'Could not refresh token from timer');
+        this.logger.error(
+          cleanupHttpError(e),
+          'Could not refresh token from timer',
+        );
       }
       // tslint:disable-next-line: align
     }, secs * 1000);

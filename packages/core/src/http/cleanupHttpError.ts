@@ -11,7 +11,7 @@
  * @param error an error object
  */
 export function cleanupHttpError(error: any) {
-  const clonedError = { 
+  const clonedError = {
     ...error,
     name: error.name,
     message: error.message,
