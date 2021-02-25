@@ -14,7 +14,9 @@ describe('SuperagentHttpClient', () => {
   initHttpClientTestSuite({
     httpClientFactory: (logger, httpDefaults) =>
       new SuperagentHttpClient(logger, httpDefaults),
-  });
+      express: require('express'),
+      bodyParser: require('body-parser'),
+    });
 
   test('the constructor should accept an undefined httpDefaults parameter', () => {
     const client = new SuperagentHttpClient(new NoopLogger());

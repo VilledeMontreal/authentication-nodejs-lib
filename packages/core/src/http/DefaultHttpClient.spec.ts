@@ -21,7 +21,9 @@ describe('DefaultHttpClient', () => {
   initHttpClientTestSuite({
     httpClientFactory: (logger, httpDefaults) =>
       new DefaultHttpClient(logger, httpDefaults),
-  });
+      express: require('express'),
+      bodyParser: require('body-parser'),
+    });
 
   test('the constructor should accept an undefined httpDefaults parameter', () => {
     const client = new DefaultHttpClient(new NoopLogger());

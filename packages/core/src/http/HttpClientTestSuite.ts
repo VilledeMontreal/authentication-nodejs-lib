@@ -5,10 +5,11 @@
  */
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-import bodyParser from 'body-parser';
+import { Options, OptionsJson, OptionsText, OptionsUrlencoded } from 'body-parser';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import express from 'express';
 import { Server } from 'http';
+import { NextHandleFunction } from 'connect';
 import { ILogger } from '..';
 import { FakeLogger } from '../logging/FakeLogger';
 import { HttpClientError } from './HttpClientError';
@@ -22,6 +23,8 @@ export interface IHttpClientTestSuiteOptions {
     logger: ILogger,
     httpDefaults: IHttpDefaults,
   ) => IHttpClient;
+  express: any;
+  bodyParser: any;
 }
 export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
   let server: Server;
@@ -743,16 +746,22 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
   }
 
   function createSampleApi(): Promise<Server> {
-    const app = express();
-    app.use(bodyParser.json());
+    const app: express.Application = options.express();
+    const typedBodyParser: {
+      json: (options?: OptionsJson) => NextHandleFunction;
+      raw: (options?: Options) => NextHandleFunction;
+      text: (options?: OptionsText) => NextHandleFunction;
+      urlencoded: (options?: OptionsUrlencoded) => NextHandleFunction;
+    } = options.bodyParser;
+    app.use(typedBodyParser.json());
     app.use(
-      bodyParser.text({
+      typedBodyParser.text({
         type: ['text/plain', 'text/html', 'application/x-yaml'],
       }),
     );
-    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(typedBodyParser.urlencoded({ extended: true }));
     app.use(
-      bodyParser.raw({ type: ['image/jpeg', 'application/octet-stream'] }),
+      typedBodyParser.raw({ type: ['image/jpeg', 'application/octet-stream'] }),
     );
     app.use((req, res, next) => {
       requestCounter += 1;

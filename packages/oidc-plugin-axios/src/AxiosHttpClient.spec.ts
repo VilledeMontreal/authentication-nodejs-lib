@@ -16,6 +16,8 @@ describe('AxiosHttpClient', () => {
   initHttpClientTestSuite({
     httpClientFactory: (logger, httpDefaults) =>
       new AxiosHttpClient(logger, httpDefaults),
+    express: require('express'),
+    bodyParser: require('body-parser'),
   });
 
   test('the constructor should accept an undefined httpDefaults parameter', () => {
