@@ -1,10 +1,19 @@
 {
-  "version": "1.0.5",
-  "packages": ["examples/*", "packages/*"],
-  "ignoreChanges": ["**/*.spec.ts", "**/*.md"],
+  "version": "1.0.6",
+  "packages": [
+    "examples/*",
+    "packages/*"
+  ],
+  "ignoreChanges": [
+    "**/*.spec.ts",
+    "**/*.md"
+  ],
   "command": {
     "publish": {
-      "ignoreChanges": ["*.md", "*.spec.ts"]
+      "ignoreChanges": [
+        "*.md",
+        "*.spec.ts"
+      ]
     }
   }
 }

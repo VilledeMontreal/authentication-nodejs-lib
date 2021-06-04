@@ -1,6 +1,6 @@
 {
   "name": "@villedemontreal/demo-client-superagent",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "description": "",
   "main": "dist/index.js",
@@ -13,8 +13,8 @@
   "author": "Morgan Martinet <morgan.martinet@montreal.ca>",
   "license": "MIT",
   "dependencies": {
-    "@villedemontreal/auth-core": "^1.0.5",
-    "@villedemontreal/auth-oidc-plugin-superagent": "^1.0.5",
+    "@villedemontreal/auth-core": "^1.0.6",
+    "@villedemontreal/auth-oidc-plugin-superagent": "^1.0.6",
     "superagent": "6.1.0"
   },
   "devDependencies": {
