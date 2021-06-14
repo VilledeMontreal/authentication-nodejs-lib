@@ -45,10 +45,7 @@ export class AxiosHttpClient implements IHttpClient {
   public async send(request: Readonly<IHttpRequest>): Promise<IHttpResponse> {
     return retryAction({
       maxRetries: request.retries || this.defaults.retries || 0,
-      action: async (attempt, lastError) => {
-        const response = await this.doSend(request);
-        return response;
-      },
+      action: (attempt, lastError) => this.doSend(request),
       canRetry: (attempt, error) =>
         Promise.resolve(
           isTransientHttpError(error.response?.status, error.code),

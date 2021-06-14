@@ -54,19 +54,19 @@ export class ConsoleLogger implements ILogger {
     messageObj: any,
     txtMsg?: string,
   ) {
-    const args = [new Date().toJSON(), `[${logType.toLocaleUpperCase()}]`];
+    const loggerArgs = [new Date().toJSON(), `[${logType.toLocaleUpperCase()}]`];
     if (this.correlationIdProvider) {
       const cid = this.correlationIdProvider();
       if (cid) {
-        args.push(`[Cid: ${cid}]`);
+        loggerArgs.push(`[Cid: ${cid}]`);
       }
     }
     if (txtMsg) {
-      args.push(txtMsg);
+      loggerArgs.push(txtMsg);
     }
     if (messageObj) {
-      args.push(messageObj);
+      loggerArgs.push(messageObj);
     }
-    logger(...args);
+    logger(...loggerArgs);
   }
 }

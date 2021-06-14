@@ -17,6 +17,25 @@ import { IClaimsProvider } from './IClaimsProvider';
  * using the associated IClaimsProvider, then cached.
  */
 export class TokenSet {
+  /** a time provider */
+  public readonly timeProvider: ITimeProvider;
+  /** an access token */
+  public readonly access_token: string;
+  /** a token type */
+  public readonly token_type: string;
+  /** an expiration delay in seconds */
+  public readonly expires_in: number;
+  /** an optional id_token */
+  public readonly id_token?: string;
+  /** an optional refresh token */
+  public readonly refresh_token?: string;
+  /** the requested scope */
+  public readonly scope?: string;
+  /** an optional claims provider */
+  public readonly claimsProvider?: IClaimsProvider;
+  /**  an optional token issuer */
+  public readonly issuer?: string;
+
   public readonly createdAt: Date;
 
   public readonly expiresAt: Date;
@@ -27,40 +46,55 @@ export class TokenSet {
 
   /**
    *
-   * @param timeProvider a time provider
-   * @param access_token an access token
-   * @param token_type a token type
-   * @param expires_in an expiration delay in seconds
-   * @param [id_token] an optional id_token
-   * @param refresh_token an optional refresh token
-   * @param [scope] the requested scope
-   * @param claimsProvider an optional claims provider
-   * @param [issuer] an optional token issuer
+   * @param args a set of properties for the new TokenSet
    */
   constructor(
-    public readonly timeProvider: ITimeProvider,
-    public readonly access_token: string,
-    public readonly token_type: string,
-    public readonly expires_in: number,
-    public readonly id_token?: string,
-    public readonly refresh_token?: string,
-    public readonly scope?: string,
-    public readonly claimsProvider?: IClaimsProvider,
-    public readonly issuer?: string,
+    args: {
+      /** a time provider */
+      timeProvider: ITimeProvider;
+      /** an access token */
+      access_token: string;
+      /** a token type */
+      token_type: string;
+      /** an expiration delay in seconds */
+      expires_in: number;
+      /** an optional id_token */
+      id_token?: string;
+      /** an optional refresh token */
+      refresh_token?: string;
+      /** the requested scope */
+      scope?: string;
+      /** an optional claims provider */
+      claimsProvider?: IClaimsProvider;
+      /**  an optional token issuer */
+      issuer?: string;
+    }
   ) {
-    if (!access_token) {
+    if (!args) {
+      throw new Error('Expected to receive args');
+    }
+    if (!args.access_token) {
       throw new Error('Expected to receive an access_token');
     }
-    if (!token_type) {
+    if (!args.token_type) {
       throw new Error('Expected to receive a token_type');
     }
-    if (expires_in < 1) {
+    if (args.expires_in < 1) {
       throw new Error('Expected expires_in to be >= 1');
     }
-    this.expirationOffset = this.calcExpirationOffsetInSecs(expires_in);
-    this.createdAt = new Date(timeProvider.getNow().getTime());
+    this.timeProvider = args.timeProvider;
+    this.access_token = args.access_token;
+    this.token_type = args.token_type;
+    this.expires_in = args.expires_in;
+    this.id_token = args.id_token;
+    this.refresh_token = args.refresh_token;
+    this.scope = args.scope;
+    this.claimsProvider = args.claimsProvider;
+    this.issuer = args.issuer;
+    this.expirationOffset = this.calcExpirationOffsetInSecs(args.expires_in);
+    this.createdAt = new Date(args.timeProvider.getNow().getTime());
     this.expiresAt = new Date(
-      this.createdAt.getTime() + (expires_in - this.expirationOffset) * 1000,
+      this.createdAt.getTime() + (args.expires_in - this.expirationOffset) * 1000,
     );
     this.claims = new SynchronizedAsyncCachedValue<IClaims>(previousValue =>
       this.claimsProvider

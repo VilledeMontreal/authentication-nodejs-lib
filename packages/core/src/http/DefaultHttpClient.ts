@@ -159,13 +159,9 @@ export class DefaultHttpClient implements IHttpClient {
     });
 
     req.on('timeout', () => {
-      req.abort();
-    });
-
-    req.on('abort', (e: any) => {
-      reject(
+      req.destroy(
         new HttpClientError(
-          formatErrorMessage(context, `timed out after ${request.timeout} ms`),
+          `timed out after ${request.timeout} ms`,
           'ETIMEDOUT',
         ),
       );

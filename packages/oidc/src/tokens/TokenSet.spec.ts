@@ -29,15 +29,15 @@ describe('TokenSet', () => {
     const timeProvider = new FakeTimeProvider(
       new Date('2019-06-21T14:33:56-04:00'),
     );
-    const token = new TokenSet(
+    const token = new TokenSet({
       timeProvider,
-      'access_token',
-      'Bearer',
-      300,
-      'id_token',
-      'refresh_token',
-      'openid profile',
-    );
+      access_token: 'access_token',
+      token_type: 'Bearer',
+      expires_in: 300,
+      id_token: 'id_token',
+      refresh_token: 'refresh_token',
+      scope: 'openid profile',
+    });
     expect(token.access_token).toBe('access_token');
     expect(token.id_token).toBe('id_token');
     expect(token.refresh_token).toBe('refresh_token');
@@ -161,13 +161,22 @@ describe('TokenSet', () => {
     expect(token.expiresAt.toISOString()).toBe('2019-06-21T19:56:16.000Z');
   });
 
+  test('you should not pass an empty args to the constructor', () => {
+    expect.assertions(1);
+    try {
+      new TokenSet(null as any);
+    } catch (e) {
+      expect(e.message).toBe('Expected to receive args');
+    }
+  });
+
   test('you should not pass an empty access_token to the constructor', () => {
     const timeProvider = new FakeTimeProvider(
       new Date('2019-05-21T14:33:56-04:00'),
     );
     expect.assertions(1);
     try {
-      new TokenSet(timeProvider, '', '', 100);
+      new TokenSet({timeProvider, access_token: '', token_type: '', expires_in: 100});
     } catch (e) {
       expect(e.message).toBe('Expected to receive an access_token');
     }
@@ -179,7 +188,7 @@ describe('TokenSet', () => {
     );
     expect.assertions(1);
     try {
-      new TokenSet(timeProvider, 'some-token', '', 100);
+      new TokenSet({timeProvider, access_token: 'some-token', token_type: '', expires_in: 100});
     } catch (e) {
       expect(e.message).toBe('Expected to receive a token_type');
     }
@@ -191,7 +200,7 @@ describe('TokenSet', () => {
     );
     expect.assertions(1);
     try {
-      new TokenSet(timeProvider, 'some-token', 'Bearer', 0);
+      new TokenSet({timeProvider, access_token: 'some-token', token_type: 'Bearer', expires_in: 0});
     } catch (e) {
       expect(e.message).toBe('Expected expires_in to be >= 1');
     }
@@ -203,7 +212,7 @@ describe('TokenSet', () => {
     );
     expect.assertions(1);
     try {
-      new TokenSet(timeProvider, 'some-token', 'Bearer', -1);
+      new TokenSet({timeProvider,  access_token: 'some-token',  token_type: 'Bearer', expires_in: -1});
     } catch (e) {
       expect(e.message).toBe('Expected expires_in to be >= 1');
     }
@@ -228,53 +237,53 @@ describe('TokenSet', () => {
 
   test('equals with different access_token should be false', () => {
     const { token } = createToken();
-    const other = new TokenSet(
-      token.timeProvider,
-      'other',
-      token.token_type,
-      token.expires_in,
-      token.id_token,
-      token.refresh_token,
-    );
+    const other = new TokenSet({
+      timeProvider: token.timeProvider,
+      access_token: 'other',
+      token_type: token.token_type,
+      expires_in: token.expires_in,
+      id_token: token.id_token,
+      refresh_token: token.refresh_token,
+    });
     expect(token.equals(other)).toBeFalsy();
   });
 
   test('equals with different refresh_token should be false', () => {
     const { token } = createToken();
-    const other = new TokenSet(
-      token.timeProvider,
-      token.access_token,
-      token.token_type,
-      token.expires_in,
-      token.id_token,
-      'other',
-    );
+    const other = new TokenSet({
+      timeProvider: token.timeProvider,
+      access_token: token.access_token,
+      token_type: token.token_type,
+      expires_in: token.expires_in,
+      id_token: token.id_token,
+      refresh_token: 'other',
+    });
     expect(token.equals(other)).toBeFalsy();
   });
 
   test('equals with different token_type should be false', () => {
     const { token } = createToken();
-    const other = new TokenSet(
-      token.timeProvider,
-      token.access_token,
-      'other',
-      token.expires_in,
-      token.id_token,
-      token.refresh_token,
-    );
+    const other = new TokenSet({
+      timeProvider: token.timeProvider,
+      access_token: token.access_token,
+      token_type: 'other',
+      expires_in: token.expires_in,
+      id_token: token.id_token,
+      refresh_token: token.refresh_token,
+    });
     expect(token.equals(other)).toBeFalsy();
   });
 
   test('equals with different expires_in should be false', () => {
     const { token } = createToken();
-    const other = new TokenSet(
-      token.timeProvider,
-      token.access_token,
-      token.token_type,
-      111,
-      token.id_token,
-      token.refresh_token,
-    );
+    const other = new TokenSet({
+      timeProvider: token.timeProvider,
+      access_token: token.access_token,
+      token_type: token.token_type,
+      expires_in: 111,
+      id_token: token.id_token,
+      refresh_token: token.refresh_token,
+    });
     expect(token.equals(other)).toBeFalsy();
   });
 
@@ -284,16 +293,16 @@ describe('TokenSet', () => {
     const timeProvider = new FakeTimeProvider(
       new Date('2019-06-21T14:33:56-04:00'),
     );
-    const token = new TokenSet(
+    const token = new TokenSet({
       timeProvider,
-      'access_token',
-      'Bearer',
-      expiresIn,
-      'id_token',
-      'refresh_token',
-      'scope',
+      access_token: 'access_token',
+      token_type: 'Bearer',
+      expires_in: expiresIn,
+      id_token: 'id_token',
+      refresh_token: 'refresh_token',
+      scope: 'scope',
       claimsProvider,
-    );
+    });
     return { timeProvider, token };
   }
 });

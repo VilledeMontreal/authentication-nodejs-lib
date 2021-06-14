@@ -61,18 +61,18 @@ export class FakeTokenProvider {
 
   private generateToken() {
     this.tokenCounter += 1;
-    return new TokenSet(
-      this.timeProvider,
-      `token${this.tokenCounter}`,
-      'Bearer',
-      this.expirationInSecs,
-      '',
-      this.canGenerateRefreshTokens
+    return new TokenSet({
+      timeProvider: this.timeProvider,
+      access_token: `token${this.tokenCounter}`,
+      token_type: 'Bearer',
+      expires_in: this.expirationInSecs,
+      id_token: '',
+      refresh_token: this.canGenerateRefreshTokens
         ? `refreshtoken${this.tokenCounter}`
         : undefined,
-      'scope',
-      this.claimsProvider,
-      'https://fake.token.issuer',
-    );
+      scope: 'scope',
+      claimsProvider: this.claimsProvider,
+      issuer: 'https://fake.token.issuer',
+    });
   }
 }

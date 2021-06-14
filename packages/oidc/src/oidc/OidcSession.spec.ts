@@ -430,14 +430,14 @@ test('delete token that is not current should be ignored', async () => {
   const token = await session.getToken();
   expect(token).toBeDefined();
   expect(await session.hasToken()).toBeTruthy();
-  const otherTokens = new TokenSet(
+  const otherTokens = new TokenSet({
     timeProvider,
-    'other-token',
-    'Bearer',
-    222,
-    'other-id',
-    'other-refresh',
-  );
+    access_token: 'other-token',
+    token_type: 'Bearer',
+    expires_in: 222,
+    id_token: 'other-id',
+    refresh_token: 'other-refresh',
+  });
   // act
   await session.deleteToken(otherTokens);
   // expect

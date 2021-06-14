@@ -115,16 +115,16 @@ describe('InMemoryTokenStore', () => {
     await store.add(token);
     const currentToken = await store.get();
     expect(currentToken).toBeDefined();
-    const otherToken = new TokenSet(
+    const otherToken = new TokenSet({
       timeProvider,
-      'access_token33',
-      'Bearer',
-      300,
-      'some_id_token33',
-      'refresh_token33',
-      'scope33',
+      access_token: 'access_token33',
+      token_type: 'Bearer',
+      expires_in: 300,
+      id_token: 'some_id_token33',
+      refresh_token: 'refresh_token33',
+      scope: 'scope33',
       claimsProvider,
-    );
+    });
     logger.reset();
     // act
     await store.delete(otherToken);
@@ -141,16 +141,16 @@ describe('InMemoryTokenStore', () => {
     const timeProvider = new FakeTimeProvider(
       new Date('2019-06-21T14:33:56-04:00'),
     );
-    const token = new TokenSet(
+    const token = new TokenSet({
       timeProvider,
-      'access_token',
-      'Bearer',
-      300,
-      'some_id_token',
-      'refresh_token',
-      'scope',
+      access_token: 'access_token',
+      token_type: 'Bearer',
+      expires_in: 300,
+      id_token: 'some_id_token',
+      refresh_token: 'refresh_token',
+      scope: 'scope',
       claimsProvider,
-    );
+    });
     return {
       claims,
       claimsProvider,

@@ -135,17 +135,17 @@ export class OidcTokenProvider implements ITokenProvider {
     // Note that we need to capitalize the token_type received by the Gluu server
     // that might return a lowercase 'bearer' which would then cause
     // errors when used in the authorization header, with token.toAuthorizationString().
-    return new TokenSet(
-      this.timeProvider,
-      body.access_token,
-      capitalize(body.token_type),
-      body.expires_in,
-      body.id_token,
-      body.refresh_token,
-      body.scope,
-      this.claimsProvider,
-      serverConfig.issuer,
-    );
+    return new TokenSet({
+      timeProvider: this.timeProvider,
+      access_token: body.access_token,
+      token_type: capitalize(body.token_type),
+      expires_in: body.expires_in,
+      id_token: body.id_token,
+      refresh_token: body.refresh_token,
+      scope: body.scope,
+      claimsProvider: this.claimsProvider,
+      issuer: serverConfig.issuer,
+    });
   }
 }
 /**

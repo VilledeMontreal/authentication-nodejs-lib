@@ -6,12 +6,10 @@
 // import { ILogger, IHttpDefaults } from '@villedemontreal/auth-core';
 import {
   createSession as coreCreateSession,
-  // injectHttpClient,
   IOidcClientConfig,
   IOidcSession,
   IOidcSessionConfig,
 } from '@villedemontreal/auth-oidc';
-// import { RequestHttpClient } from './RequestHttpClient';
 
 /**
  * creates a new OIDC session using a IHttpClient implemented by Superagent
@@ -23,9 +21,5 @@ export function createSession(
   clientConfig: IOidcClientConfig,
   sessionConfig?: IOidcSessionConfig,
 ): IOidcSession {
-  // const factory = (logger: ILogger, defaults: IHttpDefaults) =>
-  //   new RequestHttpClient(logger, defaults);
-  // const mySessionConfig = injectHttpClient(factory, sessionConfig);
-  // return coreCreateSession(clientConfig, mySessionConfig);
   return coreCreateSession(clientConfig, sessionConfig);
 }
