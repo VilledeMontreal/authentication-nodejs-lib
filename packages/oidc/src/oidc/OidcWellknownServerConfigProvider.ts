@@ -21,7 +21,8 @@ import { IOidcServerConfigProvider } from './IOidcServerConfigProvider';
  * of the OIDC server (.wellknown/openid-configuration)
  */
 export class OidcWellknownServerConfigProvider
-  implements IOidcServerConfigProvider {
+  implements IOidcServerConfigProvider
+{
   private readonly cache: Cache<
     SynchronizedAsyncCachedValue<IOidcServerConfig>
   >;

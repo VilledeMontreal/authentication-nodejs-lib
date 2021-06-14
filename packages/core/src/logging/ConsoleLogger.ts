@@ -54,7 +54,10 @@ export class ConsoleLogger implements ILogger {
     messageObj: any,
     txtMsg?: string,
   ) {
-    const loggerArgs = [new Date().toJSON(), `[${logType.toLocaleUpperCase()}]`];
+    const loggerArgs = [
+      new Date().toJSON(),
+      `[${logType.toLocaleUpperCase()}]`,
+    ];
     if (this.correlationIdProvider) {
       const cid = this.correlationIdProvider();
       if (cid) {

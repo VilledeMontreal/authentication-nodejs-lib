@@ -35,10 +35,11 @@ export function authenticator(
     retries:
       authenticatorConfig?.retryUnauthenticatedRequests !== false ? 1 : 0,
     //--------------------------------------------------------------------
-    onStart: (config) => onStart(config, session, authenticatorConfig),
+    onStart: config => onStart(config, session, authenticatorConfig),
 
     //--------------------------------------------------------------------
-    onError: (config, error) => onError(config, error, session, authenticatorConfig),
+    onError: (config, error) =>
+      onError(config, error, session, authenticatorConfig),
 
     //--------------------------------------------------------------------
     canRetry(config: AxiosRequestConfig, error: AxiosError) {
@@ -107,7 +108,8 @@ async function onError(
   }
 }
 
-function canApplyAuthenticator(config: AxiosRequestConfig,
+function canApplyAuthenticator(
+  config: AxiosRequestConfig,
   authenticatorConfig?: Readonly<IOidcAuthenticatorConfig>,
 ): boolean {
   if (enabledProperty.get(config)) {

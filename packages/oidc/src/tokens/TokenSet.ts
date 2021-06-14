@@ -19,20 +19,28 @@ import { IClaimsProvider } from './IClaimsProvider';
 export class TokenSet {
   /** a time provider */
   public readonly timeProvider: ITimeProvider;
+
   /** an access token */
   public readonly access_token: string;
+
   /** a token type */
   public readonly token_type: string;
+
   /** an expiration delay in seconds */
   public readonly expires_in: number;
+
   /** an optional id_token */
   public readonly id_token?: string;
+
   /** an optional refresh token */
   public readonly refresh_token?: string;
+
   /** the requested scope */
   public readonly scope?: string;
+
   /** an optional claims provider */
   public readonly claimsProvider?: IClaimsProvider;
+
   /**  an optional token issuer */
   public readonly issuer?: string;
 
@@ -48,28 +56,26 @@ export class TokenSet {
    *
    * @param args a set of properties for the new TokenSet
    */
-  constructor(
-    args: {
-      /** a time provider */
-      timeProvider: ITimeProvider;
-      /** an access token */
-      access_token: string;
-      /** a token type */
-      token_type: string;
-      /** an expiration delay in seconds */
-      expires_in: number;
-      /** an optional id_token */
-      id_token?: string;
-      /** an optional refresh token */
-      refresh_token?: string;
-      /** the requested scope */
-      scope?: string;
-      /** an optional claims provider */
-      claimsProvider?: IClaimsProvider;
-      /**  an optional token issuer */
-      issuer?: string;
-    }
-  ) {
+  constructor(args: {
+    /** a time provider */
+    timeProvider: ITimeProvider;
+    /** an access token */
+    access_token: string;
+    /** a token type */
+    token_type: string;
+    /** an expiration delay in seconds */
+    expires_in: number;
+    /** an optional id_token */
+    id_token?: string;
+    /** an optional refresh token */
+    refresh_token?: string;
+    /** the requested scope */
+    scope?: string;
+    /** an optional claims provider */
+    claimsProvider?: IClaimsProvider;
+    /**  an optional token issuer */
+    issuer?: string;
+  }) {
     if (!args) {
       throw new Error('Expected to receive args');
     }
@@ -94,7 +100,8 @@ export class TokenSet {
     this.expirationOffset = this.calcExpirationOffsetInSecs(args.expires_in);
     this.createdAt = new Date(args.timeProvider.getNow().getTime());
     this.expiresAt = new Date(
-      this.createdAt.getTime() + (args.expires_in - this.expirationOffset) * 1000,
+      this.createdAt.getTime() +
+        (args.expires_in - this.expirationOffset) * 1000,
     );
     this.claims = new SynchronizedAsyncCachedValue<IClaims>(previousValue =>
       this.claimsProvider

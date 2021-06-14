@@ -190,7 +190,12 @@ describe('authenticator', () => {
     // setup
     const { session, states, timeProvider, tokenStore } = setup();
     // inject a bad token in the store in order to cause the initial http call to fail with a 401
-    const badToken = new TokenSet(timeProvider, 'bad-token', 'Bearer', 300);
+    const badToken = new TokenSet({
+      timeProvider,
+      access_token: 'bad-token',
+      token_type: 'Bearer',
+      expires_in: 300,
+    });
     tokenStore.add(badToken);
     // act
     const req = superagent
@@ -211,16 +216,16 @@ describe('authenticator', () => {
 
   test('should fail and retry successfully', async () => {
     // setup
-    const {
-      session,
-      states,
-      timeProvider,
-      tokenStore,
-      authenticatorConfig,
-    } = setup({ retryUnauthenticatedRequests: true });
+    const { session, states, timeProvider, tokenStore, authenticatorConfig } =
+      setup({ retryUnauthenticatedRequests: true });
     // inject a bad token in the store in order to cause the initial http call to fail with a 401
     // and have it retried with a new and valid token.
-    const badToken = new TokenSet(timeProvider, 'bad-token', 'Bearer', 300);
+    const badToken = new TokenSet({
+      timeProvider,
+      access_token: 'bad-token',
+      token_type: 'Bearer',
+      expires_in: 300,
+    });
     tokenStore.add(badToken);
     // act
     const req = superagent
@@ -249,7 +254,12 @@ describe('authenticator', () => {
       authenticatorConfig,
     } = setup({ retryUnauthenticatedRequests: true });
     // inject a bad token in the store in order to cause the initial http call to fail with a 401
-    const badToken = new TokenSet(timeProvider, 'bad-token', 'Bearer', 300);
+    const badToken = new TokenSet({
+      timeProvider,
+      access_token: 'bad-token',
+      token_type: 'Bearer',
+      expires_in: 300,
+    });
     tokenStore.add(badToken);
     tokenProvider.canProduceTokens = false;
     // act
@@ -285,7 +295,12 @@ describe('authenticator', () => {
       authenticatorConfig,
     } = setup({ retryUnauthenticatedRequests: true });
     // inject a bad token in the store in order to cause the initial http call to fail with a 401
-    const badToken = new TokenSet(timeProvider, 'bad-token', 'Bearer', 300);
+    const badToken = new TokenSet({
+      timeProvider,
+      access_token: 'bad-token',
+      token_type: 'Bearer',
+      expires_in: 300,
+    });
     tokenStore.add(badToken);
     tokenProvider.canProduceTokens = false;
     tokenStore.delete = token => {
@@ -310,16 +325,16 @@ describe('authenticator', () => {
 
   test('should fail and not retry for a 404', async () => {
     // setup
-    const {
-      session,
-      states,
-      timeProvider,
-      tokenStore,
-      authenticatorConfig,
-    } = setup({ retryUnauthenticatedRequests: true });
+    const { session, states, timeProvider, tokenStore, authenticatorConfig } =
+      setup({ retryUnauthenticatedRequests: true });
     // inject a bad token in the store in order to cause the initial http call to fail with a 401
     // and have it retried with a new and valid token.
-    const badToken = new TokenSet(timeProvider, 'bad-token', 'Bearer', 300);
+    const badToken = new TokenSet({
+      timeProvider,
+      access_token: 'bad-token',
+      token_type: 'Bearer',
+      expires_in: 300,
+    });
     tokenStore.add(badToken);
     // act
     const req = superagent
@@ -339,19 +354,19 @@ describe('authenticator', () => {
 
   test('should fail and retry successfully, and maintain specific retry count', async () => {
     // setup
-    const {
-      session,
-      states,
-      timeProvider,
-      tokenStore,
-      authenticatorConfig,
-    } = setup({
-      forceErrorCode: 500,
-      retryUnauthenticatedRequests: true,
-    });
+    const { session, states, timeProvider, tokenStore, authenticatorConfig } =
+      setup({
+        forceErrorCode: 500,
+        retryUnauthenticatedRequests: true,
+      });
     // inject a bad token in the store in order to cause the initial http call to fail with a 401
     // and have it retried with a new and valid token.
-    const badToken = new TokenSet(timeProvider, 'bad-token', 'Bearer', 300);
+    const badToken = new TokenSet({
+      timeProvider,
+      access_token: 'bad-token',
+      token_type: 'Bearer',
+      expires_in: 300,
+    });
     tokenStore.add(badToken);
     // act
     try {
@@ -371,19 +386,19 @@ describe('authenticator', () => {
 
   test('should fail and retry successfully, and maintain specific retry callback', async () => {
     // setup
-    const {
-      session,
-      states,
-      timeProvider,
-      tokenStore,
-      authenticatorConfig,
-    } = setup({
-      forceErrorCode: 500,
-      retryUnauthenticatedRequests: true,
-    });
+    const { session, states, timeProvider, tokenStore, authenticatorConfig } =
+      setup({
+        forceErrorCode: 500,
+        retryUnauthenticatedRequests: true,
+      });
     // inject a bad token in the store in order to cause the initial http call to fail with a 401
     // and have it retried with a new and valid token.
-    const badToken = new TokenSet(timeProvider, 'bad-token', 'Bearer', 300);
+    const badToken = new TokenSet({
+      timeProvider,
+      access_token: 'bad-token',
+      token_type: 'Bearer',
+      expires_in: 300,
+    });
     tokenStore.add(badToken);
     let retryCallbackCalled = false;
     try {

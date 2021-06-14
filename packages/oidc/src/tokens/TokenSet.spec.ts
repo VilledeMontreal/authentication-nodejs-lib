@@ -176,7 +176,12 @@ describe('TokenSet', () => {
     );
     expect.assertions(1);
     try {
-      new TokenSet({timeProvider, access_token: '', token_type: '', expires_in: 100});
+      new TokenSet({
+        timeProvider,
+        access_token: '',
+        token_type: '',
+        expires_in: 100,
+      });
     } catch (e) {
       expect(e.message).toBe('Expected to receive an access_token');
     }
@@ -188,7 +193,12 @@ describe('TokenSet', () => {
     );
     expect.assertions(1);
     try {
-      new TokenSet({timeProvider, access_token: 'some-token', token_type: '', expires_in: 100});
+      new TokenSet({
+        timeProvider,
+        access_token: 'some-token',
+        token_type: '',
+        expires_in: 100,
+      });
     } catch (e) {
       expect(e.message).toBe('Expected to receive a token_type');
     }
@@ -200,7 +210,12 @@ describe('TokenSet', () => {
     );
     expect.assertions(1);
     try {
-      new TokenSet({timeProvider, access_token: 'some-token', token_type: 'Bearer', expires_in: 0});
+      new TokenSet({
+        timeProvider,
+        access_token: 'some-token',
+        token_type: 'Bearer',
+        expires_in: 0,
+      });
     } catch (e) {
       expect(e.message).toBe('Expected expires_in to be >= 1');
     }
@@ -212,7 +227,12 @@ describe('TokenSet', () => {
     );
     expect.assertions(1);
     try {
-      new TokenSet({timeProvider,  access_token: 'some-token',  token_type: 'Bearer', expires_in: -1});
+      new TokenSet({
+        timeProvider,
+        access_token: 'some-token',
+        token_type: 'Bearer',
+        expires_in: -1,
+      });
     } catch (e) {
       expect(e.message).toBe('Expected expires_in to be >= 1');
     }
