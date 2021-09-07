@@ -165,7 +165,7 @@ describe('TokenSet', () => {
     expect.assertions(1);
     try {
       new TokenSet(null as any);
-    } catch (e) {
+    } catch (e: any) {
       expect(e.message).toBe('Expected to receive args');
     }
   });
@@ -182,7 +182,7 @@ describe('TokenSet', () => {
         token_type: '',
         expires_in: 100,
       });
-    } catch (e) {
+    } catch (e: any) {
       expect(e.message).toBe('Expected to receive an access_token');
     }
   });
@@ -199,7 +199,7 @@ describe('TokenSet', () => {
         token_type: '',
         expires_in: 100,
       });
-    } catch (e) {
+    } catch (e: any) {
       expect(e.message).toBe('Expected to receive a token_type');
     }
   });
@@ -216,7 +216,7 @@ describe('TokenSet', () => {
         token_type: 'Bearer',
         expires_in: 0,
       });
-    } catch (e) {
+    } catch (e: any) {
       expect(e.message).toBe('Expected expires_in to be >= 1');
     }
   });
@@ -233,7 +233,7 @@ describe('TokenSet', () => {
         token_type: 'Bearer',
         expires_in: -1,
       });
-    } catch (e) {
+    } catch (e: any) {
       expect(e.message).toBe('Expected expires_in to be >= 1');
     }
   });

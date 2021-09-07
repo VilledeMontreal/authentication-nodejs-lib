@@ -186,7 +186,7 @@ describe('OidcHttpClient', () => {
       // act
       await oidcHttpClient.send(req);
       throw new Error('expected error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(await session.hasToken()).toBeTruthy();
       expect(err.message).toBe('Some error...');
@@ -217,7 +217,7 @@ describe('OidcHttpClient', () => {
       // act
       await oidcHttpClient.send(req);
       throw new Error('expected error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(await session.hasToken()).toBeTruthy();
       expect(err).toBeInstanceOf(HttpClientError);
@@ -252,7 +252,7 @@ describe('OidcHttpClient', () => {
       // act
       await oidcHttpClient.send(req);
       throw new Error('expected error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(await session.hasToken()).toBeFalsy();
       expect(err).toBeInstanceOf(HttpClientError);
@@ -286,7 +286,7 @@ describe('OidcHttpClient', () => {
       // act
       await oidcHttpClient.send(req);
       throw new Error('expected error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(await session.hasToken()).toBeFalsy();
       expect(err).toBeInstanceOf(HttpClientError);
@@ -360,7 +360,7 @@ describe('OidcHttpClient', () => {
       // act
       await oidcHttpClient.send(req);
       throw new Error('expected error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(await session.hasToken()).toBeTruthy();
       expect(err.statusCode).toBe(401);

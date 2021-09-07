@@ -31,7 +31,7 @@ export class SuperagentHttpClient implements IHttpClient {
   constructor(
     private readonly logger: ILogger,
     private readonly defaults: IHttpDefaults = {},
-  ) {}
+  ) { }
 
   /**
    * Sends a HTTP request to a remote server
@@ -141,7 +141,7 @@ function validateRequestContentType(
     }
     return content;
   }
-  let serializationError = new Error(
+  let serializationError: any = new Error(
     `Could not find a serializer for contentType '${contentType}'`,
   );
   const serializers = createDefaultDeserializers();
@@ -149,7 +149,7 @@ function validateRequestContentType(
   if (serializer) {
     try {
       return serializer.serialize(content);
-    } catch (err) {
+    } catch (err: any) {
       serializationError = err;
     }
   }

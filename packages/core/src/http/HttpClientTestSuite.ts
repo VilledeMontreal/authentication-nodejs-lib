@@ -54,7 +54,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
       // act
       await client.send(req);
       throw new Error('expected error');
-    } catch (e) {
+    } catch (e: any) {
       // expect
       expect(e).toBeInstanceOf(HttpClientError);
       const err = e as HttpClientError;
@@ -83,7 +83,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
       // act
       await client.send(req);
       throw new Error('expected error');
-    } catch (e) {
+    } catch (e: any) {
       // expect
       expect(e).toBeInstanceOf(HttpClientError);
       const err = e as HttpClientError;
@@ -108,7 +108,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
       // act
       await client.send(req);
       throw new Error('expected error');
-    } catch (e) {
+    } catch (e: any) {
       // expect
       expect(e).toBeInstanceOf(HttpClientError);
       const err = e as HttpClientError;
@@ -166,7 +166,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
       // act
       await client.send(req);
       throw new Error('expected error');
-    } catch (e) {
+    } catch (e: any) {
       // expect
       expect(e).toBeInstanceOf(HttpClientError);
       const err = e as HttpClientError;
@@ -409,7 +409,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
       // act
       await client.send(req);
       throw new Error('expected error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err).toBeInstanceOf(HttpClientError);
       expect(err.message).toBe(
@@ -496,7 +496,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
       // act
       await client.send(req);
       throw new Error('expected error');
-    } catch (err) {
+    } catch (err: any) {
       expect(err.message).toBe(
         'POST http://localhost:3000/binary => Could not serialize body',
       );
@@ -531,7 +531,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
       // act
       await client.send(req);
       throw new Error('expected error');
-    } catch (e) {
+    } catch (e: any) {
       // expect
       expect(e).toBeInstanceOf(HttpClientError);
       const err = e as HttpClientError;
@@ -564,7 +564,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
       // act
       await client.send(req);
       throw new Error('expected error');
-    } catch (e) {
+    } catch (e: any) {
       // expect
       expect(e).toBeInstanceOf(HttpClientError);
       const err = e as HttpClientError;
@@ -641,7 +641,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
       // act
       await client.send(req);
       throw new Error('expected error');
-    } catch (e) {
+    } catch (e: any) {
       // expect
       expect(e).toBeInstanceOf(HttpClientError);
       const err = e as HttpClientError;

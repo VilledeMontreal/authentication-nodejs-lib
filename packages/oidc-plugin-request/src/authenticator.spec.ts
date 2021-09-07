@@ -161,7 +161,7 @@ describe('authenticator', () => {
           try {
             await httpGet('http://localhost:4000/api/error/400', options);
             throw new Error('Expected error');
-          } catch (err) {
+          } catch (err: any) {
             expect(err.message).toBe('400 - "Bad Request"');
           }
           expect(requestCounter).toBe(1);
@@ -178,7 +178,7 @@ describe('authenticator', () => {
           try {
             await httpGet('http://localhost:4000/api/error/400', options);
             throw new Error('Expected error');
-          } catch (err) {
+          } catch (err: any) {
             expect(err.message).toBe('400 - "Bad Request"');
           }
           expect(requestCounter).toBe(1);
@@ -293,7 +293,7 @@ describe('authenticator', () => {
     try {
       await httpGet('http://localhost:4000/api/secured', options);
       throw new Error('Expected error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.message).toBe('Some error...');
       expect(err.req.headers.authorization).toBe('Bearer token1');
@@ -318,7 +318,7 @@ describe('authenticator', () => {
     try {
       await httpGet('http://localhost:4000/api/secured', options);
       throw new Error('expected 401 error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.message).toBe('Could not get token');
       expect(requestCounter).toBe(0);
@@ -351,7 +351,7 @@ describe('authenticator', () => {
     try {
       await httpGet('http://localhost:4000/api/secured', options);
       throw new Error('Expected 401 error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.response.statusCode).toBe(401);
       expect(err.response.req.getHeader('authorization')).toBe(
@@ -440,7 +440,7 @@ describe('authenticator', () => {
   //   try {
   //     await req;
   //     throw new Error('Expected 401 error');
-  //   } catch (err) {
+  //   } catch (err: any) {
   //     // expect
   //     expect(err.message).toBe('Could not get token');
   //     expect(err.config).toBeUndefined();
@@ -484,7 +484,7 @@ describe('authenticator', () => {
     try {
       await httpGet('http://localhost:4000/api/secured', options);
       throw new Error('Expected 401 error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.response.statusCode).toBe(401);
       expect(err.req.getHeader('authorization')).toBe('Bearer bad-token');
@@ -514,7 +514,7 @@ describe('authenticator', () => {
     try {
       await httpGet('http://localhost:4000/api/anonymous', options);
       throw new Error('Expected error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.response.statusCode).toBe(200);
       expect(requestCounter).toBe(1);
@@ -538,7 +538,7 @@ describe('authenticator', () => {
     try {
       await httpGet('http://localhost:3999/api/anonymous', options);
       throw new Error('Expected error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(requestCounter).toBe(0);
       expect(err.message).toBe('Some error...');
@@ -570,7 +570,7 @@ describe('authenticator', () => {
     // act
     try {
       await httpGet('http://localhost:4000/api/unknown', options);
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.response.statusCode).toBe(404);
       expect(err.req.getHeader('authorization')).toBe('Bearer bad-token');
@@ -594,7 +594,7 @@ describe('authenticator', () => {
     // act
     try {
       await httpGet('http://localhost:3999/api/secured', options);
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.code).toBe('ECONNREFUSED');
       expect(requestCounter).toBe(0);
@@ -633,7 +633,7 @@ describe('authenticator', () => {
   //     retryRequest(2).bind(agent);
   //     const req = agent.get('http://localhost:4000/api/secured');
   //     await req;
-  //   } catch (err) {
+  //   } catch (err: any) {
   //     // expect
   //     expect(err.response.statusCode).toBe(500);
   //     expect(requestCounter).toBe(3);
@@ -672,7 +672,7 @@ describe('authenticator', () => {
   //     }).bind(agent);
   //     const req = agent.get('http://localhost:4000/api/secured');
   //     await req;
-  //   } catch (err) {
+  //   } catch (err: any) {
   //     // expect
   //     expect(err.response.statusCode).toBe(500);
   //     expect(requestCounter).toBe(1);
@@ -747,7 +747,7 @@ describe('authenticator', () => {
     const fakeCorrelator: IHttpRequestCorrelator = {
       bind: (target: any) => target,
       getId: () => undefined,
-      withId: () => {},
+      withId: () => { },
       withIdAsync: () => Promise.resolve(),
     };
     authenticator(session).bind(options);
@@ -974,7 +974,7 @@ describe('authenticator', () => {
             resolve(srv);
           })
           .on('error', err => reject(err));
-      } catch (err) {
+      } catch (err: any) {
         reject(err);
       }
     });

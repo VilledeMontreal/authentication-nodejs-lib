@@ -60,7 +60,7 @@ export function authenticator(
         res.statusCode === 401 &&
         token &&
         token.toAuthorizationString() ===
-          (req.headers.Authorization || req.headers.authorization)
+        (req.headers.Authorization || req.headers.authorization)
       ) {
         try {
           // ensure that we don't use the token any more since the request returned a 401
@@ -119,7 +119,7 @@ async function injectTokenInHeaders(
   if (authenticatorConfig && authenticatorConfig.beforeSendRequest) {
     try {
       await authenticatorConfig.beforeSendRequest(req, token);
-    } catch (err) {
+    } catch (err: any) {
       err.req = req;
       throw err;
     }

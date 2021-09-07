@@ -333,7 +333,7 @@ describe('OidcSessionState', () => {
       // act
       await session.getToken();
       throw new Error('expected token failure');
-    } catch (e) {
+    } catch (e: any) {
       // expect
       expect(e.message).toBe('Could not get token');
       expect(await session.getState()).toBe(OidcSessionState.error);

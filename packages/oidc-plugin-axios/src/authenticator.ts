@@ -88,7 +88,7 @@ async function onError(
     res.status === 401 &&
     token &&
     token.toAuthorizationString() ===
-      (config.headers.Authorization || config.headers.authorization)
+    (config.headers.Authorization || config.headers.authorization)
   ) {
     try {
       // ensure that we don't use the token any more since the request returned a 401
@@ -146,7 +146,7 @@ async function injectTokenInHeaders(
   if (authenticatorConfig && authenticatorConfig.beforeSendRequest) {
     try {
       await authenticatorConfig.beforeSendRequest(config, token);
-    } catch (err) {
+    } catch (err: any) {
       err.config = config;
       throw err;
     }

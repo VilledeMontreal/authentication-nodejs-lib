@@ -71,7 +71,7 @@ describe('FakeHttpClient', () => {
       // act
       await httpClient.send({ url: 'http://localhost/some/path' });
       throw new Error('expected to receive a 404 error');
-    } catch (e) {
+    } catch (e: any) {
       // expect
       expect(e.statusCode).toBe(404);
     }

@@ -152,7 +152,7 @@ describe('authenticator', () => {
     try {
       await req;
       throw new Error('Expected error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.message).toBe('Some error...');
       expect(req.get('authorization')).toBe('Bearer token1');
@@ -174,7 +174,7 @@ describe('authenticator', () => {
         .get('http://localhost:4000/api/secured')
         .use(authenticator(session));
       throw new Error('expected 401 error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.message).toBe('Could not get token');
       expect(requestCounter).toBe(0);
@@ -204,7 +204,7 @@ describe('authenticator', () => {
     try {
       await req;
       throw new Error('Expected 401 error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.status).toBe(401);
       expect(req.get('authorization')).toBe('Bearer bad-token');
@@ -269,7 +269,7 @@ describe('authenticator', () => {
     try {
       await req;
       throw new Error('Expected 401 error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.status).toBe(401);
       expect(req.get('authorization')).toBe('Bearer bad-token');
@@ -313,7 +313,7 @@ describe('authenticator', () => {
     try {
       await req;
       throw new Error('Expected 401 error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.status).toBe(401);
       expect(req.get('authorization')).toBe('Bearer bad-token');
@@ -342,7 +342,7 @@ describe('authenticator', () => {
       .use(authenticator(session, authenticatorConfig));
     try {
       await req;
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.status).toBe(404);
       expect(req.get('authorization')).toBe('Bearer bad-token');
@@ -375,7 +375,7 @@ describe('authenticator', () => {
         .retry(2)
         .use(authenticator(session, authenticatorConfig));
       await req;
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.status).toBe(500);
       expect(requestCounter).toBe(3);
@@ -414,7 +414,7 @@ describe('authenticator', () => {
         })
         .use(authenticator(session, authenticatorConfig));
       await req;
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.status).toBe(500);
       expect(requestCounter).toBe(1);
@@ -583,7 +583,7 @@ describe('authenticator', () => {
             resolve(srv);
           })
           .on('error', err => reject(err));
-      } catch (err) {
+      } catch (err: any) {
         reject(err);
       }
     });

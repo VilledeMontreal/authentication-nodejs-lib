@@ -106,7 +106,7 @@ async function executeRequest(
       await plugin.onSuccess?.(config, response);
     }
     return response;
-  } catch (err) {
+  } catch (err: any) {
     for (const plugin of ctx.plugins) {
       await plugin.onError?.(config, err);
     }

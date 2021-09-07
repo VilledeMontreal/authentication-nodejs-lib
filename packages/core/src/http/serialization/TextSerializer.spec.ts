@@ -23,7 +23,7 @@ describe('TextSerializer', () => {
       try {
         s.serialize(Buffer.from([]));
         throw new Error('error');
-      } catch (error) {
+      } catch (error: any) {
         expect(error.message).toEqual(
           'A text serializer can only receive a string',
         );

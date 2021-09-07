@@ -16,7 +16,7 @@ describe('findSerializer', () => {
     try {
       findSerializer('', serializers);
       throw new Error('expected error');
-    } catch (error) {
+    } catch (error: any) {
       expect(error.message).toBe('contentType is a required parameter');
     }
   });

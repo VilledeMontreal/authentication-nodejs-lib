@@ -81,7 +81,7 @@ describe('OidcUserInfoClaimsProvider', () => {
       // act
       await provider.getClaims('bad token');
       throw new Error('expected token endpoint error');
-    } catch (e) {
+    } catch (e: any) {
       // expect
       expect(e.message).toBe('serverConfig.userinfo_endpoint is empty');
     }
@@ -103,7 +103,7 @@ describe('OidcUserInfoClaimsProvider', () => {
       // act
       await provider.getClaims('bad token');
       throw new Error('expected 400 error');
-    } catch (e) {
+    } catch (e: any) {
       // expect
       expect(e.code).toBe('EBadHttpResponseStatusCode');
       expect(e.statusCode).toBe(400);

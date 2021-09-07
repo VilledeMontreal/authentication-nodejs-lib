@@ -83,7 +83,7 @@ describe('OidcTokenProvider', () => {
       try {
         await provider.getToken();
         throw new Error('expected token request to fail');
-      } catch (e) {
+      } catch (e: any) {
         // expect
         expect(e.statusCode).toBe(401);
         expect(e.body).toBeDefined();
@@ -116,7 +116,7 @@ describe('OidcTokenProvider', () => {
       try {
         await provider.getToken();
         throw new Error('expected token request to fail');
-      } catch (e) {
+      } catch (e: any) {
         // expect
         expect(e.statusCode).toBe(401);
         expect(e.body).toBeDefined();
@@ -149,7 +149,7 @@ describe('OidcTokenProvider', () => {
       try {
         await provider.refreshToken('badRefreshToken');
         throw new Error('expected token request to fail');
-      } catch (e) {
+      } catch (e: any) {
         // expect
         expect(e.statusCode).toBe(401);
         expect(e.body).toBeDefined();
@@ -168,7 +168,7 @@ describe('OidcTokenProvider', () => {
         // act
         await provider.getToken();
         throw new Error('expected to have wrong auth method');
-      } catch (e) {
+      } catch (e: any) {
         // expect
         expect(e.message).toBe('Unexpected auth method "bad auth method"');
       }
@@ -191,7 +191,7 @@ describe('OidcTokenProvider', () => {
         // act
         await provider.getToken();
         throw new Error('expected to have wrong grant type');
-      } catch (e) {
+      } catch (e: any) {
         // expect
         expect(e.message).toBe('Unexpected grant type "myGrantType"');
       }
@@ -213,7 +213,7 @@ describe('OidcTokenProvider', () => {
         // act
         await provider.getToken();
         throw new Error('expected to have missing client');
-      } catch (e) {
+      } catch (e: any) {
         // expect
         expect(e.message).toBe('clientConfig.client is empty');
       }
@@ -235,7 +235,7 @@ describe('OidcTokenProvider', () => {
         // act
         await provider.getToken();
         throw new Error('expected to have missing client');
-      } catch (e) {
+      } catch (e: any) {
         // expect
         expect(e.message).toBe('clientConfig.client is empty');
       }
@@ -257,7 +257,7 @@ describe('OidcTokenProvider', () => {
         // act
         await provider.getToken();
         throw new Error('expected to have missing client');
-      } catch (e) {
+      } catch (e: any) {
         // expect
         expect(e.message).toBe('clientConfig.client is empty');
       }
@@ -280,7 +280,7 @@ describe('OidcTokenProvider', () => {
         // act
         await provider.getToken();
         throw new Error('expected to have missing user');
-      } catch (e) {
+      } catch (e: any) {
         // expect
         expect(e.message).toBe(
           'Expected to receive a user in the OIDC client config for password grant',
@@ -305,7 +305,7 @@ describe('OidcTokenProvider', () => {
         // act
         await provider.getToken();
         throw new Error('expected to have missing user');
-      } catch (e) {
+      } catch (e: any) {
         // expect
         expect(e.message).toBe('Expected to receive a refresh token');
       }
@@ -318,7 +318,7 @@ describe('OidcTokenProvider', () => {
         // act
         await provider.getToken();
         throw new Error('expected to have missing token_endpoint');
-      } catch (e) {
+      } catch (e: any) {
         // expect
         expect(e.message).toBe('serverConfig.token_endpoint is empty');
       }
@@ -407,7 +407,7 @@ describe('OidcTokenProvider', () => {
       test('error - username', () => {
         try {
           encodeBasicAuth('', '');
-        } catch (e) {
+        } catch (e: any) {
           expect(e.message).toBe('username is required');
         }
       });
@@ -415,7 +415,7 @@ describe('OidcTokenProvider', () => {
       test('error - password', () => {
         try {
           encodeBasicAuth('username', '');
-        } catch (e) {
+        } catch (e: any) {
           expect(e.message).toBe('password is required');
         }
       });
@@ -423,7 +423,7 @@ describe('OidcTokenProvider', () => {
       test('error - username - bad char', () => {
         try {
           encodeBasicAuth('user:name', 'pwd');
-        } catch (e) {
+        } catch (e: any) {
           expect(e.message).toBe('username cannot contain ":"');
         }
       });

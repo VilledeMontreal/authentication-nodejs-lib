@@ -156,7 +156,7 @@ describe('OidcTokenInspector', () => {
     try {
       await inspector.getTokenInfo('');
       throw new Error('expected error');
-    } catch (error) {
+    } catch (error: any) {
       expect(error.message).toBe('accessToken is required');
     }
   });
@@ -189,7 +189,7 @@ describe('OidcTokenInspector', () => {
     try {
       await inspector.getTokenInfo('token');
       throw new Error('expected error');
-    } catch (error) {
+    } catch (error: any) {
       expect(error.message).toBe(
         'serverConfig.introspection_endpoint is empty',
       );
@@ -234,7 +234,7 @@ describe('OidcTokenInspector', () => {
     try {
       await inspector.getClientInfo('');
       throw new Error('expected error');
-    } catch (error) {
+    } catch (error: any) {
       expect(error.message).toBe('accessToken is required');
     }
   });
@@ -267,7 +267,7 @@ describe('OidcTokenInspector', () => {
     try {
       await inspector.getClientInfo('token');
       throw new Error('expected error');
-    } catch (error) {
+    } catch (error: any) {
       expect(error.message).toBe('serverConfig.clientinfo_endpoint is empty');
     }
   });
@@ -310,7 +310,7 @@ describe('OidcTokenInspector', () => {
     try {
       await inspector.getUserInfo('');
       throw new Error('expected error');
-    } catch (error) {
+    } catch (error: any) {
       expect(error.message).toBe('accessToken is required');
     }
   });
@@ -343,7 +343,7 @@ describe('OidcTokenInspector', () => {
     try {
       await inspector.getUserInfo('token');
       throw new Error('expected error');
-    } catch (error) {
+    } catch (error: any) {
       expect(error.message).toBe('serverConfig.userinfo_endpoint is empty');
     }
   });

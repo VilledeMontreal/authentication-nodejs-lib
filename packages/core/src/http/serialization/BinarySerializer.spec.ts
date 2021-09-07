@@ -30,7 +30,7 @@ describe('BinarySerializer', () => {
       try {
         s.serialize('');
         throw new Error('error');
-      } catch (error) {
+      } catch (error: any) {
         expect(error.message).toEqual(
           'A binary serializer can only receive a buffer',
         );
@@ -42,7 +42,7 @@ describe('BinarySerializer', () => {
       try {
         s.serialize('hello');
         throw new Error('error');
-      } catch (error) {
+      } catch (error: any) {
         expect(error.message).toEqual(
           'A binary serializer can only receive a buffer',
         );
@@ -75,7 +75,7 @@ describe('BinarySerializer', () => {
       try {
         s.deserialize('hello');
         throw new Error('error');
-      } catch (error) {
+      } catch (error: any) {
         expect(error.message).toEqual(
           'A binary serializer can only receive a buffer',
         );

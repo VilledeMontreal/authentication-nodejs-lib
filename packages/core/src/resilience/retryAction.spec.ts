@@ -29,7 +29,7 @@ describe('retryAction', () => {
         },
         canRetry: (attempt, error) => Promise.resolve(false),
       });
-    } catch (err) {
+    } catch (err: any) {
       expect(counter).toBe(1);
       expect(err.message).toBe('some error');
     }
@@ -60,7 +60,7 @@ describe('retryAction', () => {
         },
         canRetry: (attempt, error) => Promise.resolve(true),
       });
-    } catch (err) {
+    } catch (err: any) {
       expect(counter).toBe(4);
       expect(err.message).toBe('some error');
     }
@@ -77,7 +77,7 @@ describe('retryAction', () => {
         },
         canRetry: (attempt, error) => Promise.resolve(true),
       });
-    } catch (err) {
+    } catch (err: any) {
       expect(counter).toBe(1);
       expect(err.message).toBe('some error');
     }

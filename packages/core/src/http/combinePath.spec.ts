@@ -16,7 +16,7 @@ test('combinePath', () => {
   try {
     combinePath('', '');
     throw new Error('expected to fail with empty parameters');
-  } catch (e) {
+  } catch (e: any) {
     expect(e.message).toBe(
       'Expected to have at least one parameter a or b to be defined',
     );

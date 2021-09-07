@@ -25,7 +25,7 @@ describe('OidcSessionBuilder', () => {
       try {
         // act
         builder.buildSession(clientConfig as IOidcClientConfig);
-      } catch (e) {
+      } catch (e: any) {
         // expect
         expect(e.message).toBe('clientConfig is required');
       }

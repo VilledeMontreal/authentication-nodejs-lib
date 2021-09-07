@@ -157,7 +157,7 @@ describe('authenticator', () => {
     try {
       await req;
       throw new Error('Expected error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.message).toBe('Some error...');
       expect(err.config.headers.authorization).toBe('Bearer token1');
@@ -179,7 +179,7 @@ describe('authenticator', () => {
       authenticator(session, authenticatorConfig).bind(agent);
       await agent.get('http://localhost:4000/api/secured');
       throw new Error('expected 401 error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.message).toBe('Could not get token');
       expect(requestCounter).toBe(0);
@@ -210,7 +210,7 @@ describe('authenticator', () => {
     try {
       await req;
       throw new Error('Expected 401 error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.response.status).toBe(401);
       expect(err.config.headers.authorization).toBe('Bearer bad-token');
@@ -305,7 +305,7 @@ describe('authenticator', () => {
     try {
       await req;
       throw new Error('Expected 401 error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.message).toBe('Could not get token');
       expect(err.config).toBeUndefined();
@@ -347,7 +347,7 @@ describe('authenticator', () => {
     try {
       await req;
       throw new Error('Expected 401 error');
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.response.status).toBe(401);
       expect(err.config.headers.authorization).toBe('Bearer bad-token');
@@ -376,7 +376,7 @@ describe('authenticator', () => {
     const req = agent.get('http://localhost:4000/api/unknown');
     try {
       await req;
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.response.status).toBe(404);
       expect(err.config.headers.authorization).toBe('Bearer bad-token');
@@ -409,7 +409,7 @@ describe('authenticator', () => {
       retryRequest(2).bind(agent);
       const req = agent.get('http://localhost:4000/api/secured');
       await req;
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.response.status).toBe(500);
       expect(requestCounter).toBe(3);
@@ -448,7 +448,7 @@ describe('authenticator', () => {
       }).bind(agent);
       const req = agent.get('http://localhost:4000/api/secured');
       await req;
-    } catch (err) {
+    } catch (err: any) {
       // expect
       expect(err.response.status).toBe(500);
       expect(requestCounter).toBe(1);
@@ -616,7 +616,7 @@ describe('authenticator', () => {
             resolve(srv);
           })
           .on('error', err => reject(err));
-      } catch (err) {
+      } catch (err: any) {
         reject(err);
       }
     });
