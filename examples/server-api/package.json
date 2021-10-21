@@ -19,6 +19,7 @@
     "express": "4.17.1"
   },
   "devDependencies": {
-    "typescript": "4.4.2"
+    "@types/node": "12.x",
+    "typescript": "4.4.4"
   }
 }

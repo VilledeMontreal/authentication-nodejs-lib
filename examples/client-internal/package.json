@@ -17,6 +17,7 @@
     "@villedemontreal/auth-oidc": "^1.0.7"
   },
   "devDependencies": {
-    "typescript": "4.4.2"
+    "@types/node": "12.x",
+    "typescript": "4.4.4"
   }
 }

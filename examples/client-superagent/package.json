@@ -18,7 +18,8 @@
     "superagent": "6.1.0"
   },
   "devDependencies": {
-    "@types/superagent": "4.1.12",
-    "typescript": "4.4.2"
+    "@types/node": "12.x",
+    "@types/superagent": "4.1.13",
+    "typescript": "4.4.4"
   }
 }

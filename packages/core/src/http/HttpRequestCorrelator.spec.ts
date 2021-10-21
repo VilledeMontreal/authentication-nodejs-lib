@@ -7,43 +7,9 @@
 import { EventEmitter } from 'events';
 import {
   HttpRequestCorrelator,
-  createAsyncLocalStorage,
 } from './HttpRequestCorrelator';
 
-// tslint:disable-next-line: no-empty
-function myConstructor() {}
-
 describe('HttpRequestCorrelator', () => {
-  test('createAsyncLocalStorage should create a storage with a constructor', () => {
-    const storage = createAsyncLocalStorage(myConstructor);
-    expect(storage).toBeDefined();
-  });
-
-  test('createAsyncLocalStorage should create a storage without constructor', () => {
-    const storage = createAsyncLocalStorage(undefined);
-    expect(storage).toBeDefined();
-    expect(storage).toHaveProperty('getStore');
-    expect(storage).toHaveProperty('run');
-    expect(storage).toHaveProperty('enterWith');
-    expect(storage).toHaveProperty('exit');
-    expect(storage.getStore()).toBeUndefined();
-    let runCalled = false;
-    expect(
-      storage.run({}, () => {
-        runCalled = true;
-      }),
-    );
-    expect(runCalled).toBeTruthy();
-    storage.enterWith({});
-    expect(createAsyncLocalStorage(undefined)).not.toBe(storage);
-    let exitCalled = false;
-    expect(
-      storage.exit(() => {
-        exitCalled = true;
-      }),
-    );
-    expect(exitCalled).toBeTruthy();
-  });
 
   test('should generate a default ID', () => {
     // setup

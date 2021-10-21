@@ -19,8 +19,9 @@
     "request-promise-native": "1.0.9"
   },
   "devDependencies": {
+    "@types/node": "12.x",
     "@types/request": "2.48.7",
     "@types/request-promise-native": "1.0.18",
-    "typescript": "4.4.2"
+    "typescript": "4.4.4"
   }
 }

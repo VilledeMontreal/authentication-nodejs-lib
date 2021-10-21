@@ -33,7 +33,7 @@
     "show-coverage": "open output/coverage/lcov-report/index.html"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=12.0.0"
   },
   "directories": {
     "lib": "src"
@@ -47,22 +47,23 @@
     "@villedemontreal/auth-core": "^1.0.7"
   },
   "devDependencies": {
-    "@types/jest": "27.0.1",
-    "@typescript-eslint/eslint-plugin": "4.31.0",
-    "@typescript-eslint/parser": "4.31.0",
-    "eslint": "7.32.0",
-    "eslint-config-airbnb-typescript": "14.0.0",
+    "@types/jest": "27.0.2",
+    "@types/node": "12.x",
+    "@typescript-eslint/eslint-plugin": "5.1.0",
+    "@typescript-eslint/parser": "5.1.0",
+    "eslint": "8.0.1",
+    "eslint-config-airbnb-typescript": "14.0.1",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-header": "3.1.1",
-    "eslint-plugin-import": "2.24.2",
-    "eslint-plugin-jest": "24.4.0",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-jest": "25.2.2",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "4.0.0",
-    "jest": "27.1.0",
-    "jest-junit": "12.2.0",
-    "prettier": "2.3.2",
-    "ts-jest": "27.0.5",
-    "typescript": "4.4.2"
+    "jest": "27.3.1",
+    "jest-junit": "13.0.0",
+    "prettier": "2.4.1",
+    "ts-jest": "27.0.7",
+    "typescript": "4.4.4"
   },
   "gitHead": "4dcc8bcfab5223d988b84b660cc8e2b2e4428318"
 }

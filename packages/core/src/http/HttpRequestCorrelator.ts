@@ -6,8 +6,7 @@
 import { EventEmitter } from 'events';
 import { IHttpRequestCorrelator } from './IHttpRequestCorrelator';
 import { TypedProperty } from '../types/TypedProperty';
-
-const { AsyncLocalStorage } = require('async_hooks');
+import { AsyncLocalStorage } from 'async_hooks';
 
 const oldEmitProperty = new TypedProperty<any, EventEmitter>(Symbol('oldEmit'));
 const storeProperty = new TypedProperty<any, any>(Symbol('cidStore'));
@@ -17,7 +16,7 @@ const storeProperty = new TypedProperty<any, any>(Symbol('cidStore'));
  * that will be injected both in HTTP requests and log events,
  * using plugins and middlewares.
  * @remarks
- * This service only works with NodeJS 13.10 or later since it relies
+ * This service only works with NodeJS 12.17/13.10 or later since it relies
  * on the new {AsyncLocalStorage} class, from the async_hooks module.
  * We don't provide an alternate implementation since we don't want
  * to introduce any external dependency to this project.
@@ -36,7 +35,7 @@ export class HttpRequestCorrelator implements IHttpRequestCorrelator {
    * @param [idGenerator] an optional custom ID generator
    */
   constructor(private readonly idGenerator?: () => string) {
-    this.storage = createAsyncLocalStorage(AsyncLocalStorage);
+    this.storage = new AsyncLocalStorage();
   }
 
   /**
@@ -132,36 +131,4 @@ export class HttpRequestCorrelator implements IHttpRequestCorrelator {
       return target.call(this, ...args);
     } as any;
   }
-}
-
-let warningDelivered = false;
-export function createAsyncLocalStorage(ctor: any) {
-  if (ctor) {
-    // eslint-disable-next-line new-cap
-    return new ctor();
-  }
-  if (!warningDelivered) {
-    warningDelivered = true;
-    const msg = `Could not find AsyncLocalStorage class in async_hooks module.
-This is probably because you're running a version of node prior to 13.10.
-Note that the correlation feature will be disabled.`;
-    // eslint-disable-next-line no-console
-    console.warn(msg);
-  }
-  let store: any;
-  return {
-    getStore() {
-      return store;
-    },
-    run(aStore: any, callback: any, ...args: any[]) {
-      callback(...args);
-    },
-    enterWith(aStore: any) {
-      store = aStore;
-    },
-    exit(callback: any, ...args: any[]) {
-      store = undefined;
-      callback(...args);
-    },
-  };
 }
