@@ -1,6 +1,6 @@
 {
   "name": "@villedemontreal/auth-oidc-plugin-axios",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "axios binding for auth-oidc",
   "author": "Montreal City Authors",
   "keywords": [
@@ -45,8 +45,8 @@
   ],
   "typings": "dist/index.d.ts",
   "dependencies": {
-    "@villedemontreal/auth-core": "^1.0.8",
-    "@villedemontreal/auth-oidc": "^1.0.8"
+    "@villedemontreal/auth-core": "^1.0.9",
+    "@villedemontreal/auth-oidc": "^1.0.9"
   },
   "peerDependencies": {
     "axios": "0.x"
