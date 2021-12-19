@@ -747,7 +747,7 @@ describe('authenticator', () => {
     const fakeCorrelator: IHttpRequestCorrelator = {
       bind: (target: any) => target,
       getId: () => undefined,
-      withId: () => { },
+      withId: () => {},
       withIdAsync: () => Promise.resolve(),
     };
     authenticator(session).bind(options);

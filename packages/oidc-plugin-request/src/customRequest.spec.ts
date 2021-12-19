@@ -31,12 +31,12 @@ describe('customRequest', () => {
 
   test('patchClass should only patch once', () => {
     // eslint-disable-next-line func-names
-    const ctor = function () { };
+    const ctor = function () {};
     const prototype = {
-      init() { },
-      write() { },
-      end() { },
-      pipe() { },
+      init() {},
+      write() {},
+      end() {},
+      pipe() {},
     };
     const protoCopy: any = { ...prototype };
     ctor.prototype = protoCopy;
@@ -56,8 +56,8 @@ describe('customRequest', () => {
   test('custom init should wrap the callback only once', () => {
     const options: any = {};
     const req: any = {
-      oldInit() { },
-      _callback() { },
+      oldInit() {},
+      _callback() {},
     };
     req.init = customInit;
     req.init(options); // 1st time

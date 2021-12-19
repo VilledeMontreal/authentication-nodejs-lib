@@ -12,7 +12,7 @@ import {
 import { AxiosRequestConfig, AxiosError } from 'axios';
 import { cleanupHttpError, TypedProperty } from '@villedemontreal/auth-core';
 import { makeAxiosPlugin } from './makeAxiosPlugin';
-import { getRequestInfo } from './requestUtils';
+import { getHeader, getRequestInfo } from './requestUtils';
 
 const enabledProperty = new TypedProperty<boolean, AxiosRequestConfig>(
   Symbol('hasAuthenticator'),
@@ -88,7 +88,7 @@ async function onError(
     res.status === 401 &&
     token &&
     token.toAuthorizationString() ===
-    (config.headers.Authorization || config.headers.authorization)
+      (getHeader(config, 'Authorization') || getHeader(config, 'authorization'))
   ) {
     try {
       // ensure that we don't use the token any more since the request returned a 401
@@ -117,7 +117,10 @@ function canApplyAuthenticator(
     // that can apply the authenticator since we already did it once.
     return true;
   }
-  if (config.headers.Authorization || config.headers.authorization) {
+  if (
+    getHeader(config, 'Authorization') ||
+    getHeader(config, 'authorization')
+  ) {
     return false;
   }
   if (authenticatorConfig && authenticatorConfig.onAcceptRequest) {
@@ -140,8 +143,10 @@ async function injectTokenInHeaders(
   authenticatorConfig?: Readonly<IOidcAuthenticatorConfig>,
 ): Promise<TokenSet> {
   const token = await session.getToken();
-  // eslint-disable-next-line no-param-reassign
-  config.headers.authorization = token.toAuthorizationString();
+  config.headers = {
+    ...config.headers,
+    authorization: token.toAuthorizationString(),
+  };
   tokenProperty.set(config, token);
   if (authenticatorConfig && authenticatorConfig.beforeSendRequest) {
     try {

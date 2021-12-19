@@ -5,12 +5,9 @@
  */
 
 import { EventEmitter } from 'events';
-import {
-  HttpRequestCorrelator,
-} from './HttpRequestCorrelator';
+import { HttpRequestCorrelator } from './HttpRequestCorrelator';
 
 describe('HttpRequestCorrelator', () => {
-
   test('should generate a default ID', () => {
     // setup
     const correlator = new HttpRequestCorrelator();

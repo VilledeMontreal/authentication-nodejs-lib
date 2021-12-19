@@ -61,14 +61,17 @@ export class AxiosHttpClient implements IHttpClient {
     const config: AxiosRequestConfig = {
       method: request.method,
       url: request.url,
-      headers: context.headers,
+      headers: context.headers as any,
       timeout: context.options.timeout,
       responseType: 'arraybuffer',
       validateStatus: status => true,
     };
-    if (content) {
-      config.headers['content-type'] = content.contentType;
-      config.headers['content-length'] = content.contentLength;
+    if (content && config.headers) {
+      config.headers = {
+        ...config.headers,
+        ['content-type']: content.contentType,
+        ['content-length']: content.contentLength.toString(),
+      };
       config.data = content.content;
     }
     if (this.defaults.correlator) {

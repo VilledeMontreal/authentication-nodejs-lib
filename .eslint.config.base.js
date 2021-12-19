@@ -8,7 +8,8 @@ module.exports = {
   plugins: ['@typescript-eslint', 'header', 'node', 'jest'],
   extends: [
     'airbnb-typescript/base',
-    'prettier', 
+    'prettier',
+    'plugin:import/recommended',
     'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
     'plugin:node/recommended',
     // 'plugin:jest/recommended',

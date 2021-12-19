@@ -67,7 +67,7 @@ describe('authenticator', () => {
     const res = await req;
     // expect
     expect(res.status).toBe(200);
-    expect(res.config.headers.authorization).toBe('Bearer custom');
+    expect(res.config.headers?.authorization).toBe('Bearer custom');
     expect(requestCounter).toBe(1);
     expect(states).toEqual([]);
   });
@@ -110,7 +110,7 @@ describe('authenticator', () => {
     const res = await req;
     // expect
     expect(res.status).toBe(200);
-    expect(res.config.headers.authorization).toBe('Bearer token1');
+    expect(res.config.headers?.authorization).toBe('Bearer token1');
     expect(requestCounter).toBe(1);
     expect(states).toEqual([
       OidcSessionState.acquiringToken,
@@ -134,7 +134,7 @@ describe('authenticator', () => {
     const res = await req;
     // expect
     expect(res.status).toBe(200);
-    expect(res.config.headers.authorization).toBe('Bearer token1');
+    expect(res.config.headers?.authorization).toBe('Bearer token1');
     expect(res.data.tokenIssuer).toBe('https://fake.token.issuer');
     expect(requestCounter).toBe(1);
     expect(states).toEqual([
@@ -240,7 +240,7 @@ describe('authenticator', () => {
     const res = await req;
     // expect
     expect(res.status).toBe(200);
-    expect(res.config.headers.authorization).toBe('Bearer token1');
+    expect(res.config.headers?.authorization).toBe('Bearer token1');
     expect(requestCounter).toBe(2);
     expect(states).toEqual([
       OidcSessionState.acquiringToken,
@@ -270,7 +270,7 @@ describe('authenticator', () => {
     const res = await req;
     // expect
     expect(res.status).toBe(200);
-    expect(res.config.headers.authorization).toBe('Bearer token1');
+    expect(res.config.headers?.authorization).toBe('Bearer token1');
     expect(requestCounter).toBe(2);
     expect(states).toEqual([
       OidcSessionState.acquiringToken,
@@ -471,7 +471,7 @@ describe('authenticator', () => {
       const res = await req;
       // expect
       expect(res.status).toBe(200);
-      expect(res.config.headers.authorization).toBe('Bearer token1');
+      expect(res.config.headers?.authorization).toBe('Bearer token1');
       expect(requestCounter).toBe(1);
       expect(states).toEqual([
         OidcSessionState.acquiringToken,

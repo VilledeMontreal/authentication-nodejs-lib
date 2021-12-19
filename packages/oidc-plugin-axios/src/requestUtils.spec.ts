@@ -4,7 +4,7 @@
  * See LICENSE file in the project root for full license information.
  */
 import { AxiosRequestConfig } from 'axios';
-import { getRequestInfo } from './requestUtils';
+import { getHeader, getRequestInfo } from './requestUtils';
 
 describe('requestUtils', () => {
   test('empty config should produce GET /', () => {
@@ -63,5 +63,34 @@ describe('requestUtils', () => {
     const { method, url } = getRequestInfo(config);
     expect(method).toBe('POST');
     expect(url).toBe('http://localhost/bar');
+  });
+
+  test('getHeader without headers should return undefined', () => {
+    const config: AxiosRequestConfig = {
+      method: 'PUT',
+      url: 'https://zorg.ca/foo',
+    };
+    const value = getHeader(config, 'Authorization');
+    expect(value).toBeUndefined();
+  });
+  test('getHeader with headers and unknown header should return undefined', () => {
+    const config: AxiosRequestConfig = {
+      method: 'PUT',
+      url: 'https://zorg.ca/foo',
+      headers: {},
+    };
+    const value = getHeader(config, 'Authorization');
+    expect(value).toBeUndefined();
+  });
+  test('getHeader with headers and known header should return a value', () => {
+    const config: AxiosRequestConfig = {
+      method: 'PUT',
+      url: 'https://zorg.ca/foo',
+      headers: {
+        Authorization: 'my auth',
+      },
+    };
+    const value = getHeader(config, 'Authorization');
+    expect(value).toBe('my auth');
   });
 });

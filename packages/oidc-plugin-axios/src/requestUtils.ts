@@ -28,3 +28,13 @@ export function getRequestInfo(config: AxiosRequestConfig) {
     url,
   };
 }
+
+export function getHeader(
+  config: AxiosRequestConfig,
+  name: string,
+): string | undefined {
+  if (config.headers) {
+    return config.headers[name];
+  }
+  return undefined;
+}

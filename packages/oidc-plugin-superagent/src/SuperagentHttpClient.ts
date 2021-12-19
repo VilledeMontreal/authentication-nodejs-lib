@@ -31,7 +31,7 @@ export class SuperagentHttpClient implements IHttpClient {
   constructor(
     private readonly logger: ILogger,
     private readonly defaults: IHttpDefaults = {},
-  ) { }
+  ) {}
 
   /**
    * Sends a HTTP request to a remote server

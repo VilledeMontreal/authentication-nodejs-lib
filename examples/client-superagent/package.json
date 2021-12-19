@@ -20,6 +20,6 @@
   "devDependencies": {
     "@types/node": "12.x",
     "@types/superagent": "4.1.13",
-    "typescript": "4.4.4"
+    "typescript": "4.5.4"
   }
 }
