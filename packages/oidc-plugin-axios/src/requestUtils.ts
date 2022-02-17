@@ -32,7 +32,7 @@ export function getRequestInfo(config: AxiosRequestConfig) {
 export function getHeader(
   config: AxiosRequestConfig,
   name: string,
-): string | undefined {
+): string | number | boolean | undefined {
   if (config.headers) {
     return config.headers[name];
   }
