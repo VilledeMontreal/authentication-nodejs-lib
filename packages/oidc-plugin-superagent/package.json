@@ -49,7 +49,7 @@
     "@villedemontreal/auth-oidc": "^1.0.11"
   },
   "peerDependencies": {
-    "superagent": "6.x | 7.x"
+    "superagent": "6.x || 7.x"
   },
   "devDependencies": {
     "@types/body-parser": "1.19.2",
