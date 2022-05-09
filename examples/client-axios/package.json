@@ -15,11 +15,11 @@
   "dependencies": {
     "@villedemontreal/auth-core": "^1.0.10",
     "@villedemontreal/auth-oidc-plugin-axios": "^1.0.10",
-    "axios": "0.26.0"
+    "axios": "0.27.2"
   },
   "devDependencies": {
     "@types/axios": "0.14.0",
-    "@types/node": "12.x",
-    "typescript": "4.5.5"
+    "@types/node": "16.x",
+    "typescript": "4.6.4"
   }
 }
