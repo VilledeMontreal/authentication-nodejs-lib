@@ -1,6 +1,6 @@
 {
   "name": "@villedemontreal/auth-core",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Core services shared with OIDC and http bindings",
   "author": "Montreal City Authors",
   "license": "MIT",
