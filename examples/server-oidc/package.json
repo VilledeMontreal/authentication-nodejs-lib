@@ -1,6 +1,6 @@
 {
   "name": "@villedemontreal/demo-server-oidc",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "private": true,
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "author": "Morgan Martinet <morgan.martinet@montreal.ca>",
   "license": "MIT",
   "dependencies": {
-    "oidc-provider": "7.11.1"
+    "oidc-provider": "7.11.3"
   },
   "devDependencies": {
     "@types/node": "12.x"

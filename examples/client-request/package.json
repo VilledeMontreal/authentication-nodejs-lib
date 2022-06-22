@@ -1,6 +1,6 @@
 {
   "name": "@villedemontreal/demo-client-request",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "private": true,
   "description": "",
   "main": "dist/index.js",
@@ -13,8 +13,8 @@
   "author": "Morgan Martinet <morgan.martinet@montreal.ca>",
   "license": "MIT",
   "dependencies": {
-    "@villedemontreal/auth-core": "^1.0.12",
-    "@villedemontreal/auth-oidc-plugin-request": "^1.0.12",
+    "@villedemontreal/auth-core": "^1.0.13",
+    "@villedemontreal/auth-oidc-plugin-request": "^1.0.13",
     "request": "2.88.2",
     "request-promise-native": "1.0.9"
   },
@@ -22,6 +22,6 @@
     "@types/node": "16.x",
     "@types/request": "2.48.8",
     "@types/request-promise-native": "1.0.18",
-    "typescript": "4.6.4"
+    "typescript": "4.7.4"
   }
 }
