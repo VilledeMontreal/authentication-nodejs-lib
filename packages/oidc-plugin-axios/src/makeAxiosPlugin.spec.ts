@@ -4,13 +4,17 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import {
-  AxiosRequestConfig,
+import { FakeLogger } from '@villedemontreal/auth-core';
+import axios, {
   AxiosAdapter,
   AxiosResponse,
   AxiosError,
+  AxiosHeaders,
+  InternalAxiosRequestConfig,
+  AxiosRequestConfig,
 } from 'axios';
 import { pluginErrorPoll, IAxiosPluginContext } from './makeAxiosPlugin';
+import { requestLogger } from './requestLogger';
 
 describe('makeAxiosPlugin', () => {
   test('no plugin should not produce a valid vote', () => {
@@ -106,8 +110,53 @@ describe('makeAxiosPlugin', () => {
     expect(poll).toBe(false);
   });
 
-  function createContext() {
+  test('should call old adapter if it is a function', async () => {
+    const fakeConfig: InternalAxiosRequestConfig = {
+      headers: AxiosHeaders.from({}),
+    };
+    const fakeResp: AxiosResponse = {
+      config: fakeConfig,
+      data: '',
+      status: 500,
+      statusText: 'Internal Server Error',
+      headers: {},
+    };
+    const config: AxiosRequestConfig = {
+      adapter: () => Promise.resolve(fakeResp),
+    };
+    const logger = new FakeLogger();
+    requestLogger(logger).bind(config);
+
+    const res = await axios.get('http://localhost:1234', config);
+    expect(res).toBe(fakeResp);
+  });
+
+  test('should call old adapter if it is a function in defaults', async () => {
+    const fakeConfig: InternalAxiosRequestConfig = {
+      headers: AxiosHeaders.from({}),
+    };
+    const fakeResp: AxiosResponse = {
+      config: fakeConfig,
+      data: '',
+      status: 500,
+      statusText: 'Internal Server Error',
+      headers: {},
+    };
+    const agent = axios.create({
+      adapter: () => Promise.resolve(fakeResp),
+    });
     const config: AxiosRequestConfig = {};
+    const logger = new FakeLogger();
+    requestLogger(logger).bind(agent);
+
+    const res = await agent.get('http://localhost:1234', config);
+    expect(res).toBe(fakeResp);
+  });
+
+  function createContext() {
+    const config: InternalAxiosRequestConfig = {
+      headers: AxiosHeaders.from({}),
+    };
     const resp: AxiosResponse = {
       config,
       data: '',

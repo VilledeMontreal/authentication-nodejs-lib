@@ -17,6 +17,8 @@ import {
 import { IAxiosPlugin } from './IAxiosPlugin';
 import { IAxiosPluginImplementation } from './IAxiosPluginImplementation';
 
+const adapterFlag = Symbol('adapterFlag');
+
 const contextProperty = new TypedProperty<
   IAxiosPluginContext,
   AxiosInstance | AxiosRequestConfig
@@ -65,6 +67,7 @@ export function makeAxiosPlugin(
         newAdapter: oldAdapter,
       };
       newCtx.newAdapter = requestAdapter(newCtx);
+      (newCtx.newAdapter as any)[adapterFlag] = true;
       return newCtx;
     });
     ctx.plugins.push(implementation);
@@ -93,6 +96,14 @@ export function makeAxiosPlugin(
   }
 }
 
+function removeAdapter(config: any) {
+  const result = { ...config };
+  if (result.adapter && result.adapter[adapterFlag]) {
+    delete result.adapter;
+  }
+  return result;
+}
+
 async function executeRequest(
   ctx: IAxiosPluginContext,
   config: AxiosRequestConfig,
@@ -101,7 +112,11 @@ async function executeRequest(
     await plugin.onStart?.(config);
   }
   try {
-    const response = await ctx.oldAdapter(config);
+    const req =
+      typeof ctx.oldAdapter === 'function'
+        ? ctx.oldAdapter(config as any)
+        : axios.request(removeAdapter(config));
+    const response = await req;
     for (const plugin of ctx.plugins) {
       await plugin.onSuccess?.(config, response);
     }

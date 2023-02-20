@@ -14,7 +14,8 @@ import {
   IHttpContext,
   createDefaultDeserializers,
 } from '@villedemontreal/auth-core';
-import { remapError, AxiosHttpClient } from './AxiosHttpClient';
+import { RawAxiosResponseHeaders } from 'axios';
+import { remapError, AxiosHttpClient, convertHeaders } from './AxiosHttpClient';
 
 describe('AxiosHttpClient', () => {
   initHttpClientTestSuite({
@@ -58,6 +59,25 @@ describe('AxiosHttpClient', () => {
     expect(err).toBeInstanceOf(HttpClientError);
     expect(err.code).toBe('EBadHttpResponseStatusCode');
     expect(err.message).toBe('GET /foo/bar => 404');
+  });
+
+  test('convertHeaders ', () => {
+    const headers: RawAxiosResponseHeaders = {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      'Content-Length': 1234,
+      Server: null,
+      'Content-Encoding': undefined,
+      'Cache-Control': true,
+      'set-cookie': ['foo=bar; Path=/', 'session_id=1234; Path=/'],
+    };
+    expect(convertHeaders(headers)).toEqual({
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      'Content-Length': '1234',
+      'Cache-Control': 'true',
+      'set-cookie': ['foo=bar; Path=/', 'session_id=1234; Path=/'],
+    });
   });
 });
 

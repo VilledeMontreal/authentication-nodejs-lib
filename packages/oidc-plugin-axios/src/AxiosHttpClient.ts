@@ -25,7 +25,12 @@ import {
   getHeaderAsString,
 } from '@villedemontreal/auth-core';
 import * as http from 'http';
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, {
+  AxiosRequestConfig,
+  AxiosResponse,
+  AxiosResponseHeaders,
+  RawAxiosResponseHeaders,
+} from 'axios';
 import { requestCorrelator } from './requestCorrelator';
 import { requestLogger } from './requestLogger';
 
@@ -156,9 +161,10 @@ export class AxiosHttpClient implements IHttpClient {
       res.data,
       res.headers['content-type'],
     );
+
     const response: IHttpResponse = {
       body: incomingData,
-      headers: res.headers,
+      headers: convertHeaders(res.headers),
       statusCode: res.status,
       statusMessage: res.statusText,
     };
@@ -176,6 +182,29 @@ export class AxiosHttpClient implements IHttpClient {
     }
     return response;
   }
+}
+
+function convertHeaderValue(
+  value: string | string[] | number | boolean | null,
+): string | string[] | undefined {
+  if (value === null) {
+    return undefined;
+  }
+  if (value === undefined) {
+    return value;
+  }
+  if (Array.isArray(value)) {
+    return value;
+  }
+  return value.toString();
+}
+
+export function convertHeaders(
+  headers: RawAxiosResponseHeaders | AxiosResponseHeaders,
+): http.IncomingHttpHeaders {
+  return Object.fromEntries(
+    [...Object.entries(headers)].map(([k, v]) => [k, convertHeaderValue(v)]),
+  );
 }
 
 /**

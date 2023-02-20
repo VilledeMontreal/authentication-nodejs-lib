@@ -544,7 +544,7 @@ describe('authenticator', () => {
       expect(err.message).toBe('Some error...');
       expect(err.innerError).toBeDefined();
       expect(err.innerError.message).toBe(
-        'connect ECONNREFUSED 127.0.0.1:3999',
+        'connect ECONNREFUSED ::1:3999',
       );
     }
   });
