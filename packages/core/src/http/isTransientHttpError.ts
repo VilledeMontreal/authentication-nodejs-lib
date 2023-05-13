@@ -20,6 +20,7 @@ export function isTransientHttpError(statusCode?: number, code?: string) {
     }
   }
   if (
+    // See all existing error codes here: https://nodejs.org/api/os.html#posix-error-constants
     [
       'ECONNRESET',
       'ECONNABORTED',
@@ -29,6 +30,7 @@ export function isTransientHttpError(statusCode?: number, code?: string) {
       'ETIMEDOUT',
       'ENETUNREACH',
       'EAI_AGAIN',
+      'EPROTO'
     ].includes(code ?? '')
   ) {
     return true;
