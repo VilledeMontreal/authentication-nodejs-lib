@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/VilledeMontreal/authentication-nodejs-lib/compare/v1.0.15...v1.1.0) (2023-05-13)
+
+
+### Features
+
+* **network:** add EPROTO to transient http errors (SSL handshake error) ([1b4df1b](https://github.com/VilledeMontreal/authentication-nodejs-lib/commit/1b4df1b3afcb6172db1ca4e0ea5f48e490c8e2a1))
+
+
+
+
+
 ## [1.0.15](https://github.com/VilledeMontreal/authentication-nodejs-lib/compare/v1.0.14...v1.0.15) (2023-02-20)
 
 **Note:** Version bump only for package @villedemontreal/auth-core
