@@ -1,4 +1,4 @@
-const { Provider } = require('oidc-provider');
+import Provider from 'oidc-provider';
 
 const accounts = {
   foo: {

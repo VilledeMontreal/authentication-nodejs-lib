@@ -36,10 +36,10 @@
     "ncu-fix": "ncu -u && ./node_modules/.bin/lerna exec -- ncu -u -x @types/node"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.4.4",
-    "@commitlint/config-conventional": "17.4.4",
+    "@commitlint/cli": "17.6.3",
+    "@commitlint/config-conventional": "17.6.3",
     "husky": "8.0.3",
-    "lerna": "^6.5.1"
+    "lerna": "^6.6.2"
   },
   "husky": {
     "hooks": {
