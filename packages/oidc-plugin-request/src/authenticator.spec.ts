@@ -543,8 +543,13 @@ describe('authenticator', () => {
       expect(requestCounter).toBe(0);
       expect(err.message).toBe('Some error...');
       expect(err.innerError).toBeDefined();
-      expect(err.innerError.message).toBe(
+      expect(err.innerError.code).toBe('ECONNREFUSED');
+      expect(err.innerError.errors.length).toBe(2);
+      expect(err.innerError.errors[0].message).toBe(
         'connect ECONNREFUSED ::1:3999',
+      );
+      expect(err.innerError.errors[1].message).toBe(
+        'connect ECONNREFUSED 127.0.0.1:3999',
       );
     }
   });

@@ -16,7 +16,7 @@
     "url": "git+https://github.com/VilledeMontreal/authentication-nodejs-lib.git"
   },
   "scripts": {
-    "postinstall": "npm run bootstrap && npm run compile",
+    "postinstall": "npm run compile",
     "prepublishOnly": "./node_modules/.bin/lerna run compile --no-private",
     "pre-commit": "./node_modules/.bin/lerna run pre-commit",
     "pre-push": "./node_modules/.bin/lerna run pre-push --concurrency 1",
@@ -35,11 +35,24 @@
     "ncu": "ncu && ./node_modules/.bin/lerna exec -- ncu -x @types/node",
     "ncu-fix": "ncu -u && ./node_modules/.bin/lerna exec -- ncu -u -x @types/node"
   },
+  "workspaces": [
+    "packages/core",
+    "packages/oidc",
+    "packages/oidc-plugin-axios",
+    "packages/oidc-plugin-requestre",
+    "packages/oidc-plugin-superagent",
+    "examples/client-axios",
+    "examples/client-internal",
+    "examples/client-request",
+    "examples/client-superagent",
+    "examples/server-api",
+    "examples/server-oidc"
+  ],
   "devDependencies": {
-    "@commitlint/cli": "17.6.3",
-    "@commitlint/config-conventional": "17.6.3",
+    "@commitlint/cli": "18.4.3",
+    "@commitlint/config-conventional": "18.4.3",
     "husky": "8.0.3",
-    "lerna": "^6.6.2"
+    "lerna": "^7.4.2"
   },
   "husky": {
     "hooks": {

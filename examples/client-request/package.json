@@ -20,8 +20,8 @@
   },
   "devDependencies": {
     "@types/node": "18.x",
-    "@types/request": "2.48.8",
-    "@types/request-promise-native": "1.0.18",
-    "typescript": "5.0.4"
+    "@types/request": "2.48.12",
+    "@types/request-promise-native": "1.0.21",
+    "typescript": "5.3.3"
   }
 }

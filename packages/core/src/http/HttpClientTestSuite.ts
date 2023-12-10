@@ -177,7 +177,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
       expect(err.innerError).toBeDefined();
       if (err.innerError) {
         expect(err.innerError.message).toBe(
-          'Unexpected token a in JSON at position 0',
+          `Unexpected token 'a', \"a: 1, b:2\" is not valid JSON`,
         );
       }
       expect(requestCounter).toBe(1);
