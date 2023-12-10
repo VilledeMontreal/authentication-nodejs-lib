@@ -27,7 +27,7 @@
     "test": "npx nx run-many -t test --parallel=false",
     "test-ci": "./node_modules/.bin/lerna run test-ci --parallel=false",
     "publish:dev": "./node_modules/.bin/lerna publish --canary --preid beta --dist-tag beta --force-publish --yes",
-    "publish:master": "./node_modules/.bin/lerna publish from-git --yes",
+    "publish:master": "./node_modules/.bin/lerna publish from-package --yes",
     "bump": "node scripts/bump-version.js",
     "ncu": "ncu && ./node_modules/.bin/lerna exec -- ncu -x @types/node",
     "ncu-fix": "ncu -u && ./node_modules/.bin/lerna exec -- ncu -u -x @types/node"
