@@ -30,7 +30,7 @@ export function isTransientHttpError(statusCode?: number, code?: string) {
       'ETIMEDOUT',
       'ENETUNREACH',
       'EAI_AGAIN',
-      'EPROTO'
+      'EPROTO',
     ].includes(code ?? '')
   ) {
     return true;

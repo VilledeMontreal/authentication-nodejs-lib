@@ -143,9 +143,8 @@ export class OidcSession extends EventEmitter implements IOidcSession {
   ): Promise<TokenSet | undefined> {
     try {
       this.setState(OidcSessionState.refreshingToken);
-      const refreshedToken = await this.tokenProvider.refreshToken(
-        refreshToken,
-      );
+      const refreshedToken =
+        await this.tokenProvider.refreshToken(refreshToken);
       this.setState(OidcSessionState.tokenAcquired);
       return refreshedToken;
     } catch (e) {

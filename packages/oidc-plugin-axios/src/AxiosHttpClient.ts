@@ -38,7 +38,10 @@ import { requestLogger } from './requestLogger';
  * An implementation of the IHttpClient using the Axios library
  */
 export class AxiosHttpClient implements IHttpClient {
-  constructor(private logger: ILogger, private defaults: IHttpDefaults = {}) {}
+  constructor(
+    private logger: ILogger,
+    private defaults: IHttpDefaults = {},
+  ) {}
 
   /**
    * Sends a HTTP request to a remote server

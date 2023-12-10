@@ -12,5 +12,8 @@ export class CacheEntry<T> {
    * @param value the cached value
    * @param expiresAt the time after which the cached entry can be flushed
    */
-  constructor(public readonly value: T, public readonly expiresAt: Date) {}
+  constructor(
+    public readonly value: T,
+    public readonly expiresAt: Date,
+  ) {}
 }
