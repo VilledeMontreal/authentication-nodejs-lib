@@ -23,13 +23,13 @@
   },
   "scripts": {
     "clean": "rm -rf ./build ./tsconfig.tsbuildinfo coverage output",
-    "compile": "./node_modules/.bin/tsc -p .",
+    "compile": "../../node_modules/.bin/tsc -p .",
     "pre-commit": "npm run lint-fix",
     "pre-push": "npm run lint && npm run test",
     "lint": "eslint -c .eslintrc.js --ext .ts src",
     "lint-fix": "eslint -c .eslintrc.js --fix --ext .ts src",
-    "test": "./node_modules/.bin/jest --reporters=default",
-    "test-ci": "./node_modules/.bin/jest --ci",
+    "test": "../../node_modules/.bin/jest --reporters=default",
+    "test-ci": "../../node_modules/.bin/jest --ci",
     "show-coverage": "open output/coverage/lcov-report/index.html"
   },
   "engines": {

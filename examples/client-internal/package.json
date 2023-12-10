@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -rf ./build ./tsconfig.tsbuildinfo coverage output",
-    "compile": "./node_modules/.bin/tsc",
+    "compile": "../../node_modules/.bin/tsc",
     "start": "npm run compile && node dist/index.js",
     "test": "echo 'no tests'"
   },
