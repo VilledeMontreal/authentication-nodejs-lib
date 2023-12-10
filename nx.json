@@ -1,0 +1,36 @@
+{
+  "targetDefaults": {
+    "compile": {
+      "dependsOn": [
+        "^compile"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "cache": true
+    },
+    "start": {
+      "dependsOn": [
+        "^start"
+      ]
+    },
+    "test": {
+      "outputs": [
+        "{projectRoot}/output"
+      ],
+      "cache": true
+    },
+    "test-ci": {
+      "outputs": [
+        "{projectRoot}/output"
+      ],
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    }
+  },
+  "affected": {
+    "defaultBase": "develop"
+  }
+}

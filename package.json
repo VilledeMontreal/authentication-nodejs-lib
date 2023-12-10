@@ -1,6 +1,6 @@
 {
   "name": "@villedemontreal/authentication-nodejs-lib",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "private": true,
   "author": "Montreal City Authors",
   "license": "MIT",
@@ -17,21 +17,18 @@
   },
   "scripts": {
     "postinstall": "npm run compile",
-    "prepublishOnly": "./node_modules/.bin/lerna run compile --no-private",
-    "pre-commit": "./node_modules/.bin/lerna run pre-commit",
-    "pre-push": "./node_modules/.bin/lerna run pre-push --concurrency 1",
+    "prepublishOnly": "npx nx run-many -t compile",
+    "pre-commit": "npx nx run-many -t pre-commit",
+    "pre-push": "npx nx run-many -t pre-push --parallel=false",
     "clean": "./node_modules/.bin/lerna clean && ./node_modules/.bin/lerna run clean",
-    "compile": "./node_modules/.bin/lerna run compile",
-    "lint": "./node_modules/.bin/lerna run lint",
-    "lint-fix": "./node_modules/.bin/lerna run lint-fix",
-    "test": "./node_modules/.bin/lerna run test --concurrency 1",
-    "test-ci": "./node_modules/.bin/lerna run test-ci --concurrency 1",
+    "compile": "npx nx run-many -t compile",
+    "lint": "npx nx run-many -t run lint",
+    "lint-fix": "npx nx run-many -t lint-fix",
+    "test": "npx nx run-many -t test --parallel=false",
+    "test-ci": "./node_modules/.bin/lerna run test-ci --parallel=false",
     "publish:dev": "./node_modules/.bin/lerna publish --canary --preid beta --dist-tag beta --force-publish --yes",
     "publish:master": "./node_modules/.bin/lerna publish from-git --yes",
-    "bootstrap": "./node_modules/.bin/lerna bootstrap",
-    "bump": "./node_modules/.bin/lerna version patch",
-    "bump:force": "./node_modules/.bin/lerna version patch --force-publish",
-    "bump:release": "./node_modules/.bin/lerna version --force-publish --conventional-commits --create-release github",
+    "bump": "node scripts/bump-version.js",
     "ncu": "ncu && ./node_modules/.bin/lerna exec -- ncu -x @types/node",
     "ncu-fix": "ncu -u && ./node_modules/.bin/lerna exec -- ncu -u -x @types/node"
   },
@@ -39,7 +36,7 @@
     "packages/core",
     "packages/oidc",
     "packages/oidc-plugin-axios",
-    "packages/oidc-plugin-requestre",
+    "packages/oidc-plugin-request",
     "packages/oidc-plugin-superagent",
     "examples/client-axios",
     "examples/client-internal",
@@ -49,16 +46,6 @@
     "examples/server-oidc"
   ],
   "devDependencies": {
-    "@commitlint/cli": "18.4.3",
-    "@commitlint/config-conventional": "18.4.3",
-    "husky": "8.0.3",
     "lerna": "^7.4.2"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run pre-commit",
-      "pre-push": "npm run pre-push"
-    }
   }
 }

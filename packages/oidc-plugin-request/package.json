@@ -1,6 +1,6 @@
 {
   "name": "@villedemontreal/auth-oidc-plugin-request",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "request binding for auth-oidc",
   "author": "Montreal City Authors",
   "keywords": [
@@ -45,8 +45,8 @@
   ],
   "typings": "dist/index.d.ts",
   "dependencies": {
-    "@villedemontreal/auth-core": "^1.1.0",
-    "@villedemontreal/auth-oidc": "^1.1.0"
+    "@villedemontreal/auth-core": "^1.1.1",
+    "@villedemontreal/auth-oidc": "^1.1.1"
   },
   "peerDependencies": {
     "request": "2.x"

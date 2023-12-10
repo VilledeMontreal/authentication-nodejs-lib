@@ -301,7 +301,7 @@ Note that it will automatically install the modules of each project managed by t
 
 ### Build
 
-```
+```shell
 npm run compile
 ```
 
@@ -330,44 +330,55 @@ inject a beta tag and a Git sha.
 
 Ex: @villedemontreal/auth-core@0.0.6-beta.1+55b3646
 
-```
+```shell
 git checkout develop
 npm run publish:dev
 ```
 
 ### Master branch
 
-```
+```shell
 git checkout develop
 git pull
 ```
 
 Generate a new version in package.json, commit it and tag it (should be executed manually):
 
-```
-export GH_TOKEN=...
-npm run bump:release
-```
+First, edit the root package.json and bump its version.
 
-Note that you must provide a Github auth token in order to let Lerna create a Github release with
-the generated release notes, using conventional commits.
-See [Lerna version](https://github.com/lerna/lerna/tree/main/commands/version#--create-release-type) for
-more information.
+Then run the following task that will execute a javascript script which copy the root version
+into each package and it will also adjust the dependencies.
+
+```shell
+npm run bump
+```
 
 Merge develop into master:
 
-```
+```shell
 git checkout master
 git pull
 git merge develop --ff-only
 ```
 
+Tag the release:
+```shell
+git tag v1.x.x
+```
+
+
 Push to Github:
 
-`git push`
+```shell
+git push
+git push --tags
+```
 
 Note that any push to the master branch will trigger a Github action that will build, test,
-run Sonarqube and finally publish the lib to npm automatically.
+run Sonarqube but it won't publish the lib to NPM.
+
+To publish the lib to npm automatically, you will have to **create a release in Github** using the last tag you just pushed.
+This will trigger a build that will invoke the `publish:master` task.
 
 However, if you need to publish manually, you can execute the following command, providing you
 did a `npm login` first:
