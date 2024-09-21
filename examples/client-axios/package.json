@@ -1,6 +1,6 @@
 {
   "name": "@villedemontreal/demo-client-axios",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "description": "",
   "main": "dist/index.js",
@@ -13,8 +13,8 @@
   "author": "Morgan Martinet <morgan.martinet@montreal.ca>",
   "license": "MIT",
   "dependencies": {
-    "@villedemontreal/auth-core": "^1.1.1",
-    "@villedemontreal/auth-oidc-plugin-axios": "^1.1.1",
+    "@villedemontreal/auth-core": "^1.1.2",
+    "@villedemontreal/auth-oidc-plugin-axios": "^1.1.2",
     "axios": "1.7.7"
   },
   "devDependencies": {
