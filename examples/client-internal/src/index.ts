@@ -20,7 +20,7 @@ async function main(): Promise<void> {
       id: 'client',
       secret: 'clientSecret',
     },
-    issuer: 'http://localhost:5000',
+    issuer: 'http://localhost:5005',
     scopes: ['openid', 'profile'],
     requestTimeout: 5000, // 5s timeout for OIDC requests (overrides global value)
   };

@@ -21,7 +21,7 @@ const clientConfig: IOidcClientConfig = {
     id: 'inspector',
     secret: 'inspectorSecret',
   },
-  issuer: 'http://localhost:5000',
+  issuer: 'http://localhost:5005',
   scopes: ['openid', 'profile'],
 };
 const sessionConfig: IOidcSessionConfig = {

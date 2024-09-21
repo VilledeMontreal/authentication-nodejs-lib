@@ -113,7 +113,7 @@ const session = createSession({
     id: 'client',
     secret: 'clientSecret',
   },
-  issuer: 'http://localhost:5000',
+  issuer: 'http://localhost:5005',
   scopes: ['openid', 'profile'],
 });
 // custom auth for each http call:
@@ -151,7 +151,7 @@ const session = createSession({
     id: 'client',
     secret: 'clientSecret',
   },
-  issuer: 'http://localhost:5000',
+  issuer: 'http://localhost:5005',
   scopes: ['openid', 'profile'],
 });
 // custom auth for each http call:
@@ -190,7 +190,7 @@ const session = createSession({
     id: 'client',
     secret: 'clientSecret',
   },
-  issuer: 'http://localhost:5000',
+  issuer: 'http://localhost:5005',
   scopes: ['openid', 'profile'],
 });
 // custom auth for each http call:

@@ -45,11 +45,11 @@ const configuration = {
   ],
 };
 
-const oidc = new Provider('http://localhost:5000', configuration);
+const oidc = new Provider('http://localhost:5005', configuration);
 
 // or just expose a server standalone, see /examples/standalone.js
-const server = oidc.listen(5000, () => {
+const server = oidc.listen(5005, () => {
   console.log(
-    'oidc-provider listening on port 5000, check http://localhost:5000/.well-known/openid-configuration'
+    'oidc-provider listening on port 5005, check http://localhost:5005/.well-known/openid-configuration'
   );
 });
