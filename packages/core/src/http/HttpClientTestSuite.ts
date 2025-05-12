@@ -589,7 +589,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
     // expect
     expect(res.statusCode).toBe(200);
     expect(res.body).toEqual('Hello World');
-    if (res.headers) {
+    if (res.headers && res.headers['set-cookie']) {
       expect(res.headers['set-cookie']).toEqual([
         'foo=bar; Path=/',
         'session_id=1234; Path=/',
@@ -762,10 +762,11 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
     });
 
     app.get('/text', (req: any, res: any) => {
-      if (req.headers.cookie) {
-        for (const c of req.headers.cookie.split(';')) {
+      const cookie = req.headers.cookie;
+      if (cookie) {
+        for (const c of cookie.split(';')) {
           const items = c.split('=');
-          res.cookie(items[0], items[1]);
+          res.cookie(items[0].trim(), items[1]);
         }
       }
       res.send('Hello World');

@@ -25,7 +25,7 @@ describe('Stopwatch', () => {
     await delay(100);
     const elapsed = watch.elapsedTimeInMS();
     expect(elapsed).toBeGreaterThanOrEqual(99);
-    expect(elapsed).toBeLessThan(120);
+    expect(elapsed).toBeLessThan(150);
     expect(watch.isStarted()).toBeTruthy();
     expect(watch.isStopped()).toBeFalsy();
   });

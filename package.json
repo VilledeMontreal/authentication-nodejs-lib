@@ -1,6 +1,6 @@
 {
   "name": "@villedemontreal/authentication-nodejs-lib",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "private": true,
   "author": "Montreal City Authors",
   "license": "MIT",
@@ -29,8 +29,10 @@
     "publish:dev": "./node_modules/.bin/lerna publish --canary --preid beta --dist-tag beta --force-publish --yes",
     "publish:master": "./node_modules/.bin/lerna publish from-package --yes",
     "bump": "node scripts/bump-version.js",
-    "ncu": "ncu && ./node_modules/.bin/lerna exec -- ncu -x @types/node",
-    "ncu-fix": "ncu -u && ./node_modules/.bin/lerna exec -- ncu -u -x @types/node"
+    "ncu": "ncu && npx nx exec --parallel=false -- ncu -x @types/node",
+    "ncu-fix": "ncu -u && npx nx exec --parallel=false -- ncu -u -x @types/node",
+    "ncu-minor": "ncu --target minor && npx nx exec --parallel=false -- ncu --target minor -x @types/node",
+    "ncu-minor-fix": "ncu --target minor -u && npx nx exec --parallel=false -- ncu --target minor -u -x @types/node"
   },
   "workspaces": [
     "packages/core",
@@ -46,6 +48,6 @@
     "examples/server-oidc"
   ],
   "devDependencies": {
-    "lerna": "^8.1.8"
+    "lerna": "^8.2.2"
   }
 }
