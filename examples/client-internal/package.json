@@ -1,6 +1,6 @@
 {
   "name": "@villedemontreal/demo-client-internal",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "private": true,
   "description": "",
   "main": "dist/index.js",
@@ -13,8 +13,8 @@
   "author": "Morgan Martinet <morgan.martinet@montreal.ca>",
   "license": "MIT",
   "dependencies": {
-    "@villedemontreal/auth-core": "^1.1.2",
-    "@villedemontreal/auth-oidc": "^1.1.2"
+    "@villedemontreal/auth-core": "^1.1.3",
+    "@villedemontreal/auth-oidc": "^1.1.3"
   },
   "devDependencies": {
     "@types/node": "20.x",
