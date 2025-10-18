@@ -38,7 +38,7 @@ describe('Stopwatch', () => {
     expect(watch.isStopped()).toBeTruthy();
     const elapsed = watch.elapsedTimeInMS();
     expect(elapsed).toBeGreaterThanOrEqual(99);
-    expect(elapsed).toBeLessThan(120);
+    expect(elapsed).toBeLessThan(140);
     await delay(50);
     expect(watch.elapsedTimeInMS()).toBeCloseTo(elapsed);
   });

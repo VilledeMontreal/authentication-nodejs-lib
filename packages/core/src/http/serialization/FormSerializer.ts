@@ -46,7 +46,7 @@ export class FormSerializer implements ISerializer {
   public deserialize(data: string | Buffer) {
     const result: any = {};
     if (data) {
-      const text = data instanceof Buffer ? data.toString() : data;
+      const text = data instanceof Buffer ? data.toString() : (data as string);
       for (const [k, v] of new URLSearchParams(text)) {
         result[k] = v;
       }

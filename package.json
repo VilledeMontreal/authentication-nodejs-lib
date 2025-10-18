@@ -48,6 +48,6 @@
     "examples/server-oidc"
   ],
   "devDependencies": {
-    "lerna": "^8.2.2"
+    "lerna": "^8.2.4"
   }
 }

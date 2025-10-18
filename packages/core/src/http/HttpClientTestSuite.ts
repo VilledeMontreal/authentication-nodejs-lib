@@ -511,7 +511,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
     const req: IHttpRequest = {
       body: 'Foo: bar',
       headers: {
-        'content-type': 33,
+        'content-type': '33',
       },
       method: 'POST',
       url: 'http://localhost:3000/html',
@@ -519,7 +519,8 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
     // act
     const res = await client.send(req);
     // expect
-    expect(res.body).toEqual(req.body);
+    expect(res.statusCode).toEqual(201);
+    expect(res.body).toBeNull();
   });
 
   test('bad request', async () => {

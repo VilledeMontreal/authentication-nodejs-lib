@@ -34,7 +34,7 @@ export class JsonSerializer implements ISerializer {
     if (!data) {
       return {};
     }
-    const text = data instanceof Buffer ? data.toString() : data;
+    const text = data instanceof Buffer ? data.toString() : (data as string);
     if (text) {
       return JSON.parse(text);
     }
