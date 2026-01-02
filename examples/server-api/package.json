@@ -6,17 +6,17 @@
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -rf ./build ./tsconfig.tsbuildinfo coverage output",
-    "compile": "../../node_modules/.bin/tsc",
+    "compile": "tsc",
     "start": "npm run compile && node dist/index.js",
     "test": "echo 'no tests'"
   },
   "author": "Morgan Martinet <morgan.martinet@montreal.ca>",
   "license": "MIT",
   "dependencies": {
-    "@types/express": "5.0.3",
+    "@types/express": "5.0.6",
     "@villedemontreal/auth-core": "^1.1.4",
     "@villedemontreal/auth-oidc": "^1.1.4",
-    "express": "5.1.0"
+    "express": "5.2.1"
   },
   "devDependencies": {
     "@types/node": "24.x",

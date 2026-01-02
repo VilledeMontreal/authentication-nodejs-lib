@@ -44,7 +44,6 @@ export class TypedProperty<TProperty, TObject = any> {
     if (value === undefined) {
       this.clear(target);
     } else {
-      // eslint-disable-next-line no-param-reassign
       (target as any)[this.propertyName] = value;
     }
   }
@@ -54,7 +53,6 @@ export class TypedProperty<TProperty, TObject = any> {
    * @param target the target object to modify
    */
   clear(target: TObject): void {
-    // eslint-disable-next-line no-param-reassign
     delete (target as any)[this.propertyName];
   }
 

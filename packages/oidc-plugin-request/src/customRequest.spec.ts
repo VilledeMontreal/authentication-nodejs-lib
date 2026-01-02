@@ -11,8 +11,6 @@ import {
   customInit,
 } from './customRequest';
 
-/* eslint-disable no-underscore-dangle */
-
 describe('customRequest', () => {
   test('catchErrors should catch any error', () => {
     catchErrors(() => {
@@ -30,7 +28,6 @@ describe('customRequest', () => {
   });
 
   test('patchClass should only patch once', () => {
-    // eslint-disable-next-line func-names
     const ctor = function () {};
     const prototype = {
       init() {},

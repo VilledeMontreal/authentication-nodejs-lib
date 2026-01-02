@@ -4,8 +4,6 @@
  * See LICENSE file in the project root for full license information.
  */
 
-/* eslint-disable import/no-cycle */
-
 import { IOidcClientConfig } from './oidc/IOidcClientConfig';
 import { IOidcSession } from './oidc/IOidcSession';
 import { IOidcSessionConfig } from './oidc/IOidcSessionConfig';

@@ -4,8 +4,6 @@
  * See LICENSE file in the project root for full license information.
  */
 
-/* eslint-disable no-new */
-
 import { FakeTimeProvider } from '@villedemontreal/auth-core';
 import { FakeClaimsProvider } from './FakeClaimsProvider';
 import { IClaims } from './IClaims';

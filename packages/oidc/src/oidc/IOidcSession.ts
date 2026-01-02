@@ -8,7 +8,7 @@ import { IHttpClient, ILogger } from '@villedemontreal/auth-core';
 import { TokenSet } from '../tokens/TokenSet';
 import { IOidcClientConfig } from './IOidcClientConfig';
 import { IOidcServerConfig } from './IOidcServerConfig';
-// eslint-disable-next-line import/no-cycle
+
 import { IOidcSessionConfig } from './IOidcSessionConfig';
 import { OidcSessionState } from './OidcSessionState';
 

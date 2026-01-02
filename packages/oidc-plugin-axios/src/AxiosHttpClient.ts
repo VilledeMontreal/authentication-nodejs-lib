@@ -4,7 +4,6 @@
  * See LICENSE file in the project root for full license information.
  */
 
-// eslint-disable-next-line max-classes-per-file
 import {
   createDefaultDeserializers,
   guessContentTypeFrom,

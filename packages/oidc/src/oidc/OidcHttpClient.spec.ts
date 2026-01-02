@@ -116,7 +116,6 @@ describe('OidcHttpClient', () => {
     // setup
     const { oidcHttpClient, httpClient, session } = setup({
       beforeSendRequest: async (pReq, token) => {
-        // eslint-disable-next-line no-param-reassign
         pReq.headers['x-token-issuer'] = token.issuer;
         return Promise.resolve();
       },

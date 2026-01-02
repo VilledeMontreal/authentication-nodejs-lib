@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -rf ./build ./tsconfig.tsbuildinfo coverage output",
-    "compile": "../../node_modules/.bin/tsc",
+    "compile": "tsc",
     "start": "npm run compile && node dist/index.js",
     "test": "echo 'no tests'"
   },
@@ -16,7 +16,7 @@
     "@villedemontreal/auth-core": "^1.1.4",
     "@villedemontreal/auth-oidc-plugin-request": "^1.1.4",
     "request": "2.88.2",
-    "request-promise-native": "^0.0.0"
+    "request-promise-native": "^1.0.9"
   },
   "devDependencies": {
     "@types/node": "24.x",

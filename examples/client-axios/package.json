@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -rf ./build ./tsconfig.tsbuildinfo coverage output",
-    "compile": "../../node_modules/.bin/tsc",
+    "compile": "tsc",
     "start": "npm run compile && node dist/index.js",
     "test": "echo 'no tests'"
   },
@@ -15,7 +15,7 @@
   "dependencies": {
     "@villedemontreal/auth-core": "^1.1.4",
     "@villedemontreal/auth-oidc-plugin-axios": "^1.1.4",
-    "axios": "1.12.2"
+    "axios": "1.13.2"
   },
   "devDependencies": {
     "@types/node": "24.x",

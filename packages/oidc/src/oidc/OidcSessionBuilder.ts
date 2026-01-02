@@ -24,7 +24,7 @@ import { IOidcSession } from './IOidcSession';
 import { IOidcSessionConfig } from './IOidcSessionConfig';
 import { OidcServerConfigGetter } from './OidcServerConfigGetter';
 import { OidcSession } from './OidcSession';
-// eslint-disable-next-line import/no-cycle
+
 import { OidcTokenProvider } from './OidcTokenProvider';
 import { OidcUserInfoClaimsProvider } from './OidcUserInfoClaimsProvider';
 import { OidcWellknownServerConfigProvider } from './OidcWellknownServerConfigProvider';

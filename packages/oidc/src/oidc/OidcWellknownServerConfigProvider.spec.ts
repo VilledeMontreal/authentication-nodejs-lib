@@ -93,8 +93,6 @@ describe('OidcWellknownServerConfigProvider', () => {
     const config = provider.getConfig('');
 
     // expect
-    return expect(config).rejects.toThrowError(
-      'server is a required parameter',
-    );
+    return expect(config).rejects.toThrow('server is a required parameter');
   });
 });

@@ -58,7 +58,6 @@ function promisify(
     const params = { ...options, method };
     params.callback = (err, res, body) => {
       if (err) {
-        // eslint-disable-next-line no-param-reassign
         err.response = res;
         reject(err);
       } else if (
@@ -945,7 +944,6 @@ describe('authenticator', () => {
         });
 
         app.get('/api/secured', (req, res) => {
-          // eslint-disable-next-line no-console
           if (
             !req.headers.authorization ||
             req.headers.authorization === 'Bearer bad-token'

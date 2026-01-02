@@ -4,8 +4,6 @@
  * See LICENSE file in the project root for full license information.
  */
 
-/* eslint-disable import/no-extraneous-dependencies */
-
 import { Server } from 'http';
 import { ILogger } from '..';
 import { FakeLogger } from '../logging/FakeLogger';
@@ -576,12 +574,36 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
     }
   });
 
-  test('get request with cookies', async () => {
+  test('get request with single cookie', async () => {
+    // setup
+    const req: IHttpRequest = {
+      headers: {
+        accept: 'text/plain',
+        cookie: 'foo=bar',
+      },
+      url: 'http://localhost:3000/text',
+    };
+    // act
+    const res = await client.send(req);
+    // expect
+    expect(res.statusCode).toBe(200);
+    expect(res.body).toEqual('Hello World');
+    if (res.headers && res.headers['set-cookie']) {
+      expect(res.headers['set-cookie']).toEqual([
+        'foo=bar; Path=/',
+      ]);
+    } else {
+      throw new Error('expected to receive cookies');
+    }
+  });
+
+  test('get request with multiple cookies', async () => {
     // setup
     const req: IHttpRequest = {
       headers: {
         accept: 'text/plain',
         cookie: ['foo=bar', 'session_id=1234'],
+        custom_header: ['custom_value1', 'custom_value2'], // for code coverage
       },
       url: 'http://localhost:3000/text',
     };

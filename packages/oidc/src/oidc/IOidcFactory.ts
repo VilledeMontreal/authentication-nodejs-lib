@@ -10,7 +10,7 @@ import {
   ITimeProvider,
 } from '@villedemontreal/auth-core';
 import { IHttpDefaults } from '@villedemontreal/auth-core/dist/http/IHttpDefaults';
-// eslint-disable-next-line import/no-cycle
+
 import { IOidcSession } from './IOidcSession';
 import { IClaimsProvider } from '../tokens/IClaimsProvider';
 import { ITokenProvider } from '../tokens/ITokenProvider';
@@ -18,7 +18,7 @@ import { ITokenStore } from '../tokens/ITokenStore';
 import { IOidcClientConfig } from './IOidcClientConfig';
 import { IOidcServerConfigGetter } from './IOidcServerConfigGetter';
 import { IOidcServerConfigProvider } from './IOidcServerConfigProvider';
-// eslint-disable-next-line import/no-cycle
+
 import { IOidcSessionConfig } from './IOidcSessionConfig';
 
 /**

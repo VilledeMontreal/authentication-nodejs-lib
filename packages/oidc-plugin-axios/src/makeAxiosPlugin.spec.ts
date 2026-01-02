@@ -13,7 +13,7 @@ import axios, {
   InternalAxiosRequestConfig,
   AxiosRequestConfig,
 } from 'axios';
-import { pluginErrorPoll, IAxiosPluginContext } from './makeAxiosPlugin';
+import { pluginErrorPoll, IAxiosPluginContext, removeAdapter, adapterFlag } from './makeAxiosPlugin';
 import { requestLogger } from './requestLogger';
 
 describe('makeAxiosPlugin', () => {
@@ -151,6 +151,26 @@ describe('makeAxiosPlugin', () => {
 
     const res = await agent.get('http://localhost:1234', config);
     expect(res).toBe(fakeResp);
+  });
+
+  test('removeAdapter should remove adapter flag', () => {
+    const configWithAdapter = {
+      adapter: () => { },
+    };
+    (configWithAdapter.adapter as any)[adapterFlag] = true;
+
+    const cleanedConfig = removeAdapter(configWithAdapter);
+    expect(cleanedConfig.adapter).toBeUndefined();
+  });
+
+  test('removeAdapter should not remove adapter if flag not present', () => {
+    const originalAdapter = () => { };
+    const configWithAdapter = {
+      adapter: originalAdapter,
+    };
+
+    const cleanedConfig = removeAdapter(configWithAdapter);
+    expect(cleanedConfig.adapter).toBe(originalAdapter);
   });
 
   function createContext() {

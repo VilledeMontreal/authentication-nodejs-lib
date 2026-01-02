@@ -33,9 +33,8 @@ export function authenticator(
     if (canApplyAuthenticator(request)) {
       // setup retries
       if (config && config.retryUnauthenticatedRequests !== false) {
-        // eslint-disable-next-line no-underscore-dangle
         const maxRetries = (request as any)._maxRetries;
-        // eslint-disable-next-line no-underscore-dangle
+
         const retryCallback = (request as any)._retryCallback;
         request.retry(maxRetries || 1, canRetryRequest(retryCallback));
       }

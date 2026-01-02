@@ -122,7 +122,6 @@ describe('authenticator', () => {
     // setup
     const { session, states, authenticatorConfig } = setup({
       beforeSendRequest: async (pReq, token) => {
-        // eslint-disable-next-line no-param-reassign
         pReq.headers['x-token-issuer'] = token.issuer;
         return Promise.resolve();
       },
@@ -586,7 +585,6 @@ describe('authenticator', () => {
         });
 
         app.get('/api/secured', (req, res) => {
-          // eslint-disable-next-line no-console
           if (
             !req.headers.authorization ||
             req.headers.authorization === 'Bearer bad-token'

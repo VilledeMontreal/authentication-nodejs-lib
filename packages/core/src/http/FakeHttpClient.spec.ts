@@ -11,7 +11,7 @@ describe('FakeHttpClient', () => {
     const httpClient = new FakeHttpClient();
     return expect(
       httpClient.send({ url: 'http://localhost/some/path' }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       'No registered mock for http call: GET http://localhost/some/path',
     );
   });
@@ -27,7 +27,7 @@ describe('FakeHttpClient', () => {
     // act
     return expect(
       httpClient.send({ url: 'http://localhost/other/path' }),
-    ).rejects.toThrowError(
+    ).rejects.toThrow(
       'No registered mock for http call: GET http://localhost/other/path',
     );
   });

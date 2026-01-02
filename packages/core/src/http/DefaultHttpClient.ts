@@ -239,7 +239,6 @@ export class DefaultHttpClient implements IHttpClient {
     if (!headers['x-correlation-id'] && this.defaults.correlator) {
       const correlationId = this.defaults.correlator.getId();
       if (correlationId) {
-        // eslint-disable-next-line no-param-reassign
         headers['x-correlation-id'] = correlationId;
       }
     }

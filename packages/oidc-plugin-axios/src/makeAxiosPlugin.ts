@@ -17,7 +17,7 @@ import {
 import { IAxiosPlugin } from './IAxiosPlugin';
 import { IAxiosPluginImplementation } from './IAxiosPluginImplementation';
 
-const adapterFlag = Symbol('adapterFlag');
+export const adapterFlag = Symbol('adapterFlag');
 
 const contextProperty = new TypedProperty<
   IAxiosPluginContext,
@@ -96,7 +96,7 @@ export function makeAxiosPlugin(
   }
 }
 
-function removeAdapter(config: any) {
+export function removeAdapter(config: any) {
   const result = { ...config };
   if (result.adapter && result.adapter[adapterFlag]) {
     delete result.adapter;

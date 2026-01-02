@@ -10,7 +10,7 @@ import { IClaims } from '../tokens/IClaims';
 import { IOidcSession } from './IOidcSession';
 import { IOidcTokenInfo } from './IOidcTokenInfo';
 import { OidcHttpClient } from './OidcHttpClient';
-// eslint-disable-next-line import/no-cycle
+
 import { encodeBasicAuth } from './OidcTokenProvider';
 
 const AccessTokenIsRequiredMessage = 'accessToken is required';

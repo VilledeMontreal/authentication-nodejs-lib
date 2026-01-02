@@ -32,7 +32,6 @@ export class OidcSession extends EventEmitter implements IOidcSession {
 
   private state: OidcSessionState = OidcSessionState.uninitialized;
 
-  /* eslint-disable-next-line no-undef */
   private timer?: NodeJS.Timeout;
 
   private getTokenCounter = 0;

@@ -17,7 +17,6 @@ export class ConsoleLogger implements ILogger {
    * @param txtMsg a text message to report
    */
   public debug(messageObj: any, txtMsg?: string): void {
-    // eslint-disable-next-line no-console
     this.doLog(console.debug, 'Debug', messageObj, txtMsg);
   }
 
@@ -26,7 +25,6 @@ export class ConsoleLogger implements ILogger {
    * @param txtMsg a text message to report
    */
   public info(messageObj: any, txtMsg?: string): void {
-    // eslint-disable-next-line no-console
     this.doLog(console.info, 'Info', messageObj, txtMsg);
   }
 
@@ -35,7 +33,6 @@ export class ConsoleLogger implements ILogger {
    * @param txtMsg a text message to report
    */
   public warning(messageObj: any, txtMsg?: string): void {
-    // eslint-disable-next-line no-console
     this.doLog(console.warn, 'Warning', messageObj, txtMsg);
   }
 
@@ -44,7 +41,6 @@ export class ConsoleLogger implements ILogger {
    * @param txtMsg a text message to report
    */
   public error(messageObj: any, txtMsg?: string): void {
-    // eslint-disable-next-line no-console
     this.doLog(console.error, 'Error', messageObj, txtMsg);
   }
 

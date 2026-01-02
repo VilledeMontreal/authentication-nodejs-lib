@@ -7,8 +7,6 @@
 import * as request from 'request';
 import { IRequestPluginImplementation } from './IRequestPluginImplementation';
 
-/* eslint-disable no-underscore-dangle */
-
 // Note that we need to inject an asynchronous step before executing the request
 // and we need to inspect the outcome of the request, since we must invalidate
 // the access token if the request was not authorized (401).
@@ -31,7 +29,6 @@ export function catchErrors(action: () => void) {
   try {
     action();
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error('Unexpected error:', err);
   }
 }
@@ -47,7 +44,7 @@ export function addPlugins(
   let currentPlugins: IRequestPluginImplementation[] = instance[kPlugins];
   if (!currentPlugins) {
     currentPlugins = [];
-    // eslint-disable-next-line no-param-reassign
+
     instance[kPlugins] = currentPlugins;
   }
   currentPlugins.push(...plugins);
@@ -76,7 +73,6 @@ function onCallback(
     .catch(beforeCallbackErr => {
       catchErrors(() => {
         if (err) {
-          // eslint-disable-next-line no-param-reassign
           beforeCallbackErr.innerError = err;
         }
         oldCallback(beforeCallbackErr, res, body);

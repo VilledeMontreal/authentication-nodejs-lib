@@ -62,7 +62,7 @@ describe('HttpRequestCorrelator', () => {
       correlator.withIdAsync(() => {
         throw new Error('Foobar');
       }),
-    ).rejects.toThrowError('Foobar');
+    ).rejects.toThrow('Foobar');
   });
 
   test('bind should accept anything', () => {

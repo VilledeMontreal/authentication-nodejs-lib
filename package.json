@@ -32,7 +32,9 @@
     "ncu": "ncu && npx nx exec --parallel=false -- ncu -x @types/node",
     "ncu-fix": "ncu -u && npx nx exec --parallel=false -- ncu -u -x @types/node",
     "ncu-minor": "ncu --target minor && npx nx exec --parallel=false -- ncu --target minor -x @types/node",
-    "ncu-minor-fix": "ncu --target minor -u && npx nx exec --parallel=false -- ncu --target minor -u -x @types/node"
+    "ncu-minor-fix": "ncu --target minor -u && npx nx exec --parallel=false -- ncu --target minor -u -x @types/node",
+    "ncu-major": "ncu && npx nx exec --parallel=false -- ncu -x @types/node",
+    "ncu-major-fix": "ncu -u && npx nx exec --parallel=false -- ncu -u -x @types/node"
   },
   "workspaces": [
     "packages/core",
@@ -48,6 +50,11 @@
     "examples/server-oidc"
   ],
   "devDependencies": {
-    "lerna": "^8.2.4"
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.39.2",
+    "eslint-plugin-n": "^17.23.1",
+    "globals": "^16.5.0",
+    "lerna": "^9.0.3",
+    "typescript-eslint": "^8.51.0"
   }
 }

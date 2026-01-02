@@ -55,6 +55,6 @@ export function hookMethod(
       });
   };
   hookedProperty.set(newMethod, true);
-  // eslint-disable-next-line no-param-reassign
+
   instance[methodName] = newMethod;
 }

@@ -91,7 +91,6 @@ describe('hookMethod', () => {
     const foo = new Foo();
     // act
     hookMethod(foo, 'bar', async args => {
-      // eslint-disable-next-line no-param-reassign
       args.invokeHookedMethod = false;
       foo.barHooked = true;
       const [callback] = args.methodArgs;
@@ -163,7 +162,7 @@ describe('hookMethod', () => {
     hookMethod(foo, 'bar', async args => {
       await delay(10);
       foo.barCalled = true;
-      // eslint-disable-next-line no-param-reassign
+
       args.restoreHookedMethod = true;
     });
     foo.bar((err: any, a: number) => {
@@ -191,7 +190,6 @@ describe('hookMethod', () => {
     const originalBar = foo.bar;
     // act
     hookMethod(foo, 'bar', async args => {
-      // eslint-disable-next-line no-param-reassign
       args.restoreHookedMethod = true;
       await delay(10);
       foo.barHooked = true;

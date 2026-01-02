@@ -69,20 +69,20 @@ describe('Stopwatch', () => {
     expect(() => {
       watch.start();
       // tslint:disable-next-line: quotemark
-    }).toThrowError("You can't start an already started watch!");
+    }).toThrow("You can't start an already started watch!");
   });
 
   test('should throw when stopping a non started watch', () => {
     const watch = new Stopwatch();
     expect(() => {
       watch.stop();
-    }).toThrowError('You must start the watch before calling this method');
+    }).toThrow('You must start the watch before calling this method');
   });
 
   test('should throw when accessing elasped time of a non started watch', () => {
     const watch = new Stopwatch();
     expect(() => {
       watch.elapsedTimeInMS();
-    }).toThrowError('You must start the watch to obtain elapsed time');
+    }).toThrow('You must start the watch to obtain elapsed time');
   });
 });

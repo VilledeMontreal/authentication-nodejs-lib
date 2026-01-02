@@ -5,7 +5,7 @@
  */
 
 import { IHttpDefaults } from '@villedemontreal/auth-core/dist/http/IHttpDefaults';
-// eslint-disable-next-line import/no-cycle
+
 import { IOidcFactory } from './IOidcFactory';
 
 /**

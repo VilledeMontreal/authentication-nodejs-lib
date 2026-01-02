@@ -12,7 +12,7 @@ import {
   ITimeProvider,
 } from '@villedemontreal/auth-core';
 import { OutgoingHttpHeaders } from 'http';
-// eslint-disable-next-line import/no-cycle
+
 import { TokenSet } from '..';
 import { IClaimsProvider } from '../tokens/IClaimsProvider';
 import { ITokenProvider } from '../tokens/ITokenProvider';
