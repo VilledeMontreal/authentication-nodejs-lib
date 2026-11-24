@@ -17,9 +17,7 @@ const AccessTokenIsRequiredMessage = 'accessToken is required';
 
 export interface IOidcTokenInspectorConfig {
   introspectionEndpointAuthMethod:
-    | 'none'
-    | 'client_secret_basic'
-    | 'bearer_token';
+    'none' | 'client_secret_basic' | 'bearer_token';
 }
 /**
  * The token inspector that can do some introspection on the

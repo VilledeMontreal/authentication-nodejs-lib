@@ -33,8 +33,8 @@
     "ncu-fix": "ncu -u && npx nx exec --parallel=false -- ncu -u -x @types/node",
     "ncu-minor": "ncu --target minor && npx nx exec --parallel=false -- ncu --target minor -x @types/node",
     "ncu-minor-fix": "ncu --target minor -u && npx nx exec --parallel=false -- ncu --target minor -u -x @types/node",
-    "ncu-major": "ncu && npx nx exec --parallel=false -- ncu -x @types/node",
-    "ncu-major-fix": "ncu -u && npx nx exec --parallel=false -- ncu -u -x @types/node"
+    "ncu-major": "ncu && npx nx exec --parallel=false -- ncu -x @types/node -x typescript",
+    "ncu-major-fix": "ncu -u && npx nx exec --parallel=false -- ncu -u -x @types/node -x typescript"
   },
   "workspaces": [
     "packages/core",
@@ -50,11 +50,11 @@
     "examples/server-oidc"
   ],
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.3",
-    "@eslint/js": "^9.39.2",
-    "eslint-plugin-n": "^17.23.1",
-    "globals": "^16.5.0",
-    "lerna": "^9.0.3",
-    "typescript-eslint": "^8.51.0"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "eslint-plugin-n": "^18.5.0",
+    "globals": "^17.14.0",
+    "lerna": "^10.1.3",
+    "typescript-eslint": "^8.74.0"
   }
 }

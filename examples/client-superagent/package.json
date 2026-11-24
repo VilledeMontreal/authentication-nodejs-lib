@@ -15,11 +15,11 @@
   "dependencies": {
     "@villedemontreal/auth-core": "^1.1.5",
     "@villedemontreal/auth-oidc-plugin-superagent": "^1.1.5",
-    "superagent": "10.2.3"
+    "superagent": "10.4.2"
   },
   "devDependencies": {
     "@types/node": "24.x",
-    "@types/superagent": "8.1.9",
+    "@types/superagent": "8.1.11",
     "typescript": "5.9.3"
   }
 }

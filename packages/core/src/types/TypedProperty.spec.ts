@@ -72,6 +72,11 @@ describe('TypedProperty', () => {
       await expect(
         ageProp.getOrSetAsync(obj, () => Promise.resolve(0)),
       ).resolves.toBe(55);
+      // symbol properties should be non-enumerable so they don't leak into object merges
+      const sym = Symbol('hidden');
+      const hiddenProp = new TypedProperty<string, IUser>(sym);
+      hiddenProp.set(obj, 'secret');
+      expect(Object.prototype.propertyIsEnumerable.call(obj, sym)).toBe(false);
     });
   });
 });

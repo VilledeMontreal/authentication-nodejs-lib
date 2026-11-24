@@ -175,7 +175,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
       expect(err.innerError).toBeDefined();
       if (err.innerError) {
         expect(err.innerError.message).toBe(
-          `Unexpected token 'a', \"a: 1, b:2\" is not valid JSON`,
+          `Unexpected token 'a', "a: 1, b:2" is not valid JSON`,
         );
       }
       expect(requestCounter).toBe(1);
@@ -589,9 +589,7 @@ export function initHttpClientTestSuite(options: IHttpClientTestSuiteOptions) {
     expect(res.statusCode).toBe(200);
     expect(res.body).toEqual('Hello World');
     if (res.headers && res.headers['set-cookie']) {
-      expect(res.headers['set-cookie']).toEqual([
-        'foo=bar; Path=/',
-      ]);
+      expect(res.headers['set-cookie']).toEqual(['foo=bar; Path=/']);
     } else {
       throw new Error('expected to receive cookies');
     }

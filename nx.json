@@ -1,29 +1,19 @@
 {
   "targetDefaults": {
     "compile": {
-      "dependsOn": [
-        "^compile"
-      ],
-      "outputs": [
-        "{projectRoot}/dist"
-      ],
+      "dependsOn": ["^compile"],
+      "outputs": ["{projectRoot}/dist"],
       "cache": true
     },
     "start": {
-      "dependsOn": [
-        "^start"
-      ]
+      "dependsOn": ["^start"]
     },
     "test": {
-      "outputs": [
-        "{projectRoot}/output"
-      ],
+      "outputs": ["{projectRoot}/output"],
       "cache": true
     },
     "test-ci": {
-      "outputs": [
-        "{projectRoot}/output"
-      ],
+      "outputs": ["{projectRoot}/output"],
       "cache": true
     },
     "lint": {
@@ -32,5 +22,6 @@
   },
   "affected": {
     "defaultBase": "develop"
-  }
+  },
+  "analytics": true
 }

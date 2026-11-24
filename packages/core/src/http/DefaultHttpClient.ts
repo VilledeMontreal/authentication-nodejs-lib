@@ -218,13 +218,11 @@ export class DefaultHttpClient implements IHttpClient {
     }
     if (contentType) {
       // serialize and update headers
-      let contentLength = 0;
       const content = serialize(context, context.request.body, contentType);
-      if (typeof content === 'string') {
-        contentLength = Buffer.byteLength(content);
-      } else {
-        contentLength = content.length;
-      }
+      const contentLength =
+        typeof content === 'string'
+          ? Buffer.byteLength(content)
+          : content.length;
       return {
         content,
         contentLength,

@@ -13,7 +13,12 @@ import axios, {
   InternalAxiosRequestConfig,
   AxiosRequestConfig,
 } from 'axios';
-import { pluginErrorPoll, IAxiosPluginContext, removeAdapter, adapterFlag } from './makeAxiosPlugin';
+import {
+  pluginErrorPoll,
+  IAxiosPluginContext,
+  removeAdapter,
+  adapterFlag,
+} from './makeAxiosPlugin';
 import { requestLogger } from './requestLogger';
 
 describe('makeAxiosPlugin', () => {
@@ -155,7 +160,7 @@ describe('makeAxiosPlugin', () => {
 
   test('removeAdapter should remove adapter flag', () => {
     const configWithAdapter = {
-      adapter: () => { },
+      adapter: () => {},
     };
     (configWithAdapter.adapter as any)[adapterFlag] = true;
 
@@ -164,7 +169,7 @@ describe('makeAxiosPlugin', () => {
   });
 
   test('removeAdapter should not remove adapter if flag not present', () => {
-    const originalAdapter = () => { };
+    const originalAdapter = () => {};
     const configWithAdapter = {
       adapter: originalAdapter,
     };

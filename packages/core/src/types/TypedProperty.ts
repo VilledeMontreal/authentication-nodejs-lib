@@ -43,6 +43,13 @@ export class TypedProperty<TProperty, TObject = any> {
   set(target: TObject, value: TProperty | undefined): void {
     if (value === undefined) {
       this.clear(target);
+    } else if (typeof this.propertyName === 'symbol') {
+      Object.defineProperty(target, this.propertyName, {
+        value,
+        writable: true,
+        configurable: true,
+        enumerable: false,
+      });
     } else {
       (target as any)[this.propertyName] = value;
     }

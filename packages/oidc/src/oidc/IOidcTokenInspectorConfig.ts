@@ -10,7 +10,5 @@
 export interface IOidcTokenInspectorConfig {
   /** the authentication method used to invoke the introspection endpoint */
   introspectionEndpointAuthMethod:
-    | 'none'
-    | 'client_secret_basic'
-    | 'bearer_token';
+    'none' | 'client_secret_basic' | 'bearer_token';
 }
